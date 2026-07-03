@@ -1,0 +1,18 @@
+[
+  {
+    "id": "wf3-concept-stacking",
+    "workflow": "WF03",
+    "label": "WF3 — Source Stacking Principle",
+    "layout": "concept-overlay",
+    "title": "When you add an external source to the conversation—a real template, a real example—the AI's output quality jumps dramatically. This is source stacking.",
+    "subtitle": "Source Stacking"
+  },
+  {
+    "id": "wf3-concept-eseo",
+    "workflow": "WF03",
+    "label": "WF3 — ESEO Tie-Back",
+    "layout": "concept-overlay",
+    "title": "Explore. Structure. Execute. Optimize. Everything you've done in this workflow maps back to this cycle. The template is the structure. The next workflow is the execution.",
+    "subtitle": "ESEO Framework"
+  }
+]

@@ -1,0 +1,755 @@
+/*
+ * ============================================================================
+ * shared/simulator/chrome/chatgpt/chatgpt.css
+ * ----------------------------------------------------------------------------
+ * Chrome-local stylesheet for the ChatGPT chrome module (B1).
+ *
+ * INVARIANT (architecture spec §10.1 #1):
+ *   Every hex and px literal in this file MUST be reached through
+ *   var(--token-name). All tokens are declared in lib/design-tokens.css
+ *   §17 (ChatGPT chrome) or shared sections §1..§16.
+ *
+ * Source reconciliation:
+ *   Legacy: shared/chatgpt-simulator.html lines 7..566 (inline <style>).
+ *   Port deltas:
+ *     - 16 :root vars + 22 hex literals + ~100 px literals replaced with
+ *       var() references declared in lib/design-tokens.css.
+ *     - .google-docs-* selectors stripped (belong to chrome/google-docs).
+ *     - .concept-overlay/.concept-* stripped (belong to chrome/slides).
+ *     - Inline screenshot-mode controls ("dev controls bar") removed;
+ *       capture-harness renders its own controls via runner.js.
+ * ============================================================================
+ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--cg-text);
+  background: var(--cg-bg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== LAYOUT ===== */
+.app { display: flex; height: 100vh; }
+
+.app.no-sidebar .main { max-width: 100%; }
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: var(--cg-sidebar-w);
+  background: var(--cg-sidebar-bg);
+  border-right: var(--border-width-1) solid var(--cg-sidebar-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2);
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-2) var(--space-3);
+}
+.sidebar-logo {
+  width: var(--cg-sidebar-logo);
+  height: var(--cg-sidebar-logo);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-logo svg {
+  width: var(--cg-sidebar-logo-svg);
+  height: var(--cg-sidebar-logo-svg);
+  fill: var(--white);
+}
+.sidebar-toggle {
+  width: var(--cg-sidebar-logo);
+  height: var(--cg-sidebar-logo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--radius-6);
+  color: var(--cg-text-secondary);
+}
+.sidebar-toggle:hover { background: var(--cg-sidebar-border); }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--cg-text);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.nav-item:hover { background: var(--cg-nav-hover); }
+.nav-item svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  color: var(--cg-text-secondary);
+  flex-shrink: 0;
+}
+
+.nav-section-label {
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  color: var(--cg-text-muted-strong);
+  padding: var(--space-4) var(--space-2) var(--space-2);
+  text-transform: capitalize;
+}
+.nav-item.recent {
+  font-size: var(--cg-nav-text);
+  color: var(--cg-text);
+  padding: var(--space-2);
+}
+.nav-item.recent.active { background: var(--cg-sidebar-border); }
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: var(--space-3) var(--space-2) var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-top: var(--border-width-1) solid var(--cg-sidebar-border);
+}
+.avatar {
+  width: var(--cg-avatar);
+  height: var(--cg-avatar);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+}
+.avatar-name { font-size: var(--text-sm); font-weight: var(--weight-medium); }
+.avatar-sub  { font-size: var(--text-2xs); color: var(--cg-text-muted-strong); }
+
+/* ===== MAIN ===== */
+.main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  flex-shrink: 0;
+}
+.model-selector {
+  font-size: var(--cg-text-17);
+  font-weight: var(--weight-semibold);
+  color: var(--cg-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+}
+.model-selector svg {
+  width: var(--text-md);
+  height: var(--text-md);
+  color: var(--cg-text-secondary);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--cg-text-secondary);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: var(--border-width-1) solid var(--cg-border-light);
+}
+.header-btn:hover { background: var(--cg-header-btn-hover-bg); }
+.header-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  cursor: pointer;
+  color: var(--cg-text-secondary);
+}
+
+/* Chat scroll + content */
+.chat-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 var(--space-5) var(--space-5);
+}
+.chat-content {
+  max-width: var(--cg-content-max);
+  margin: 0 auto;
+}
+
+/* Messages */
+.message { margin-bottom: var(--space-6); }
+.message.user { display: flex; justify-content: flex-end; }
+.user-bubble {
+  background: var(--cg-user-bubble);
+  border-radius: var(--cg-bubble-radius);
+  padding: var(--space-3) var(--space-4);
+  max-width: var(--cg-bubble-max-w);
+  font-size: var(--cg-text-15);
+  line-height: var(--line-normal);
+  color: var(--cg-text);
+}
+
+.message.assistant { padding: 0; }
+.assistant-content {
+  font-size: var(--cg-text-15);
+  line-height: var(--line-relaxed);
+  color: var(--cg-text);
+}
+.assistant-content h2 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  margin: var(--space-5) 0 var(--space-2);
+  line-height: var(--line-tight);
+}
+.assistant-content h3 {
+  font-size: var(--cg-text-17);
+  font-weight: var(--weight-semibold);
+  margin: var(--space-4) 0 var(--space-1);
+}
+.assistant-content p { margin: var(--space-2) 0; }
+.assistant-content ul,
+.assistant-content ol { padding-left: var(--space-6); margin: var(--space-2) 0; }
+.assistant-content li { margin: var(--space-1) 0; line-height: var(--line-relaxed); }
+.assistant-content strong { font-weight: var(--weight-semibold); }
+.assistant-content em { font-style: italic; }
+.assistant-content a { color: var(--cg-link); text-decoration: underline; }
+.assistant-content blockquote {
+  border-left: var(--border-width-3) solid var(--cg-blockquote-border);
+  background: var(--cg-blockquote-bg);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-3) 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--cg-text-15);
+}
+.assistant-content hr {
+  border: none;
+  border-top: var(--border-width-1) solid var(--cg-border-light);
+  margin: var(--space-5) 0;
+}
+.assistant-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-3) 0;
+  font-size: var(--text-sm);
+}
+.assistant-content table th {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width-3) solid var(--cg-border-light);
+  font-weight: var(--weight-semibold);
+  background: var(--cg-table-header-bg);
+}
+.assistant-content table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width-1) solid var(--cg-border-light);
+}
+
+/* Action toolbar */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  padding: var(--space-1) 0;
+}
+.action-btn {
+  width: var(--cg-input-plus);
+  height: var(--cg-input-plus);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  color: var(--cg-text-muted-strong);
+}
+.action-btn:hover { background: var(--cg-action-hover-bg); color: var(--cg-text-secondary); }
+.action-btn svg { width: var(--text-md); height: var(--text-md); }
+
+/* Input bar */
+.input-area {
+  padding: 0 var(--space-5) var(--space-4);
+  flex-shrink: 0;
+}
+.input-container {
+  max-width: var(--cg-content-max);
+  margin: 0 auto;
+  position: relative;
+}
+.input-box {
+  display: flex;
+  align-items: center;
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  border-radius: var(--cg-input-radius);
+  padding: var(--space-3) var(--space-4);
+  background: var(--cg-input-bg);
+  gap: var(--space-2);
+  box-shadow: var(--cg-input-shadow);
+}
+.input-plus {
+  width: var(--cg-input-plus);
+  height: var(--cg-input-plus);
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: var(--cg-text-secondary);
+}
+.input-text {
+  flex: 1;
+  font-size: var(--cg-text-15);
+  color: var(--cg-text-muted);
+  padding: var(--space-1) 0;
+}
+.input-mic {
+  width: var(--cg-input-plus);
+  height: var(--cg-input-plus);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--cg-text-secondary);
+}
+.input-send {
+  width: var(--cg-input-send);
+  height: var(--cg-input-send);
+  border-radius: var(--radius-pill);
+  background: var(--cg-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.input-send svg {
+  width: var(--text-md);
+  height: var(--text-md);
+  color: var(--cg-send-icon);
+}
+
+.footer-note {
+  text-align: center;
+  font-size: var(--text-2xs);
+  color: var(--cg-text-muted);
+  margin-top: var(--space-2);
+}
+
+/* ===== GPT EDITOR ===== */
+.gpt-editor { display: flex; flex: 1; overflow: hidden; }
+.gpt-editor-left {
+  flex: 1;
+  padding: var(--space-6) var(--space-8);
+  overflow-y: auto;
+  border-right: var(--border-width-1) solid var(--cg-border-light);
+}
+.gpt-editor-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6);
+}
+.gpt-editor-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: var(--border-width-1) solid var(--cg-border-light);
+}
+.gpt-editor-back {
+  cursor: pointer;
+  font-size: var(--text-xl);
+  color: var(--cg-text-secondary);
+}
+.gpt-editor-title {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+.gpt-editor-badge {
+  font-size: var(--text-2xs);
+  color: var(--cg-text-muted-strong);
+}
+.gpt-editor-create-btn {
+  background: var(--cg-text);
+  color: var(--white);
+  border: none;
+  border-radius: var(--text-xl);
+  padding: var(--space-2) var(--space-5);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+
+.gpt-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: var(--space-4) auto var(--space-6);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: fit-content;
+  align-self: center;
+}
+.gpt-tab {
+  padding: var(--space-2) var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  color: var(--cg-text-secondary);
+  background: var(--white);
+}
+.gpt-tab.active {
+  background: var(--cg-header-btn-hover-bg);
+  color: var(--cg-text);
+  font-weight: var(--weight-semibold);
+}
+
+.gpt-field-label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  margin: var(--space-4) 0 var(--space-1);
+}
+.gpt-textarea {
+  width: 100%;
+  min-height: var(--cg-gpt-textarea-min-h);
+  padding: var(--space-3);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--cg-text-135);
+  line-height: var(--line-normal);
+  resize: vertical;
+  font-family: inherit;
+  color: var(--cg-text);
+  background: var(--cg-bg);
+}
+.gpt-input {
+  width: 100%;
+  padding: var(--space-3);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--cg-text-135);
+  font-family: inherit;
+  margin-top: var(--space-2);
+  color: var(--cg-text);
+  background: var(--cg-bg);
+}
+.gpt-knowledge-hint {
+  font-size: var(--text-2xs);
+  color: var(--cg-text-muted);
+  margin-bottom: var(--space-2);
+}
+.gpt-capability {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  margin-top: var(--space-1);
+}
+
+.gpt-preview-icon {
+  width: var(--cg-gpt-preview-icon);
+  height: var(--cg-gpt-preview-icon);
+  margin: var(--space-10) 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--cg-gpt-preview-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gpt-preview-name {
+  font-size: var(--text-22);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-2);
+}
+.gpt-preview-desc {
+  font-size: var(--text-sm);
+  color: var(--cg-text-secondary);
+  text-align: center;
+  max-width: var(--cg-gpt-preview-max-w);
+  line-height: var(--line-normal);
+}
+.gpt-starter {
+  margin-top: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--cg-text-135);
+  color: var(--cg-text-secondary);
+  max-width: var(--cg-gpt-starter-max-w);
+  text-align: left;
+}
+.gpt-editor-preview-meta {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+.gpt-editor-preview-meta .preview-model {
+  color: var(--cg-text-secondary);
+}
+
+/* ============================================================================
+ * CAPTURE-HARNESS CONTROLS (bottom bar, hidden during Playwright capture)
+ * Identical structure to chrome/slides/slides.css so both chromes share the
+ * same harness affordances. Lives in chrome-local CSS for now; a future
+ * refactor may promote this block to lib/ as a shared controls stylesheet.
+ * ========================================================================== */
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--harness-bg);
+  color: var(--harness-fg);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  border-top: var(--border-width-1) solid var(--harness-border);
+}
+.controls.hidden { display: none !important; }
+
+.controls label {
+  font-weight: var(--weight-semibold);
+  margin-right: var(--space-2);
+}
+
+.controls select,
+.controls button {
+  background: var(--harness-btn-bg);
+  color: var(--harness-fg);
+  border: var(--border-width-1) solid var(--harness-btn-border);
+  border-radius: var(--radius-6);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.controls select:hover,
+.controls button:hover { background: var(--harness-btn-hover); }
+
+.slide-counter {
+  font-weight: var(--weight-semibold);
+  margin-left: auto;
+}
+
+.scene-info {
+  font-size: var(--text-3xs);
+  color: var(--harness-muted);
+}
+
+/* ============================================================================
+ * GPT-Editor rich progressive states
+ * Added 2026-04-26 per Option C (port from archived wf4-simulator.html).
+ * Provides classes for: starter chips, knowledge file chips (3 color variants),
+ * capability group toggles, instruction highlight markers, test-chat preview
+ * pane. See chrome/chatgpt/scenes/GptEditorScene.js for usage.
+ * ========================================================================== */
+
+/* Editor-left body wrapper */
+.gpt-editor-left-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+}
+
+/* Conversation starters list (Configure tab) */
+.gpt-starters-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.gpt-starter-chip {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--cg-user-bubble);
+  color: var(--cg-text);
+  font-size: var(--cg-text-15);
+  font-weight: var(--weight-medium);
+}
+
+/* Knowledge file chips with 3 color variants */
+.gpt-knowledge-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.gpt-file-chip {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--cg-text-135);
+  font-weight: var(--weight-medium);
+  color: var(--white);
+}
+.gpt-file-chip.blue   { background: #3B82F6; }   /* Context: files */
+.gpt-file-chip.green  { background: #10B981; }   /* Reference: files */
+.gpt-file-chip.orange { background: #F59E0B; }   /* Template: files */
+
+/* Capabilities group (4 toggle rows) */
+.gpt-capability-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+}
+.gpt-capability-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--cg-text-15);
+  color: var(--cg-text);
+  cursor: default;
+}
+.gpt-capability-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: default;
+}
+
+/* Instruction-highlight spans (for highlightParts: [1], [2], [3]) */
+.instruction-part {
+  display: block;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.instruction-part-1 { background: rgba(138, 0, 255, 0.10); }   /* electric-violet, soft */
+.instruction-part-2 { background: rgba(63, 109, 172, 0.10); }   /* heading-blue-text, soft */
+.instruction-part-3 { background: rgba(16, 185, 129, 0.10); }   /* green, soft */
+
+/* Preview pane: starters list + variants */
+.gpt-starters-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  width: 100%;
+  max-width: var(--cg-gpt-starter-max-w);
+}
+.gpt-starter-preview {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  background: var(--white);
+  color: var(--cg-text);
+  font-size: var(--cg-text-15);
+  text-align: left;
+}
+
+/* Generated DALL-E icon (variant of .gpt-preview-icon) */
+.gpt-preview-icon.generated {
+  background: linear-gradient(135deg, var(--electric-violet), var(--cg-link));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+}
+
+/* Test-chat preview panel (when scene.testChatIndices is set) */
+.test-chat-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: var(--space-4);
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  max-height: 400px;
+  overflow: hidden;
+}
+.test-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.test-message {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--cg-user-bubble);
+  font-size: var(--cg-text-15);
+  color: var(--cg-text);
+}
+.test-input-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-top: var(--border-width-1) solid var(--cg-blockquote-border);
+}
+.test-input-text {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  font-size: var(--cg-text-15);
+  color: var(--cg-text-muted);
+  outline: none;
+}
+.test-input-send {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: var(--cg-text);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-md);
+}
+
+/* ============================================================================
+ * Capability-mark indicator (Q-21 fix, 2026-04-27)
+ * Replaces the React `defaultChecked + readOnly` checkbox pattern that didn't
+ * render reliably in headless Chromium captures. The mark is data-driven via
+ * `is-checked` modifier on `.gpt-capability-item`.
+ * ========================================================================== */
+.gpt-capability-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--white);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: var(--weight-bold);
+}
+.gpt-capability-item.is-checked .gpt-capability-mark {
+  background: var(--cg-text);
+  border-color: var(--cg-text);
+}

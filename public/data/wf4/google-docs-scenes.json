@@ -1,0 +1,549 @@
+[
+  {
+    "id": "wf4-goal",
+    "layout": "doc",
+    "header": {
+      "title": "4️⃣ Codifying Personal AI Tools",
+      "badge": {
+        "text": "WF04",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "🎬 How This Module Relates to the Video",
+        "body": "The course video demonstrates key principles in a condensed format. This workbook is your comprehensive, hands-on exercise — includes additional prompts, structured phases, and documentation steps beyond the video."
+      },
+      {
+        "type": "text",
+        "heading": "Workflow Goal",
+        "headingLevel": 4
+      },
+      {
+        "type": "h4-text",
+        "heading": "What is a Personal AI Tool?",
+        "text": "A personal AI tool is a codified workflow — a set of instructions, knowledge, and prompts packaged so your AI collaborator can perform a specific task reliably and repeatedly. It transforms a one-off conversation into a reusable system."
+      },
+      {
+        "type": "marker",
+        "kind": "info",
+        "text": "Create a reliable, efficient tool for tailoring resumes to specific job listings, emphasizing reliability, consistency, and efficiency. Evaluate whether to build custom tools or leverage existing solutions. The goal of codifying a workflow into a personal tool is to ensure repeatability of the outcome and to bring more efficiency to the process.",
+        "label": "Objective",
+        "emoji": "🎯"
+      },
+      {
+        "type": "h4-text",
+        "heading": "The Concept: Exploring GPTs",
+        "text": "A pre-configured GPT is tailored to excel in particular areas. Users can create new models, edit existing ones, monitor usage, and share. Beyond GPTs, codification options include detailed SOPs, templatized prompt workbooks, custom assistants, and more."
+      },
+      {
+        "type": "text",
+        "heading": "Key Components of a GPT",
+        "headingLevel": 4
+      },
+      {
+        "type": "compact",
+        "label": "1. Creating GPTs",
+        "text": "Built through OpenAI's GPT Builder with a user-friendly interface. Start with a clear name and description, then progressively add instructions, knowledge files, and conversation starters."
+      },
+      {
+        "type": "compact",
+        "label": "2. Editing Existing GPTs",
+        "text": "Refine by updating instructions, adding or replacing knowledge files, and adjusting conversation starters based on testing and feedback. Most changes take effect immediately."
+      },
+      {
+        "type": "compact",
+        "label": "3. Monitoring Usage",
+        "text": "Track how often your GPT is used, which features are most valuable, and where users encounter difficulties."
+      },
+      {
+        "type": "compact",
+        "label": "4. Sharing GPTs",
+        "text": "Share privately, within an organization, or publicly. Each sharing mode has different discovery and access implications."
+      },
+      {
+        "type": "compact",
+        "label": "5. GPT Configuration Essentials",
+        "text": "Every GPT needs a clear name, description, detailed instructions, starter prompts, a knowledge base, and enabled capabilities (web browsing, code interpreter, file uploads) as needed."
+      },
+      {
+        "type": "compact",
+        "label": "6. Beyond GPTs",
+        "text": "Other codification options include Standard Operating Procedures (SOPs), prompt workbooks, custom assistants built on third-party platforms, and internal documentation systems."
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "Design a custom GPT with clear objectives, curated knowledge, and refined instructions"
+          },
+          {
+            "text": "Build conversation starters that guide productive AI interactions"
+          },
+          {
+            "text": "Develop validation systems to ensure quality and consistency"
+          },
+          {
+            "text": "Test and iterate your tool across diverse use cases"
+          },
+          {
+            "text": "Make informed decisions about building custom tools vs. leveraging existing solutions"
+          }
+        ],
+        "heading": "Learning Outcomes"
+      }
+    ],
+    "workflow": "WF04"
+  },
+  {
+    "id": "wf4-prework",
+    "layout": "doc",
+    "header": {
+      "title": "Workflow Prework",
+      "badge": {
+        "text": "WF04",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "h4-text",
+        "heading": "Prerequisites",
+        "text": "This workflow builds on the foundations established in:"
+      },
+      {
+        "type": "compact",
+        "label": "Module 1",
+        "text": "Your personal perspective brief"
+      },
+      {
+        "type": "compact",
+        "label": "Module 2",
+        "text": "Your S.E.A.-informed task breakdown and source library"
+      },
+      {
+        "type": "compact",
+        "label": "Module 3",
+        "text": "Your four-category AI toolbox"
+      },
+      {
+        "type": "text",
+        "heading": "Getting Ready",
+        "headingLevel": 4
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Review the key components of a GPT and consider which ones apply to the tool you want to build.",
+        "label": "Step 1 — Review GPT Components"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Gather reference materials that will inform your custom tool:\n• Sample job descriptions (3-5 examples from your target roles)\n• Your current resume or CV\n• Any career guidance documents or templates you have created\n• Your professional preferences and non-negotiables",
+        "label": "Step 2 — Gather Reference Materials"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Open your notes from Module 3 (your toolbox). Identify one workflow that you use repeatedly and would benefit from codification into a personal tool.",
+        "label": "Step 3 — Identify Your Tool"
+      }
+    ],
+    "workflow": "WF04"
+  },
+  {
+    "id": "wf4-phase-a",
+    "layout": "doc",
+    "header": {
+      "title": "Phase A — Define and Design",
+      "badge": {
+        "text": "WF04",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "h4-text",
+        "heading": "Configuring Your AI Collaborator",
+        "text": "Configuration is the process of defining your tool's identity, behavior, and knowledge — the foundation that determines how it responds to every request.\n\nIn Phase A, you will establish the foundation of your tool: its objective, curated information, and core instructions."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Start by naming your tool and writing a clear description of its purpose.",
+        "label": "Step 1: Name and Description"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Defining Your Tool",
+        "info": "Take a moment to name your personal AI tool and describe its core objective. For this exercise, we will call ours ResumeOptimizer.",
+        "text": "Tool Name: ResumeOptimizer\n\nTool Description: A specialized assistant that tailors resumes to specific job listings using a step-by-step analysis process. The tool evaluates job requirements, assesses resume alignment, and provides iterative refinement guided by user preferences and professional brand."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "Your tool name should be memorable and clearly convey its purpose. Your description should fit in 1-2 sentences."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Gather and organize the materials your tool will reference.",
+        "label": "Step 2: Supply the Curated Information"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Curating Knowledge",
+        "info": "What information should your tool have access to? For a resume-tailoring tool, this includes templates, context, reference material, and specifications.",
+        "text": "Templates: A template or example of a well-formatted resume\n\nContext: Your professional preferences (industries, company sizes, work environments)\n\nReference Material: Career guidance principles, resume best practices\n\nSpecifications: Your target role descriptions, key skills inventory\n\nFor your own tool, identify 3-5 reference materials or templates that will help the AI understand your context and constraints."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "💾 Save your curated information for use in the next phase."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Write the core instructions that will guide your tool's behavior. Structure your instructions in three parts: Role and Context, Interaction Protocol, and Output Constraints.",
+        "label": "Step 3: Design the Instructions"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Core Instructions — Three-Part Structure",
+        "info": "Your instructions should follow this three-part format:",
+        "text": "PART 1: Role and Context\n\"You are a career coach AI specialized in resume optimization. Your role is to analyze the user's resume alongside the target job posting, identify gaps between what the resume communicates and what the role requires, and provide specific, actionable feedback to strengthen the match.\"\n\nPART 2: Interaction Protocol\n\"In each conversation: 1. Ask the user to provide their resume and a job posting or job description. 2. Analyze the resume against the job posting — look for keyword alignment, experience gaps, and missing context. 3. Provide feedback in three sections: Strengths, Gaps, and Specific Recommendations. 4. After feedback, ask if they want to revise. If yes, paste the revised resume, and repeat the analysis cycle.\"\n\nPART 3: Output Constraints\n\"Keep feedback concise and actionable. Do not rewrite the resume for them — guide them to improve their own version. Prioritize keywords and phrasing that appear in the job posting. If the resume is already a strong match, say so explicitly.\""
+      },
+      {
+        "type": "callout",
+        "variant": "warning",
+        "title": "⚠️ Important",
+        "body": "Notice the specificity. It's not \"help people with resumes.\" It's a defined workflow: get inputs → analyze → structure feedback → guide revision. This framework is what transforms a generic AI collaborator into a purpose-built tool. Your instructions should be clear enough that the tool behaves consistently across different conversations."
+      }
+    ],
+    "workflow": "WF04"
+  },
+  {
+    "id": "wf4-phase-b",
+    "layout": "doc",
+    "header": {
+      "title": "Phase B — Configure and Launch",
+      "badge": {
+        "text": "WF04",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "text": "In Phase B, you will design conversation starters, implement validation checks, and prepare your tool for regular use."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Create a conversation starter that guides users into a productive first interaction with your tool. Conversation starters appear as clickable buttons in the chat interface — keep them short (under 150 characters) so they fit the UI.",
+        "label": "Step 4: Design Conversation Starters"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Conversation Starter",
+        "info": "Your conversation starter should launch the user directly into the tool's core workflow:",
+        "text": "\"Analyze this job posting against my resume and highlight gaps\""
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "This single starter seeds the concept of how the tool works. The user clicks it, and the tool immediately knows what to do — request the resume and job posting, then run the analysis. You can add more starters later as you discover common use patterns through testing."
+      },
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "🚀 TRY THIS",
+        "body": "Read your starter aloud. Does it clearly communicate what you want the AI to do in under 10 seconds? If it needs a paragraph of explanation, it's too complex for a conversation starter."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Design a checklist that you will use to review and validate the tool's output.",
+        "label": "Step 5: Implement a Validation System"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Validation Checklist",
+        "info": "For a resume-tailoring tool, your validation checklist might include:",
+        "text": "☐ Does the tailored resume accurately reflect my experience?\n☐ Are all claimed skills and achievements truthful and verifiable?\n☐ Does the resume address all key requirements mentioned in the job posting?\n☐ Is the formatting consistent and professional?\n\nFor your own tool, create a 4-6 item checklist that ensures quality and consistency."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "💾 Save your validation checklist for Phase C."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Finalize your tool configuration with all elements in place:\n• Curated information is organized and ready to be pasted into the tool\n• Core instructions are refined and clear\n• Conversation starter is written and tested\n• Validation checklist is documented\n• GPT is configured (or equivalent tool setup is complete)",
+        "label": "Step 6: Set Up for Cut & Paste"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "If you are building a GPT, use OpenAI's GPT builder. If you are building a different type of tool (prompt workbook, SOP, custom assistant), ensure all materials are compiled and accessible."
+      }
+    ],
+    "workflow": "WF04"
+  },
+  {
+    "id": "wf4-phase-c",
+    "layout": "doc",
+    "header": {
+      "title": "Phase C — Test and Evaluate",
+      "badge": {
+        "text": "WF04",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Testing Your Tool",
+        "headingLevel": 4
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Run your tool through 5-10 diverse job listings and evaluate the output."
+      },
+      {
+        "type": "text",
+        "heading": "Step 7: Test and Refine",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Part 1 of 2 — Resume Tailoring Analysis",
+        "info": "Use this prompt during your testing phase:",
+        "text": "\"Please help me tailor my resume for the attached job posting based on the guidance you have access to. I have attached my current resume here. Please first evaluate the knowledge provided to you, then assess my resume against the job requirements, then critique it and offer a tailored version. In your response, please provide your rationale.\""
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "For each test, evaluate the tool's output against your validation checklist."
+      },
+      {
+        "type": "text",
+        "heading": "Iterating on the Tool",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Part 2 of 2 — Iterative Refinement",
+        "info": "Once you have reviewed the initial output, use this prompt to refine:",
+        "text": "\"I agree with your assessment, except that I would like to keep my current professional summary rather than the one you suggested. Please write a new iteration of my tailored resume that I can copy and paste from your response and that will best meet the job requirements, as evidenced by this conversation and the material provided to you.\""
+      },
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "🚀 TRY THIS",
+        "body": "Document what works well and what does not. After 5 test runs, you should have clear patterns about where the tool excels and where it needs refinement."
+      },
+      {
+        "type": "callout",
+        "variant": "warning",
+        "title": "⚠️ Watch for",
+        "body": "Inconsistencies in tone, accuracy gaps, or formatting issues. These are signals that your instructions or curated information needs adjustment."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Publishing and Sharing",
+        "text": "Once your tool passes initial testing, decide how to share it. Options include keeping it private, sharing within your organization, or publishing publicly. Each choice affects who can discover and use your tool."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "After testing, evaluate whether your custom tool is the best solution or if an existing tool might better serve your needs.",
+        "label": "Step 8: Consider Build vs. Buy"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Build vs. Buy Analysis",
+        "info": "Ask yourself:",
+        "text": "• Does my custom tool consistently produce high-quality results?\n• Is the tool faster and more reliable than my previous manual process?\n• Could I achieve similar results with an existing solution (third-party tool, existing GPT)?\n• Is the time investment in building and maintaining the tool worth the efficiency gains?"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "When to Build vs. Buy",
+        "body": "Building a custom tool is valuable when: you need highly specialized behavior, you want complete control over the process, or existing solutions do not meet your specific needs. Buying or using existing solutions is preferable when: they are already optimized, the customization required is minimal, or the cost-benefit analysis favors speed over specialization."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "💾 Document your decision and your reasoning."
+      }
+    ],
+    "workflow": "WF04"
+  },
+  {
+    "id": "wf4-ethics",
+    "layout": "doc",
+    "header": {
+      "title": "Limitations and Ethical Considerations",
+      "badge": {
+        "text": "WF04",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Limitations and Ethical Considerations",
+        "text": "Every AI tool has boundaries. Understanding them is not optional — it is part of responsible tool-building. As you codify your own AI workflows, these considerations should inform every design decision you make."
+      },
+      {
+        "type": "text",
+        "heading": "Technical Limitations",
+        "headingLevel": 4
+      },
+      {
+        "type": "compact",
+        "label": "Hallucination —",
+        "text": "AI can generate confident, plausible-sounding content that is factually incorrect. Your tool should never fabricate work experience, qualifications, or credentials. Always validate AI outputs before submitting them."
+      },
+      {
+        "type": "compact",
+        "label": "Context Window —",
+        "text": "AI tools have limits on how much information they can process at once. Very long conversations or large document sets may exceed these limits, causing the tool to lose context or produce degraded responses."
+      },
+      {
+        "type": "compact",
+        "label": "Knowledge Cutoff —",
+        "text": "Most AI systems are trained on data up to a fixed date. Industry trends, job market conditions, and best practices may have shifted since that cutoff. Supplement AI outputs with current research."
+      },
+      {
+        "type": "compact",
+        "label": "Inconsistency —",
+        "text": "AI outputs can vary across sessions even with identical inputs. Your tool should include a validation checklist precisely because consistency is not guaranteed."
+      },
+      {
+        "type": "text",
+        "heading": "Ethical Responsibilities",
+        "headingLevel": 4
+      },
+      {
+        "type": "callout",
+        "variant": "warning",
+        "title": "⚠️ Privacy and Data Security",
+        "body": "Anything you upload to an AI tool — resume, cover letter, perspective brief, personal notes — becomes accessible to that AI system and may be stored or used to improve future models, depending on the platform's data policy. Before uploading personal or organizational materials, review the platform's data handling and privacy terms. Do not upload confidential company documents, proprietary information, or personally identifying information beyond what is strictly necessary."
+      },
+      {
+        "type": "compact",
+        "label": "Bias Awareness —",
+        "text": "AI systems can amplify biases present in their training data — including biases around job titles, career paths, industries, and communication styles. Review AI-generated content critically and do not defer to it on decisions that involve equity, fairness, or inclusion."
+      },
+      {
+        "type": "compact",
+        "label": "Truthfulness —",
+        "text": "Your AI tool should assist you in presenting your experience accurately and compellingly — not in misrepresenting or fabricating it. Never use AI to invent experience, credentials, or accomplishments you do not have."
+      },
+      {
+        "type": "compact",
+        "label": "Transparency —",
+        "text": "Be aware of contexts where AI-generated content requires disclosure. Some employers, academic institutions, and professional bodies have policies about AI-assisted submissions. When in doubt, disclose."
+      },
+      {
+        "type": "compact",
+        "label": "Attribution —",
+        "text": "AI tools synthesize content from their training data. Output may inadvertently resemble existing published material. Apply judgment about originality, especially for content intended for public or professional distribution."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "The Guiding Principle",
+        "body": "Your AI tool is a collaborator, not a replacement for your judgment. Every output it produces passes through you before it reaches anyone else. That makes you responsible for it — regardless of how it was generated."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Before deploying your tool, confirm that your validation checklist includes at least one item that addresses truthfulness and accuracy. The checklist is your primary mechanism for catching ethical violations before they reach the outside world.",
+        "label": "Step: Review your validation checklist"
+      }
+    ],
+    "workflow": "WF04"
+  },
+  {
+    "id": "wf4-outcomes",
+    "layout": "doc",
+    "header": {
+      "title": "Workflow Outcomes",
+      "badge": {
+        "text": "WF04",
+        "color": "teal"
+      }
+    },
+    "blocks": [
+      {
+        "type": "deliverables",
+        "heading": "Workflow Deliverables",
+        "documents": [
+          {
+            "code": "WF_4a",
+            "name": "GPT Configuration (or Equivalent Tool Setup)",
+            "purpose": "Your codified personal tool, including tool name and description, curated knowledge base and reference materials, core instructions and behavioral guidelines, conversation starter, validation checklist, and tool configuration"
+          },
+          {
+            "code": "WF_4b",
+            "name": "Validation Results",
+            "purpose": "Documentation of your testing and refinement process, including test results from 5-10 use cases, validation checklist evaluations, refinements made based on testing, and build vs. buy decision and reasoning"
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "You designed a custom AI tool with clear objectives and curated knowledge"
+          },
+          {
+            "text": "You built conversation starters that guide productive interactions"
+          },
+          {
+            "text": "You created a validation system to ensure consistent, high-quality output"
+          },
+          {
+            "text": "You tested your tool across diverse real-world scenarios"
+          },
+          {
+            "text": "You made an informed decision about codifying this workflow into a personal tool"
+          }
+        ],
+        "heading": "Learning Outcomes"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "Video and Workbook Mapping",
+        "body": "The video demonstration and your workbook exercise produce complementary artifacts. Both are valuable. Save the GPT configuration (workbook WF_4a) so you can reproduce and refine your tool. Save your best iteration output (video WF_4a) as evidence of what the tool produces. Your workbook exercise is more comprehensive than what the video demonstrates — that is by design."
+      },
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "🚀 TRY THIS",
+        "body": "Consider whether any other workflows from your Module 3 toolbox would benefit from codification. Start with the workflow that you perform most frequently or that would save the most time if streamlined."
+      },
+      {
+        "type": "marker",
+        "kind": "complete",
+        "text": "You have successfully codified a personal AI tool. This is a powerful lever for efficiency and consistency. As you use your tool over time, continue to refine and iterate based on real-world results. The best personal tools evolve as your needs change.",
+        "label": "CONGRATULATIONS"
+      },
+      {
+        "type": "next",
+        "heading": "What Is Next",
+        "content": "Ready to integrate your personal tools into your broader AI workflow? Move on to Module 5 to explore multi-tool orchestration and scaling your approach."
+      }
+    ],
+    "workflow": "WF04"
+  }
+]

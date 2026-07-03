@@ -1,0 +1,567 @@
+[
+  {
+    "id": "wf2-goal",
+    "layout": "doc",
+    "header": {
+      "title": "The Mindset Shift",
+      "breadcrumb": "Module 2 / The Mindset Shift / 2.1 Workflow Goal",
+      "badge": {
+        "text": "Workflow Goal",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "🎬 How This Module Relates to the Video",
+        "body": "The course video for this workflow demonstrates the key principles and teaching moments in a condensed format. This workbook module is your comprehensive, hands-on exercise — it includes additional prompts, structured phases, and documentation steps that go beyond what the video covers. Follow the workbook for the complete learning experience; use the video as a demonstration of the core concepts in action."
+      },
+      {
+        "type": "text",
+        "heading": "2.1 Workflow Goal"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Introduction",
+        "text": "Objective: Use the S.E.A. framework to evaluate whether your AI collaboration is delivering real value across the job hunt process, and apply iterative decomposition to identify high-impact collaboration opportunities."
+      },
+      {
+        "type": "text",
+        "heading": "The Concept: Iterative and Recursive Collaboration",
+        "headingLevel": 3,
+        "text": "The goal is to demonstrate the iterative and recursive process guided by initial input, and how controlling the source of information and beginning with foundational layers can help break down tasks for potential AI collaboration. By shifting from task execution to strategic decomposition, you learn to identify where AI adds the most value and where your human judgment remains essential."
+      },
+      {
+        "type": "text",
+        "heading": "The S.E.A. Framework",
+        "headingLevel": 4,
+        "text": "S.E.A. is an evaluation heuristic. After integrating AI into a knowledge workflow, use S.E.A. to test whether the partnership is delivering enough value. Ask yourself three questions:"
+      },
+      {
+        "type": "compact",
+        "label": "Streamline —",
+        "text": "Has this AI collaboration reduced my cognitive load? Am I spending less mental energy on low-value tasks? E.g., \"I no longer need to manually research resume formatting — my AI collaborator handles that, freeing me to focus on strategy.\""
+      },
+      {
+        "type": "compact",
+        "label": "Enrich —",
+        "text": "Has this AI collaboration improved my outcomes or surfaced blind spots I would have missed? E.g., \"My AI collaborator identified aspects of my experience I was undervaluing — things I would not have noticed on my own.\""
+      },
+      {
+        "type": "compact",
+        "label": "Accelerate —",
+        "text": "Has this AI collaboration made my process faster and more repeatable? E.g., \"What used to take an hour per job posting now takes minutes, and I can run the same process consistently across dozens of applications.\""
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "S.E.A. vs. ESEO",
+        "body": "The course uses two complementary frameworks. S.E.A. (Streamline, Enrich, Accelerate) is an evaluation heuristic — use it to measure whether your AI partnership is delivering value. ESEO (Extract, Structure, Explore, Orchestrate), introduced in WF3, is an application heuristic — use it as a shortlist of idea starters for what AI can do in a knowledge workflow. S.E.A. asks \"is this working?\" ESEO asks \"what should I try?\""
+      },
+      {
+        "type": "text",
+        "text": "If your answer is \"no\" to any of the S.E.A. questions, that is a signal to revisit how you are collaborating with AI in that area. S.E.A. is not about what AI can do — it is about whether AI is delivering value in your specific workflow."
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "Apply the S.E.A. framework to decompose a complex task into AI-collaborative components"
+          },
+          {
+            "text": "Identify authoritative sources that inform your job hunt strategy"
+          },
+          {
+            "text": "Break down the job hunt process into actionable, discrete steps"
+          },
+          {
+            "text": "Recognize known knowns, known unknowns, unknown knowns, and unknown unknowns in your job search"
+          },
+          {
+            "text": "Produce a comprehensive job hunt scaffold that maps your entire search process"
+          }
+        ],
+        "heading": "Learning Outcomes"
+      }
+    ],
+    "label": "WF2 — Workflow Goal",
+    "workflow": "WF02"
+  },
+  {
+    "id": "wf2-prework",
+    "layout": "doc",
+    "header": {
+      "title": "The Mindset Shift",
+      "breadcrumb": "Module 2 / The Mindset Shift / 2.2 Workflow Prework",
+      "badge": {
+        "text": "Prework",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "2.2 Workflow Prework",
+        "text": "Before you begin, make sure you have completed Workflow 1 and finalized your personal perspective brief. You will reference this document throughout WF2."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Open your personal perspective brief from WF1 (saved in WF_1c). You will use this as the guiding reference for all prompts in this workflow. It ensures that your AI collaborator understands what matters most to you when evaluating job opportunities.",
+        "label": "Step 1 — Gather Your Perspective Brief"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "This brief is not a job description — it is your personal filter. It will help your AI collaborator understand your values, priorities, and preferences so that all recommendations and breakdowns are customized to your needs."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Open a new conversation thread in your LLM. This workflow involves multiple prompts and collaborative exchanges. Keeping these in a fresh thread helps organize your work.",
+        "label": "Step 2 — Open a New LLM Conversation"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "You have already defined these in WF1, but review them now before beginning the exercise.",
+        "label": "Step 3 — Set Your Variables"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "These variables will be embedded in your prompts throughout this workflow to ensure consistency and personalization."
+      }
+    ],
+    "label": "WF2 — Workflow Prework",
+    "workflow": "WF02"
+  },
+  {
+    "id": "wf2-phase-a",
+    "layout": "doc",
+    "header": {
+      "title": "The Mindset Shift",
+      "breadcrumb": "Module 2 / The Mindset Shift / Phase A",
+      "badge": {
+        "text": "Phase A",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase A — Establish Your Sources",
+        "headingLevel": 3,
+        "text": "This exercise has four phases: Establish Your Sources, Apply the S.E.A. Framework, Break Down and Enrich, and Build Your Scaffold. Each phase includes collaborative prompts that build on previous outputs."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "🎬 Video Prompt Numbering",
+        "body": "The video demonstration includes additional prompts between the numbered Parts below. Video \"Prompt 1\" = Part 1 of 5 (below). Video \"Prompt 2\" = Part 2 of 5. Video \"Prompt 3\" (S.E.A. Analysis) = S.E.A. Analysis prompt. Video \"Prompt 4\" (Four Quadrants) = Part 3 of 5. Video \"Prompt 5\" (Scaffold) = Part 4 of 5. Validation prompt = Part 5 of 5. The video counts all demonstrated prompts sequentially; this workbook numbers only the core exercise prompts as Parts 1–5."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Begin by listing the sources you already know about that relate to the job hunt: industry publications, career blogs, professional networks, recruiter websites, company research platforms, or salary databases. Consider both general career resources and those specific to your industry or role.",
+        "label": "Step 1 — Identify Authoritative Sources"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Think about the sources you have already used in previous job searches. What helped? What felt incomplete? Write down 3–5 sources that have been most valuable.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Use your LLM to identify additional authoritative sources tailored to your specific role and industry. This accelerates the research phase and ensures you are working from high-quality reference material.",
+        "label": "Step 2 — Prompt Your LLM to Discover Additional Sources"
+      },
+      {
+        "type": "text",
+        "heading": "Prompt 1",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 1 of 5",
+        "info": "These prompts should be modified to reflect your scenario. Cut and paste into your LLM.",
+        "text": "~ NEW THREAD ~\n\nLet's think step by step. Your task is to collaborate with me using an iterative and recursive approach to assist me in creating a scaffold for materials that will support my job hunt. Before we begin, first carefully consider the information that I have provided here that reflects my personal perspective on the job hunt, and use this information to inform your response. Please acknowledge the task, your role in this task, and our approach, and then we will begin.\n\nHere is my personal perspective brief:\n\n{Cut and paste your perspective brief from WF_1c}"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "This ensures your AI collaborator will reference your personal brief throughout the workflow. → Results tab: WF_2a",
+        "label": "Save your acknowledgment of the task."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Ask your LLM to provide a curated list of sources specific to your job hunt.",
+        "label": "Step 3 — Request Authoritative and Supplemental Sources"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Authoritative Sources",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\n\nBased on my personal brief, what are the most authoritative and valuable sources of information I should use to inform my job hunt? Please provide:\n\n1. A set of authoritative sources (industry leaders, established platforms, research-backed resources)\n2. A shortlist of supplemental sources that offer unique perspectives or niche insights\n3. For each source, a brief explanation of why it is relevant to my particular job search"
+      },
+      {
+        "type": "marker",
+        "kind": "warn",
+        "text": "You are not required to use every source. The goal is to have high-quality options to draw from. Choose sources that align with your preferences and learning style.",
+        "label": "REMEMBER:"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_2a (continued)",
+        "label": "Save your curated source list."
+      }
+    ],
+    "label": "WF2 — Phase A: Establish Your Sources",
+    "workflow": "WF02"
+  },
+  {
+    "id": "wf2-phase-b",
+    "layout": "doc",
+    "header": {
+      "title": "The Mindset Shift",
+      "breadcrumb": "Module 2 / The Mindset Shift / Phase B",
+      "badge": {
+        "text": "Phase B",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase B — Apply the S.E.A. Framework",
+        "headingLevel": 3
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Share additional context about your job hunt with your AI collaborator. This might include: job titles you are targeting, company characteristics you care about, geographic or remote work preferences, compensation expectations, or skill areas you want to highlight.",
+        "label": "Step 4 — Accelerate Processing of Context Information"
+      },
+      {
+        "type": "text",
+        "heading": "Prompt 2",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 2 of 5",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\n\nIn the context of my personal perspective, please evaluate the following information and use it to extract targeted information that will assist me in my evaluation and response to new job opportunities.\n\n{Cut and paste additional context: target job titles, company preferences, desired work environment, compensation range, geographic preferences, skills to emphasize, any other relevant details}"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "The more specific your context, the more useful your AI collaborator's analysis becomes. If you do not have all these details yet, that is fine — include what you know and note where you have gaps.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_2b",
+        "label": "Save your context information."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Ask your LLM to apply the S.E.A. framework to each component of your job hunt. This identifies where AI can streamline, enrich, and accelerate your work.",
+        "label": "Step 5 — Map the Job Hunt Process with S.E.A."
+      },
+      {
+        "type": "text",
+        "heading": "Prompt 3",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: S.E.A. Analysis",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\n\nBased on my personal brief and the context I have shared, please analyze the job hunt process by identifying each major component (e.g., resume creation, job searching, application customization, interview preparation, offer evaluation). For each component, apply the S.E.A. framework:\n\n- Streamline: How can AI reduce my cognitive load for this component?\n- Enrich: What blind spots might I have? Where could I improve outcomes?\n- Accelerate: How can AI speed up this process and make it repeatable?\n\nPlease organize your response by component and framework dimension."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "This analysis is the bridge between understanding your needs and building your task breakdown. It shows you where AI collaboration has the highest ROI."
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_2b (continued)",
+        "label": "Save your S.E.A. analysis."
+      }
+    ],
+    "label": "WF2 — Phase B: Apply the S.E.A. Framework",
+    "workflow": "WF02"
+  },
+  {
+    "id": "wf2-phase-c",
+    "layout": "doc",
+    "header": {
+      "title": "The Mindset Shift",
+      "breadcrumb": "Module 2 / The Mindset Shift / Phase C",
+      "badge": {
+        "text": "Phase C",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase C — Break Down and Enrich",
+        "headingLevel": 3
+      },
+      {
+        "type": "h4-text",
+        "heading": "The Four Quadrants of Knowledge",
+        "text": "The Four Quadrants of Knowledge framework helps you map what you know and what you do not know. It is one of the most powerful uses of AI collaboration, because AI excels at surfacing things you did not know you did not know."
+      },
+      {
+        "type": "compact",
+        "label": "Known Knowns —",
+        "text": "Your clear strengths, proven strategies, and confident skills. The foundation you build on."
+      },
+      {
+        "type": "compact",
+        "label": "Known Unknowns —",
+        "text": "Areas where you know you need more information. Research tasks you can delegate to AI."
+      },
+      {
+        "type": "compact",
+        "label": "Unknown Knowns —",
+        "text": "Hidden strengths or best practices you have not consciously recognized. AI surfaces these by analyzing your materials from angles you would not think to explore."
+      },
+      {
+        "type": "compact",
+        "label": "Unknown Unknowns —",
+        "text": "Opportunities and approaches you have not even considered. The highest-value discoveries in AI collaboration."
+      },
+      {
+        "type": "text",
+        "text": "The exercise below asks your AI collaborator to map all four quadrants based on your personal brief."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Before building your task breakdown, identify what you know and what you do not know about your job hunt. This prevents blind spots and ensures your scaffold covers all dimensions.",
+        "label": "Step 6 — Explore the Four Quadrants of Knowledge"
+      },
+      {
+        "type": "text",
+        "heading": "Prompt 4",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 3 of 5",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\n\nConsider this information, then help me identify task steps that I could complete to create the materials necessary to support my job hunt. Please include your rationale with your response and link it directly to the information that I have shared about my personal perspective as well as the background information that I have provided to you.\n\nAdditionally, help me map the four quadrants of knowledge in relation to my job search:\n\n- Known Knowns: Clear job search strengths and strategies I am confident about\n- Known Unknowns: Areas where I know I need more information or skill\n- Unknown Knowns: Hidden tips, best practices, or strengths I may not have recognized\n- Unknown Unknowns: Unexpected opportunities or approaches I have not considered\n\nPlease provide specific examples for each quadrant based on my personal brief."
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Review the unknown unknowns carefully. These often represent the highest-value opportunities for AI collaboration, because they surface possibilities you would not have discovered on your own.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_2b (continued)",
+        "label": "Save your four-quadrants analysis."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Ask your LLM to break the job hunt process into discrete, actionable steps.",
+        "label": "Step 7 — Request a Detailed Task Breakdown"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Task Breakdown",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\n\nBased on this outline, please recommend good sources of material that I should use to begin to inform this process. Also, create a detailed task breakdown that organizes the job hunt into logical phases, with specific steps within each phase. For each step, indicate:\n\n1. The step name and objective\n2. Whether this step is best done by me, by AI, or collaboratively\n3. What input or information is needed\n4. What the expected output should be\n5. How this step connects to my personal perspective brief"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "This breakdown is the bridge to WF3. In the next workflow, you will use this task structure to prioritize which activities to tackle first and how to allocate your time and resources."
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_2c",
+        "label": "Save your detailed task breakdown."
+      }
+    ],
+    "label": "WF2 — Phase C: Break Down and Enrich",
+    "workflow": "WF02"
+  },
+  {
+    "id": "wf2-phase-d",
+    "layout": "doc",
+    "header": {
+      "title": "The Mindset Shift",
+      "breadcrumb": "Module 2 / The Mindset Shift / Phase D",
+      "badge": {
+        "text": "Phase D",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase D — Build Your Scaffold",
+        "headingLevel": 3
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "A scaffold is a structured framework that maps your entire job hunt process. It shows you what needs to happen, in what sequence, and where AI can assist.",
+        "label": "Step 8 — Create a Comprehensive Job Hunt Scaffold"
+      },
+      {
+        "type": "text",
+        "heading": "Prompt 5",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 4 of 5",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\n\nBased on this job hunt scaffold and my personal brief, what additional components or considerations am I missing? Are there any innovative approaches to job hunting that I have not considered? Please provide:\n\n1. A visual or text-based scaffold that maps the entire job hunt process\n2. Identification of critical path items (steps that must happen before others can begin)\n3. Identification of parallel work streams (steps that can happen simultaneously)\n4. Time estimates for each phase (if possible based on the information I have shared)\n5. Resource requirements (e.g., which tools, skills, or external support is needed)"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Ask your AI collaborator to create this scaffold in a format you can easily reference later — perhaps as an outline, a timeline, or even an ASCII flowchart. Choose the visual structure that works best for how you think.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_2d",
+        "label": "Save your job hunt scaffold."
+      },
+      {
+        "type": "text",
+        "heading": "Validation",
+        "headingLevel": 4
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Run a final validation to ensure your scaffold is comprehensive and aligned with your personal perspective.",
+        "label": "Step 9 — Validate and Expand Your Scaffold"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 5 of 5",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\n\nBased on this complete job hunt scaffold, are there any gaps or blind spots I should address? Is there anything innovative or unconventional in modern job hunting that I have not included? Please validate the scaffold against my personal brief and recommend any additions or modifications."
+      },
+      {
+        "type": "marker",
+        "kind": "warn",
+        "text": "Your scaffold is not fixed. As you move through WF3 and beyond, you will refine it based on what you learn and what you execute.",
+        "label": "REMEMBER:"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_2d (continued)",
+        "label": "Save your finalized job hunt scaffold."
+      }
+    ],
+    "label": "WF2 — Phase D: Build Your Scaffold",
+    "workflow": "WF02"
+  },
+  {
+    "id": "wf2-outcomes",
+    "layout": "doc",
+    "header": {
+      "title": "The Mindset Shift",
+      "breadcrumb": "Module 2 / The Mindset Shift / 2.4 Workflow Outcomes",
+      "badge": {
+        "text": "Complete",
+        "color": "teal"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "2.4 Workflow Outcomes"
+      },
+      {
+        "type": "deliverables",
+        "heading": "Workflow Deliverables",
+        "documents": [
+          {
+            "code": "WF_2a",
+            "name": "Source Library",
+            "purpose": "A curated set of authoritative and supplemental sources tailored to your job hunt context."
+          },
+          {
+            "code": "WF_2b",
+            "name": "S.E.A. Analysis + Four Quadrants",
+            "purpose": "An S.E.A. analysis and four-quadrants knowledge map showing where AI collaboration adds the most value."
+          },
+          {
+            "code": "WF_2c",
+            "name": "Task Breakdown",
+            "purpose": "A detailed task breakdown that organizes your job hunt into phases and discrete steps with AI collaboration indicators."
+          },
+          {
+            "code": "WF_2d",
+            "name": "Job Hunt Scaffold",
+            "purpose": "A comprehensive job hunt scaffold that maps your entire search process with critical path and parallel work streams identified."
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "You applied the S.E.A. framework to decompose a complex, multi-phase project into manageable AI-collaborative components."
+          },
+          {
+            "text": "You mapped your own knowledge landscape — identifying both your strengths and your gaps — to ensure your job hunt strategy is comprehensive."
+          },
+          {
+            "text": "You produced a structured scaffold that serves as your roadmap for WF3 and beyond, showing exactly where AI collaboration will accelerate your progress."
+          },
+          {
+            "text": "You shifted your mindset from \"How do I execute this task?\" to \"How can I strategically collaborate with AI to do this better and faster?\""
+          }
+        ],
+        "heading": "Learning Outcomes"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "After completing WF2, review your scaffold and choose 2–3 phases to prioritize in WF3. You do not need to execute everything at once. Strategic sequencing — informed by your personal perspective — is where real efficiency lives.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "complete",
+        "text": "You have completed Workflow 2. You now have a strategic map of your job hunt, authoritative sources to inform your work, and a clear picture of where AI collaboration adds the most value. In WF3, you will establish your toolbox and begin executing your scaffold with AI as a full collaborator in your work.",
+        "label": "CONGRATULATIONS:"
+      },
+      {
+        "type": "next",
+        "heading": "What Is Next",
+        "content": "In Workflow 3: Establishing Your Toolbox, you will establish your tools and begin executing your scaffold with AI as a full collaborator in your work."
+      }
+    ],
+    "label": "WF2 — Workflow Outcomes",
+    "workflow": "WF02"
+  }
+]

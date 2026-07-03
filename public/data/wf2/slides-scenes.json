@@ -1,0 +1,18 @@
+[
+  {
+    "id": "wf2-concept-sea",
+    "workflow": "WF02",
+    "label": "WF2 — S.E.A. Framework",
+    "layout": "concept-overlay",
+    "title": "Scope. Evaluate. Act. This is the rhythm of every productive AI interaction. You define the scope, evaluate the output, and decide the action—the AI doesn't do that for you.",
+    "subtitle": "S.E.A. Framework"
+  },
+  {
+    "id": "wf2-concept-quadrants",
+    "workflow": "WF02",
+    "label": "WF2 — Four Quadrants of Knowledge",
+    "layout": "concept-overlay",
+    "title": "Known Knowns. Known Unknowns. Unknown Knowns. Unknown Unknowns. Your AI collaborator is uniquely good at surfacing the third quadrant—the things you know but haven't said yet.",
+    "subtitle": "Four Quadrants"
+  }
+]

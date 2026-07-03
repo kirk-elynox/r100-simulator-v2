@@ -1,0 +1,600 @@
+[
+  {
+    "id": "wf5-goal",
+    "layout": "doc",
+    "header": {
+      "title": "Workflow Goal",
+      "subtitle": "5️⃣ Orchestrating AI Collaboration"
+    },
+    "blocks": [
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "🎬 How This Module Relates to the Video",
+        "body": "This callout appears in every module of the Rule of 100 course. Watch the video first to anchor your learning."
+      },
+      {
+        "type": "text",
+        "text": "Welcome to the capstone module of the Rule of 100 course. This is where everything converges. You have learned to measure value (WF1), accelerate your development (WF2), navigate decisions (WF3), and codify your tools (WF4). Now you are ready to orchestrate a complete AI collaboration system — one that gives you exponential productivity gains across your entire job search process.\n\nThe challenge: How do you move from using individual AI tools to building an integrated assistant that understands your context, knows your goals, and can execute complex, iterative workflows? The answer is this module."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Objective",
+        "text": "Achieve exponential productivity gains by expanding AI collaboration across the entire job search process, focusing on both speed and quality improvements. Build a tailor-made assistant that gives you a repeatable tool for rapidly reacting to new information and continuously improving your candidacy.\n\nYou will construct an Assistant with personalized instructions and a comprehensive knowledge base, then validate it against the 10x10=100 principle to unlock compound productivity gains."
+      },
+      {
+        "type": "h4-text",
+        "heading": "The Concept: Exploring Assistants",
+        "text": "An Assistant is a specialized AI entity equipped with instructions, models, tools, and a knowledge base to respond to user queries with precision and context-awareness. Assistants can leverage powerful capabilities:"
+      },
+      {
+        "type": "compact",
+        "label": "Code Interpreter",
+        "text": "Execute and test code in real-time"
+      },
+      {
+        "type": "compact",
+        "label": "Retrieval",
+        "text": "Access and reference your curated knowledge base"
+      },
+      {
+        "type": "compact",
+        "label": "Function Calling",
+        "text": "Trigger external systems and workflows"
+      },
+      {
+        "type": "text",
+        "text": "The Assistant playground is a sandbox for exploring these capabilities without requiring code. You design the instructions, structure the knowledge, and write prompts that orchestrate complex, multi-step processes."
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "Understand the anatomy of an effective AI Assistant (instructions, knowledge, tools)"
+          },
+          {
+            "text": "Aggregate and structure information into a queryable knowledge base"
+          },
+          {
+            "text": "Design detailed Assistant instructions that enforce quality and consistency"
+          },
+          {
+            "text": "Construct a master prompt that orchestrates multi-step iterative workflows"
+          },
+          {
+            "text": "Evaluate your Assistant's effectiveness using the 10x10=100 principle"
+          },
+          {
+            "text": "Identify opportunities for parallel processing and workflow expansion"
+          },
+          {
+            "text": "Build a sustainable system for continuous learning and improvement"
+          },
+          {
+            "text": "Scale your Assistant to full career lifecycle management"
+          }
+        ],
+        "heading": "Learning Outcomes"
+      }
+    ],
+    "workflow": "WF05"
+  },
+  {
+    "id": "wf5-prework",
+    "layout": "doc",
+    "header": {
+      "title": "Workflow Prework"
+    },
+    "blocks": [
+      {
+        "type": "h4-text",
+        "heading": "Prerequisites",
+        "text": "This module builds directly on WF1–WF4. Before you begin, confirm completion of all prior workflows:"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "You have created your personal perspective brief through the self-interview process",
+        "label": "WF1 Complete"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "You have applied the S.E.A. framework to break down your job hunt and built a source library",
+        "label": "WF2 Complete"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "You have built your four-category toolbox using Extract, Structure, Explore, and Orchestrate",
+        "label": "WF3 Complete"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "You have codified at least one personal AI tool (custom GPT or equivalent)",
+        "label": "WF4 Complete"
+      },
+      {
+        "type": "h4-text",
+        "heading": "What You Will Need",
+        "text": "Gather these materials before beginning:"
+      },
+      {
+        "type": "compact",
+        "label": "AI Assistant Platform",
+        "text": "Access to an assistant-building interface (e.g., OpenAI Assistants, Claude API, or equivalent)"
+      },
+      {
+        "type": "compact",
+        "label": "Knowledge Base Materials",
+        "text": "Aggregated from previous workflows: resume, cover letter templates, target job postings, personal context, reference materials, and decision frameworks from WF3"
+      },
+      {
+        "type": "compact",
+        "label": "Your WF4 Artifacts",
+        "text": "The codified prompts and workflows you have developed — these will inform your Assistant's instructions"
+      },
+      {
+        "type": "compact",
+        "label": "Time & Iterative Testing",
+        "text": "WF5 is hands-on and iterative. Plan for multiple rounds of testing and refinement"
+      }
+    ],
+    "workflow": "WF05"
+  },
+  {
+    "id": "wf5-phase-a1",
+    "layout": "doc",
+    "header": {
+      "title": "Phase A: Building Your Assistant — Steps 1–2"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Opening Frame",
+        "headingLevel": 3,
+        "text": "The shift from using AI as a tool to collaborating with AI as a teammate begins with how you structure the relationship. An Assistant is not just a chatbot — it is a configured collaborator with instructions, knowledge, and the capacity to execute complex workflows."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 1: Aggregating Information",
+        "text": "Your Assistant's effectiveness depends on the quality and organization of its knowledge base. Begin by identifying all the information your Assistant needs to support your job search.\n\n🚩 Gather and categorize information into four buckets:"
+      },
+      {
+        "type": "compact",
+        "label": "Specifications",
+        "text": "The non-negotiable requirements and reference rules: target job posting, critical requirements, syntax reference for structured output"
+      },
+      {
+        "type": "compact",
+        "label": "Templates",
+        "text": "Structural models for consistent output: resume template, cover letter template, application checklist or scoring rubric"
+      },
+      {
+        "type": "compact",
+        "label": "Reference Information",
+        "text": "Best practices, frameworks, and domain knowledge: job hunt best practices, resume best practices, industry trends, your decision frameworks from WF3"
+      },
+      {
+        "type": "compact",
+        "label": "Context Inputs",
+        "text": "Personal and situational information: your About Me statement, current resume, cover letter draft, professional references, your perspective on your value"
+      },
+      {
+        "type": "text",
+        "text": "🚩 List these information sources. Do not organize them yet — just identify what you have and what you need to create."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "Example Inventory",
+        "body": "- Target Job Posting (Globe Bank, Senior Data Analyst)\n- My Current Resume (2-page version)\n- My Cover Letter (draft)\n- Resume Best Practices Article (from HBR)\n- My About Me Statement (from LinkedIn)\n- Decision Framework: \"How to Evaluate Job Fit\" (from WF3)"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 2: Build Your Library (Context)",
+        "text": "Now organize your information into a queryable knowledge base. The goal is to create a structure your Assistant can reference reliably. Capability stacking is the practice of layering multiple functions into a single Assistant — resume tailoring, cover letter generation, job evaluation — so that one collaborator handles your entire workflow."
+      },
+      {
+        "type": "text",
+        "text": "🚩 Create an Information Index document that lists all your knowledge nodes with brief descriptions:"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "Knowledge Base Index (12 Nodes)",
+        "body": "CONTEXT NODES:\n1. Personal Perspective Brief\n2. About Me — LinkedIn summary, key differentiators\n3. My Resume — Current version with all experience\n4. My Cover Letter — Current draft or template version\n5. My References — Key accomplishments and reference contacts\n\nREFERENCE NODES:\n6. Job Hunt Best Practices — Targeting, timing, follow-up\n7. Resume Best Practices Article — Keywords, metrics, formatting\n8. AI & Marketing Industry Trends — Competitive landscape\n\nSPECIFICATION NODES:\n9. Target Job Posting (Globe Bank) — Full JD with requirements\n10. Critical Requirements — Non-negotiable skills and experience\n11. Syntax Reference — How to format structured outputs\n\nTEMPLATE NODES:\n12. Resume Template — Sections, style, length constraints\n13. Cover Letter Template — Tone, structure, word count"
+      },
+      {
+        "type": "text",
+        "text": "🚩 Load or reference these nodes in your Assistant's knowledge base.\n\n🚩 Test retrieval: Ask your Assistant to summarize one node. This confirms your knowledge base is indexed correctly."
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "Your finalized Knowledge Base Index. This is your first deliverable — a clear map of all information nodes your Assistant will reference.",
+        "label": "Save Point WF_5a"
+      }
+    ],
+    "workflow": "WF05"
+  },
+  {
+    "id": "wf5-phase-a2",
+    "layout": "doc",
+    "header": {
+      "title": "Phase A: Building Your Assistant — Steps 3–4"
+    },
+    "blocks": [
+      {
+        "type": "h4-text",
+        "heading": "Step 3: Establish Your Instructions (Detail)",
+        "text": "Your Assistant's instructions are its operating system. They govern how it processes information, what standards it applies, and how it communicates.\n\n🚩 Write detailed instructions that cover:"
+      },
+      {
+        "type": "compact",
+        "label": "Role and Purpose",
+        "text": "\"You are a career assistant specializing in job search acceleration...\""
+      },
+      {
+        "type": "compact",
+        "label": "Knowledge Foundation",
+        "text": "\"You have access to 12 curated information nodes including...\""
+      },
+      {
+        "type": "compact",
+        "label": "Quality Standards",
+        "text": "\"All work must be tailored to the target job posting and validated against critical requirements...\""
+      },
+      {
+        "type": "compact",
+        "label": "Process Discipline",
+        "text": "\"As you execute your work, pause between steps to seek feedback and approval to proceed...\""
+      },
+      {
+        "type": "compact",
+        "label": "Output Format",
+        "text": "\"Deliverables are in plain text, formatted per template nodes, with metrics and keywords highlighted...\""
+      },
+      {
+        "type": "compact",
+        "label": "Constraints and Guardrails",
+        "text": "\"Never invent experience. Always cite which context nodes you are referencing...\""
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "Example Instructions Block",
+        "body": "You are an AI Career Acceleration Assistant specialized in job search strategy and application materials. Your mission is to help the user achieve 10x productivity gains across the entire job search lifecycle.\n\nYou have access to a curated knowledge base of 12 nodes (Context, Reference, Specification, Template). You must understand the user's complete situation before executing any task.\n\nYour operating principles:\n- Tailor all work to the Target Job Posting and validate against Critical Requirements\n- Reference specific context nodes to justify recommendations\n- Pause between major steps to seek user feedback before proceeding\n- Output plain text per template specifications\n- Highlight metrics, keywords, and differentiators\n- Never invent experience; only transform and reframe existing accomplishments\n- Apply a Six Sigma recursive approach: understand → evaluate → execute → validate"
+      },
+      {
+        "type": "text",
+        "text": "🚩 Refine these instructions based on your specific goals. They should feel like a contract between you and your Assistant."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 4: Write Your Master Prompt",
+        "text": "The master prompt is the crown jewel of your Assistant. It orchestrates the entire workflow — from understanding your needs to delivering tailored outputs. This prompt has six structural elements:"
+      },
+      {
+        "type": "compact",
+        "label": "Task Steps",
+        "text": "What the Assistant does, step-by-step"
+      },
+      {
+        "type": "compact",
+        "label": "Task Objective",
+        "text": "The ultimate output goal"
+      },
+      {
+        "type": "compact",
+        "label": "Knowledge Graph Definition",
+        "text": "The four node types and their significance"
+      },
+      {
+        "type": "compact",
+        "label": "Knowledge Graph Index",
+        "text": "The 12 specific nodes"
+      },
+      {
+        "type": "compact",
+        "label": "Order of Operations",
+        "text": "The sequence and reasoning"
+      },
+      {
+        "type": "compact",
+        "label": "Final Output Format",
+        "text": "Specifications for the deliverable"
+      },
+      {
+        "type": "text",
+        "text": "🚩 Copy the master prompt into your Assistant interface. This is the engine that powers everything."
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "Your Assistant's complete response to the master prompt. This is your second deliverable — evidence that your Assistant can execute a complex, multi-step workflow with quality assurance.",
+        "label": "Save Point WF_5b"
+      }
+    ],
+    "workflow": "WF05"
+  },
+  {
+    "id": "wf5-phase-b1",
+    "layout": "doc",
+    "header": {
+      "title": "Phase B: Achieving 100x Improvements — Steps 5–7"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase B: Achieving 100x Improvements (Steps 5–11)",
+        "headingLevel": 3,
+        "text": "You have built an Assistant. Now scale it.\n\nThe 10x10=100 principle states: If you can identify 10 areas where AI makes you 10x faster or 10x better in quality, compound gains yield 100x total productivity improvement."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 5: Implement the 10x10=100 Principle",
+        "text": "🚩 Analyze your job search workflow. Identify 10 areas where your Assistant can deliver 10x improvements."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "Example 10x10 Opportunity Map",
+        "body": "- Job Scanning: 30 min → 3 min (Assistant extracts critical requirements)\n- Resume Tailoring: 1 hour per application → 6 min (Assistant aligns to Critical Requirements)\n- Cover Letter: 45 min → 5 min (Assistant generates tailored draft)\n- Application Strategy: 20 min to evaluate fit → 2 min (Assistant scores against job fit framework)\n- Interview Prep: 1 hour → 10 min (Assistant generates scenario answers)\n- Reference Leverage: 30 min → 3 min (Assistant flags matching references)\n- Networking Research: 45 min → 5 min (Assistant summarizes background + talking points)\n- Salary Research: 30 min → 3 min (Assistant pulls from industry trends)\n- Feedback Integration: 20 min → 2 min (Assistant updates materials and logs learning)\n- Performance Analysis: 1 hour → 10 min (Assistant analyzes acceptance rates and patterns)"
+      },
+      {
+        "type": "text",
+        "text": "🚩 Calculate your total time savings: If each of these 10 areas saves approximately 27 minutes per job application, and you apply to 20 jobs, that is 9 hours saved per job search cycle.\n\n🚩 Now, identify which 3–5 of these areas would have the highest impact on your success rate (not just speed). Focus your Assistant expansion there first."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 6: Expand Your AI Toolbox",
+        "text": "🚩 Adapt Your Resume Tool: Transform your master prompt into a resume-only prompt. Narrow scope, deepen iteration.\n\n🚩 Develop a Cover Letter Generator: Create a companion prompt that takes job-specific context and generates a tailored cover letter using the same knowledge graph.\n\n🚩 Build a Job Fit Evaluator: Design a prompt that scores a job posting against your preferences, skills, and goals.\n\n🚩 Create an Interview Prep Assistant: Design a prompt that generates likely interview questions and your best responses.\n\n🚩 Build a Feedback Logger: Design a prompt that captures recruiter feedback, integrates it into your knowledge graph, and flags learning points."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 7: Create an Integrated Workflow",
+        "text": "🚩 Design the Workflow Chain: Step 1: Job Scan → Step 2: Resume Generation → Step 3: Cover Letter Generation → Step 4: Application Submission → Step 5: Interview Prep\n\n🚩 Automate Information Flow: Design a system where high-fit jobs flow through your full application effort.\n\n🚩 Track & Measure: Log each application, the tools used, the time saved, and the outcome."
+      }
+    ],
+    "workflow": "WF05"
+  },
+  {
+    "id": "wf5-phase-b2",
+    "layout": "doc",
+    "header": {
+      "title": "Phase B: Achieving 100x Improvements — Steps 8–11"
+    },
+    "blocks": [
+      {
+        "type": "h4-text",
+        "heading": "Step 8: Rethink from Linear to Team-Based",
+        "text": "🚩 Identify Parallel Opportunities:"
+      },
+      {
+        "type": "compact",
+        "label": "Parallel Track 1: Active Applications",
+        "text": "Run your full workflow on high-fit jobs"
+      },
+      {
+        "type": "compact",
+        "label": "Parallel Track 2: Networking",
+        "text": "Your Assistant identifies networking contacts at target companies"
+      },
+      {
+        "type": "compact",
+        "label": "Parallel Track 3: Personal Branding",
+        "text": "Your Assistant updates your LinkedIn, generates thought leadership ideas"
+      },
+      {
+        "type": "compact",
+        "label": "Parallel Track 4: Skill Development",
+        "text": "Your Assistant identifies emerging skills in target roles"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 9: Develop a Continuous Learning System",
+        "text": "🚩 Set Up a Feedback Loop. After each application or interview:"
+      },
+      {
+        "type": "compact",
+        "label": "1. Log the Outcome",
+        "text": "Interview? Offer? Rejection? What feedback?"
+      },
+      {
+        "type": "compact",
+        "label": "2. Analyze the Trend",
+        "text": "Are certain resume sections getting more interviews?"
+      },
+      {
+        "type": "compact",
+        "label": "3. Update Your Knowledge Graph",
+        "text": "Feed wins and losses back in"
+      },
+      {
+        "type": "compact",
+        "label": "4. Refine Your Prompts",
+        "text": "If a certain approach works, encode it into your Assistant's instructions"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 10: Implement Modular Information Updates",
+        "text": "🚩 Create Update Protocols:"
+      },
+      {
+        "type": "compact",
+        "label": "New Project Completion",
+        "text": "Add it to your resume immediately"
+      },
+      {
+        "type": "compact",
+        "label": "New Tool/Skill Learned",
+        "text": "Add it to your Context nodes"
+      },
+      {
+        "type": "compact",
+        "label": "Industry Trends Shift",
+        "text": "Update your Reference nodes"
+      },
+      {
+        "type": "compact",
+        "label": "Job Application Fails",
+        "text": "Log the reason and update your decision framework"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Step 11: Expand to Full Lifecycle Management",
+        "text": "🚩 Longer-Term Scenarios:"
+      },
+      {
+        "type": "compact",
+        "label": "Onboarding New Role",
+        "text": "Your Assistant generates a 30-60-90 day plan"
+      },
+      {
+        "type": "compact",
+        "label": "Salary Negotiation",
+        "text": "Your Assistant pulls market data, generates negotiation talking points"
+      },
+      {
+        "type": "compact",
+        "label": "Performance Reviews",
+        "text": "Your Assistant aggregates your accomplishments"
+      },
+      {
+        "type": "compact",
+        "label": "Career Transitions",
+        "text": "Your Assistant maps skills to target industries"
+      },
+      {
+        "type": "compact",
+        "label": "Networking & Personal Branding",
+        "text": "Your Assistant tracks relationships, generates outreach"
+      }
+    ],
+    "workflow": "WF05"
+  },
+  {
+    "id": "wf5-outcomes",
+    "layout": "doc",
+    "header": {
+      "title": "Workflow Outcomes"
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "From Tool to Orchestrated System",
+        "text": "You came in with a single-purpose tool — a resume optimizer. Through orchestration, you have transformed it into a full job hunt assistant."
+      },
+      {
+        "type": "text",
+        "heading": "What You've Built",
+        "headingLevel": 3
+      },
+      {
+        "type": "card-grid",
+        "columns": 4,
+        "cards": [
+          {
+            "title": "Stacked Capabilities",
+            "body": "Resume optimization, cover letter drafting, multi-role evaluation, market analysis, offer comparison — all in one collaborator.",
+            "accent": false
+          },
+          {
+            "title": "Integrated Context",
+            "body": "New market information reshapes your strategy in real time. Your positioning isn't static — it adapts.",
+            "accent": false
+          },
+          {
+            "title": "Modular Templates",
+            "body": "Update and reuse. Swap in new docs, keep the structure. Pick up where you left off.",
+            "accent": false
+          },
+          {
+            "title": "Values-Grounded Decisions",
+            "body": "A decision-making framework that is consistent, defensible, and grounded in what you actually value.",
+            "accent": true
+          }
+        ]
+      },
+      {
+        "type": "deliverables",
+        "heading": "Deliverables",
+        "documents": [
+          {
+            "code": "WF_5a",
+            "name": "Knowledge Base Index",
+            "purpose": "Your curated, indexed collection of 12 information nodes (Context, Reference, Specification, Template). This is your Assistant's reference library."
+          },
+          {
+            "code": "WF_5b",
+            "name": "Assistant Output",
+            "purpose": "The complete response from your Assistant to the master prompt. Evidence that your Assistant can execute complex workflows with quality assurance."
+          },
+          {
+            "code": "WF_5c",
+            "name": "100x Evaluation",
+            "purpose": "Your analysis of the 10x10=100 principle applied to your job search workflow. Includes your opportunity map, time savings calculations, and expanded toolbox design."
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "Designed and built a functional AI Assistant with instructions, knowledge base, and prompt architecture"
+          },
+          {
+            "text": "Structured information into a queryable knowledge graph with four node types"
+          },
+          {
+            "text": "Created a master prompt that orchestrates complex, iterative workflows with built-in quality assurance"
+          },
+          {
+            "text": "Tested your Assistant's effectiveness and iterated based on output quality"
+          },
+          {
+            "text": "Identified 10 areas where AI can deliver 10x productivity improvements"
+          },
+          {
+            "text": "Expanded your AI toolbox to cover resume, cover letter, job fit evaluation, and interview prep"
+          },
+          {
+            "text": "Designed an integrated workflow that chains these tools together"
+          },
+          {
+            "text": "Shifted from linear to parallel execution (team-based thinking)"
+          },
+          {
+            "text": "Established a feedback loop for continuous learning and improvement"
+          },
+          {
+            "text": "Created protocols for modular information updates"
+          },
+          {
+            "text": "Extended your Assistant to career lifecycle management"
+          }
+        ],
+        "heading": "Learning Outcomes"
+      },
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "TRY THIS — The 100x Challenge",
+        "body": "After completing WF5, measure your productivity on 10 real job applications:\n\n1. Time how long a traditional job application takes (scan → tailor resume → draft cover letter → apply): X minutes\n\n2. Run the same 10 applications through your new AI-assisted workflow: Y minutes\n\n3. Calculate: (X – Y) / Y = % time saved\n\n4. Multiply by 10 applications, then by however many job searches you will do in your career\n\nIf you hit 50%+ time savings per application, you have achieved 10x in one area. If you have implemented multiple tools (resume + cover letter + interview prep), you have unlocked 100x.\n\nLog this data. Share it. This is your proof of the Rule of 100."
+      },
+      {
+        "type": "marker",
+        "kind": "complete",
+        "text": "You started by measuring your value (WF1). You learned to accelerate your development (WF2). You navigated complex decisions (WF3). You codified your best tools (WF4). And now, you have orchestrated a complete AI collaboration system (WF5). You have built a personal AI strategist.",
+        "label": "CONGRATULATIONS: You Have Completed the Rule of 100 Course"
+      },
+      {
+        "type": "text",
+        "text": "What you have built is not just faster. It is fundamentally different. You have moved from reactive (responding to job postings) to proactive (running parallel tracks, continuous learning, career lifecycle management). You have moved from solo (you doing everything) to orchestrated (you directing AI agents).\n\nThis is the Rule of 100 in practice: incremental improvements in execution, decision-making, and collaboration that compound into exponential advantage.\n\nYour next step: Deploy this system. Run 5–10 job applications. Track the data. Refine the prompts. Build the feedback loops. And watch as your productivity — and your success rate — multiply.\n\nThe best part? You now have a template. This system does not expire after your job search. You can adapt it to salary negotiation, performance reviews, career transitions, and long-term planning. You have built a personal AI strategist.\n\nUse it well."
+      }
+    ],
+    "workflow": "WF05"
+  }
+]

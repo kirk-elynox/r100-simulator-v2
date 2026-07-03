@@ -1,0 +1,424 @@
+/*
+ * ============================================================================
+ * shared/simulator/lib/design-tokens.css
+ * ----------------------------------------------------------------------------
+ * Single source of truth for design tokens across the central simulator.
+ *
+ * GOVERNANCE AUTHORITY:
+ *   governance/02-content-authoring/design-system-visual.md v1.0 (canonical)
+ *   governance/central-simulator-architecture.md §3.1 + §10.1 (structural)
+ *
+ * INVARIANT (architecture spec §10.1 + Phase 6/7/8 rubrics):
+ *   Chrome modules (shared/simulator/chrome/*) must reference these tokens
+ *   via var(--token-name). Hex literals or px literals in chrome/* CSS
+ *   (other than as var() references) are a drift signal and a rubric
+ *   failure. Grep check:
+ *     grep -rE '#[0-9A-Fa-f]{6}|[0-9]+px' shared/simulator/chrome/ \
+ *       | grep -v 'var(' ⇒ must be empty
+ *
+ * RESOLUTION OF LITERAL DISAGREEMENTS:
+ *   Architecture spec §7.1 step 1: "Literals that disagree → governance wins."
+ *   - Ink: #0A0A0F (governance) supersedes #1a1a1a / #333 (workbook-frame).
+ *   - Paper: #F6F4F0 (governance, slide/workbook-page surround) is distinct
+ *     from Frame BG #f5f5f0 (governance, workbook-frame inner surround).
+ *     Both retained as separate tokens per governance §1.2.
+ *
+ * HEADING BLUE RECONCILIATION (corrected 2026-04-17):
+ *   An initial A1 pass omitted #4F81BD from the token set on the
+ *   assumption that it was legacy-only drift. This was wrong.
+ *   design-system-visual.md §7.1 (table at line 263) explicitly assigns
+ *   #4F81BD to all four workbook heading levels (H1–H4) and declares it
+ *   "the single most recognizable visual cue in the workbooks." It is
+ *   now tokenized as --heading-blue and is governance-canonical.
+ *   Legacy literal usage in shared/workbook-frame.css and
+ *   shared/workbook-simulator.html is therefore expected and is NOT
+ *   drift; the scan-existing.js drift list has been updated to match.
+ *
+ * SOURCE: design-system-visual.md v1.0 §1–§3 + §7.
+ * ============================================================================
+ */
+
+:root {
+  /* ========================================================================
+   * 1. BRAND COLORS (design-system-visual.md §1.1)
+   * ====================================================================== */
+  --ink: #0A0A0F;              /* Primary dark. Backgrounds, primary text. */
+  --paper: #F6F4F0;            /* Primary light. Slide + workbook-page bg. */
+  --electric-violet: #8A00FF;  /* Brand accent. Surfaces, borders, large display text on light bg (5.55:1 on paper, AA). Fails AA for normal text on dark bg (3.27:1) — use --electric-violet-on-dark instead. */
+  --electric-violet-on-dark: #B65BFF;  /* Brand-violet, brightened for AA on --ink. 5.57:1 on ink. Use for violet text/labels on dark slide backgrounds (concept-overlay kicker, closing-card titles, etc.). */
+  --digital-phlox: #DD00FF;    /* Secondary accent. Level-2 highlights.    */
+  --white: #FFFFFF;            /* Card bg, page surface, contrast layer.   */
+  --heading-blue: #4F81BD;     /* Workbook H1–H4 (design-system §7.1).     */
+  --heading-blue-text: #3F6DAC;/* Text-safe variant: 5.26:1 on white (AA). */
+                               /* Use for h2-h4 at <18.66px bold; h1 keeps */
+                               /* --heading-blue per brand continuity.     */
+                               /* Promotion 🔴 — RFC brand-alignment P3.   */
+
+  /* ========================================================================
+   * 2. NEUTRAL SCALE (design-system-visual.md §1.2)
+   * ====================================================================== */
+  --muted: #8A8A8A;            /* Decorative-only on light bg (3.27:1 on paper — fails AA for text). On dark bg (--ink), passes AAA. Use --muted-strong on light bg for readable text. */
+  --muted-strong: #707070;     /* Muted but AA-readable on light bg. 4.57:1 on paper, 4.95:1 on white. Use for labels, captions, secondary body on paper/white slide backgrounds. */
+  --muted-light: #B0B0B0;      /* Tertiary text, decorative; use on dark backgrounds only. 9.38:1 on --ink (AAA pass). FAILS WCAG on light bg — never use on paper/white. */
+  --dark-body: #e0e0e0;        /* Body text on dark slide backgrounds.     */
+  --field-bg: #F9F8F6;         /* Card fields, note blocks.                */
+  --frame-bg: #f5f5f0;         /* Workbook frame surround (warm grey).     */
+  --border: #e5e7eb;           /* Table borders, dividers.                 */
+  --border-light: #F0EFEB;     /* Subtle row separators.                   */
+  --divider-soft: #f0f0f0;     /* Marker-guide row separators (slides).    */
+
+  /* ========================================================================
+   * 3. MARKER PALETTE (design-system-visual.md §1.3 + §5.2)
+   * All WCAG-AA with white stroke/icon except --marker-6 (large graphic).
+   * ====================================================================== */
+  --marker-1: #0F766E;         /* Step to Complete (Teal)     — flag       */
+  --marker-2: #8A00FF;         /* Prompt to Copy (Violet)     — bot        */
+  --marker-3: #3182CE;         /* Save Point (Blue)           — floppy     */
+  --marker-4: #DD6B20;         /* Try This (Orange)           — rocket     */
+  --marker-5: #718096;         /* Helpful Context (Grey)      — info       */
+  --marker-6: #D69E2E;         /* Important Reminder (Amber)  — alert      */
+
+  --marker-1-on: #FFFFFF;      /* White stroke/icon on teal.               */
+  --marker-2-on: #FFFFFF;      /* White stroke/icon on violet.             */
+  --marker-3-on: #FFFFFF;      /* White stroke/icon on blue.               */
+  --marker-4-on: #FFFFFF;      /* White stroke/icon on orange.             */
+  --marker-5-on: #FFFFFF;      /* White stroke/icon on grey.               */
+  --marker-6-on: #0A0A0F;      /* Ink on amber (amber/white <AA for text). */
+
+  /* Marker chip geometry — consumed by .wb-marker-chip in the chrome CSS.
+   * Introduced by RFC brand-alignment P4. Governs circular marker pills
+   * that wrap design-system-visual.md §1.3 + §5.2 palette. Promotion 🔴. */
+  --marker-chip-size:      24px;  /* Chip outer diameter.                  */
+  --marker-chip-radius:    50%;   /* 50% = circular; override for pill.    */
+  --marker-chip-icon-size: 14px;  /* Inner SVG glyph size.                 */
+
+  /* ========================================================================
+   * 4. TYPOGRAPHY — FAMILIES (design-system-visual.md §2.1)
+   * ====================================================================== */
+  --font-display: "Century Gothic", "Avenir Next", "Avenir", "Gill Sans",
+                  "Segoe UI", sans-serif, "Noto Color Emoji", "Apple Color Emoji",
+                  "Segoe UI Emoji";
+  --font-serif:   "Palatino Linotype", "Book Antiqua", "Palatino", "Georgia",
+                  serif, "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  "Helvetica Neue", sans-serif, "Noto Color Emoji",
+                  "Apple Color Emoji", "Segoe UI Emoji";
+
+  /* Letter-spacing scale — per design-system-visual.md §2.2.
+   * Display faces (Century Gothic) tighten slightly at display sizes;
+   * hero (80px) uses -2px per §2.2. Promotion 🟢 local → track if more
+   * sizes are added. */
+  --letter-spacing-hero:    -2px;   /* 80px Century Gothic hero title */
+  --letter-spacing-display: -0.5px; /* 28-44px display headings       */
+
+  /* ========================================================================
+   * 5. TYPE SCALE — SLIDES (1920×1080) (design-system-visual.md §2.2)
+   * ====================================================================== */
+  --text-hero: 80px;           /* Hero title (Century Gothic 700, -2px)    */
+  --text-6xl: 56px;            /* Slide heading (closing cards)            */
+  --text-5xl: 44px;            /* Section title (upper range)              */
+  --text-4xl: 38px;            /* Section title (lower range)              */
+  --text-3xl: 36px;            /* Card heading (persona name)              */
+  --text-2xl: 32px;            /* Subtitle (title cards)                   */
+  --text-xl: 24px;             /* Level/card title, infographic cards      */
+  --text-lg: 18px;             /* Overline upper, body upper               */
+  --text-md: 16px;             /* Overline lower, body mid                 */
+  --text-base: 15px;           /* Body text (paragraphs, labels)           */
+  --text-sm: 14px;             /* Caption upper, notes                     */
+  --text-xs: 13px;             /* Caption lower                            */
+  --text-2xs: 12px;            /* Tag upper                                */
+  --text-3xs: 10px;            /* Tag lower, badges                        */
+  --text-11: 11px;             /* Slides: persona-field label (uppercase)  */
+  --text-22: 22px;             /* Slides: bg-level-title                   */
+  --text-26: 26px;             /* Slides: concept-overlay main text        */
+  --text-48: 48px;             /* Slides: bg-arrow + cc-arrow glyphs       */
+
+  /* ========================================================================
+   * 6. TYPE SCALE — WORKBOOK EMBED (design-system-visual.md §2.3)
+   * Smaller because rendered inside a framed preview panel.
+   * ====================================================================== */
+  --wb-text-page-heading:    20px;   /* Century Gothic 700                 */
+  --wb-text-section-heading: 14px;   /* Inter 700                          */
+  --wb-text-body:           12.5px;  /* Inter 400                          */
+  --wb-text-table-header:   10.5px;  /* Inter 600 uppercase                */
+  --wb-text-table-cell:     11.5px;  /* Inter 400                          */
+  --wb-text-list:           11.5px;  /* Inter 400                          */
+  --wb-text-breadcrumb:       12px;  /* Inter 400                          */
+  --wb-text-badge:            10px;  /* Inter 600 uppercase                */
+
+  /* ========================================================================
+   * 7. LINE-HEIGHTS & WEIGHTS
+   * ====================================================================== */
+  --line-tight:   1.2;
+  --line-snug:    1.4;
+  --line-normal:  1.5;
+  --line-relaxed: 1.6;
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --tracking-tight: -2px;      /* Hero title                               */
+  --tracking-wide:  0.5px;     /* Uppercase labels, subtitles              */
+  --tracking-1:     1px;       /* Slide module overlines, tags             */
+  --tracking-2:     2px;       /* Slide title/closing labels               */
+  --tracking-wider: 3px;       /* Overlines (3px, uppercase)               */
+
+  /* ========================================================================
+   * 8. SPACING (design-system-visual.md §3.3 gap tokens)
+   * ====================================================================== */
+  --gap-xs:      8px;          /* Tight spacing                            */
+  --gap-sm:     14px;          /* Icon-to-text, breadcrumb items           */
+  --gap-sm-lg:  16px;          /* Marker legend rows                       */
+  --gap-md:     20px;          /* Grid gaps, persona fields                */
+  --gap-md-lg:  24px;          /* Card internal spacing                    */
+  --gap-lg:     32px;          /* Section separations                      */
+  --gap-lg-xl:  40px;          /* Level card gaps                          */
+  --gap-xl:     48px;          /* Major section breaks                     */
+  --gap-xl-xxl: 56px;          /* Challenge equation spacing               */
+  --gap-xxl:    72px;          /* Infographic section gaps                 */
+
+  /* 4px base grid (architecture spec §3.1) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-9:  36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-13: 52px;
+  --space-14: 56px;
+  --space-15: 60px;
+  --space-16: 64px;
+
+  /* ========================================================================
+   * 9. RADII (design-system-visual.md §3.4)
+   * ====================================================================== */
+  --radius-xxs:  2px;          /* Callout blocks (workbook-frame)          */
+  --radius-xs:   3px;          /* Workbook page edge                       */
+  --radius-6:    6px;          /* Capture-harness controls (select/button) */
+  --radius-sm:   8px;          /* Small badges, inline elements            */
+  --radius-md:   10px;         /* Marker badges                            */
+  --radius-md-lg: 12px;        /* Callout blocks, persona fields           */
+  --radius-lg:   16px;         /* Level cards, tables, workbook frame      */
+  --radius-xl:   20px;         /* Persona card, challenge boxes            */
+  --radius-pill: 50%;          /* Full-round avatars (non-px; no var guard needed) */
+
+  /* ========================================================================
+   * 10. SHADOWS (design-system-visual.md §3.5)
+   * ====================================================================== */
+  --shadow-1: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 2px 16px rgba(0, 0, 0, 0.04);
+  --shadow-3: 0 4px 24px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 8px 40px rgba(0, 0, 0, 0.06),
+              0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-frame: 0 8px 40px rgba(0, 0, 0, 0.10),
+                  0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-paper: var(--shadow-1);   /* alias — page surface               */
+
+  /* ========================================================================
+   * 11. TRANSITIONS
+   * ====================================================================== */
+  --transition-fast: 120ms ease-out;
+  --transition-base: 200ms ease-out;
+  --transition-slow: 400ms ease-out;
+
+  /* ========================================================================
+   * 12. VIEWPORT (design-system-visual.md §3.1)
+   * ====================================================================== */
+  --viewport-w:   1920px;
+  --viewport-h:   1080px;
+  --safe-margin:   120px;      /* Safe area margin (all sides)             */
+  --content-w:    1680px;      /* Usable content area                      */
+  --content-h:     840px;
+
+  /* ========================================================================
+   * 13. FONT SMOOTHING (design-system-visual.md §6)
+   * ====================================================================== */
+  --font-smoothing: antialiased;    /* -webkit-font-smoothing target       */
+
+  /* ========================================================================
+   * 14. BORDER WIDTHS
+   * ====================================================================== */
+  --border-width-1: 1px;       /* Hairline separators, row dividers.       */
+  --border-width-2: 2px;       /* Slide divider rule (concept-overlay,     */
+                               /* title-card divider) per wf0-slides.html. */
+  --border-width-3: 3px;       /* Accent borders (persona field, level).   */
+
+  /* ========================================================================
+   * 15. SLIDE-CHROME DIMENSIONS (derived from shared/slides-simulator.html
+   * during B3 port; keep in lib/ so chrome/slides/slides.css references
+   * only via var() — enforcing invariant §10.1 #1).
+   * ====================================================================== */
+  --slide-card-persona-w:     900px;  /* Persona card                        */
+  --slide-card-marker-w:      800px;  /* Marker-guide card                   */
+  --slide-concept-text-w:     800px;  /* Concept-overlay text column (legacy)*/
+  --slide-concept-frame-w:   1500px;  /* Concept-overlay .co-frame max-width */
+  --slide-concept-head-w:    1400px;  /* Concept-overlay .co-headline max-w  */
+  --slide-subtitle-max-w:     700px;  /* Closing card subtitle               */
+  --slide-bg-footer-max-w:    800px;  /* Branded-graphic footer caption      */
+  --slide-number-card-min-w:  220px;  /* Infographic number cards            */
+  --slide-module-line-w:       56px;  /* Title-card module decoration line   */
+  --slide-avatar-size:         60px;  /* Persona avatar                      */
+  --slide-avatar-text:         24px;  /* Persona avatar initial glyph        */
+  --icon-size-md:              20px;  /* Generic 20px SVG icon box (consumed by both chatgpt and slides chromes; was --slide-icon-size before promotion to lib/generic). */
+
+  /* ========================================================================
+   * 16. CAPTURE-HARNESS CHROME (navigation controls — hidden during
+   * Playwright capture, shown for reviewer navigation). These tokens live
+   * in lib/ because the harness overlay is shared across all chrome
+   * modules and should render identically everywhere.
+   * ====================================================================== */
+  --harness-bg:         #1a1a1a;
+  --harness-fg:         #e0e0e0;
+  --harness-border:     #333333;
+  --harness-btn-bg:     #2a2a2a;
+  --harness-btn-border: #444444;
+  --harness-btn-hover:  #3a3a3a;
+  --harness-muted:      #999999;
+
+  /* ========================================================================
+   * 17. CHATGPT CHROME TOKENS (derived from shared/chatgpt-simulator.html
+   * during B1 port). Kept in lib/ so chrome/chatgpt/chatgpt.css references
+   * only via var() — enforcing invariant §10.1 #1. Distinct from slide
+   * typography because ChatGPT's visual system uses a different scale
+   * (neutral greys, tighter type) than R100's teaching slides.
+   * ====================================================================== */
+  /* Colors */
+  --cg-bg:                  #ffffff;  /* App background                      */
+  --cg-sidebar-bg:          #f9f9f9;  /* Left sidebar surface                */
+  --cg-sidebar-border:      #e5e5e5;  /* Sidebar right-edge + nav-active bg  */
+  --cg-user-bubble:         #f4f4f4;  /* Light-grey user turn bubble         */
+  --cg-text:                #0d0d0d;  /* Primary text + accent (send button) */
+  --cg-text-secondary:      #6b6b6b;  /* Secondary labels, header btns       */
+  --cg-text-muted:          #9a9a9a;  /* Muted decorative-only contexts (WCAG-exempt: placeholders, hint text, footer disclaimer). 2.85:1 on white — fails AA for body text by design; consumers are placeholders and similar exemptions. */
+  --cg-text-muted-strong:   #757575;  /* Muted but AA-readable. 4.6:1 on white — clears WCAG AA for normal text. Use for labels, badges, sub-text — anywhere the muted role meets readable-text expectations. */
+  --cg-border-light:        #e5e7eb;  /* Generic UI borders (= --border)     */
+  --cg-blockquote-bg:       #f7f7f8;  /* Assistant blockquote surface        */
+  --cg-blockquote-border:   #d1d5db;  /* Blockquote + input border           */
+  --cg-input-bg:            #ffffff;  /* Composer input background           */
+  --cg-link:                #2563eb;  /* Anchor links in assistant markdown  */
+  --cg-nav-hover:           #ececec;  /* Sidebar nav-item hover              */
+  --cg-table-header-bg:     #fafafa;  /* Assistant-content table <th> bg     */
+  --cg-action-hover-bg:     #f0f0f0;  /* Action-bar button hover             */
+  --cg-header-btn-hover-bg: #f5f5f5;  /* Header-btn + gpt-tab active bg      */
+  --cg-gpt-preview-bg:      #f5f5f5;  /* GPT editor preview icon bg          */
+  --cg-send-icon:           #ffffff;  /* Send-button SVG fill                */
+
+  /* Dimensions */
+  --cg-sidebar-w:            260px;   /* Sidebar column width                */
+  --cg-content-max:          900px;   /* Chat content max-width              */
+  --cg-sidebar-logo:          28px;   /* Sidebar logo + toggle box           */
+  --cg-sidebar-logo-svg:      18px;   /* Sidebar logo SVG inner              */
+  --cg-avatar:                28px;   /* Footer avatar size                  */
+  --cg-bubble-radius:         22px;   /* User-bubble pill radius             */
+  --cg-input-radius:          26px;   /* Composer input pill radius          */
+  --cg-input-send:            32px;   /* Send-button circle size             */
+  --cg-input-plus:            28px;   /* Plus / mic / action button size     */
+  --cg-gpt-preview-icon:      48px;   /* GPT editor preview icon circle      */
+  --cg-gpt-textarea-min-h:   120px;   /* GPT instructions textarea min       */
+  --cg-gpt-preview-max-w:    380px;   /* GPT preview description max-width   */
+  --cg-gpt-starter-max-w:    220px;   /* GPT preview starter card max-width  */
+  --cg-text-17:               17px;   /* Model selector heading              */
+  --cg-text-15:               15px;   /* Chat body copy                      */
+  --cg-text-135:            13.5px;   /* GPT editor labels + starter card    */
+  --cg-nav-text:            13.5px;   /* Sidebar recent-chat text            */
+  --cg-bubble-max-w:           75%;   /* User bubble max-width (non-px)      */
+
+  /* Shadow (ChatGPT-native, tighter than slide shadows) */
+  --cg-input-shadow:    0 1px 4px rgba(0, 0, 0, 0.04);
+
+  /* ========================================================================
+   * 18. GOOGLE DOCS CHROME TOKENS (derived from shared/workbook-simulator.html
+   * + shared/workbook-frame.css during B2 port). All `--gd-*` prefixed so
+   * chrome/google-docs/google-docs.css references only via var() —
+   * enforcing invariant §10.1 #1. These tokens encode the Google Docs
+   * surround (toolbar, breadcrumb, page surface) plus the workbook
+   * content-block styles (prompt-box, compact, callout, marker, card-grid)
+   * ported verbatim from governance-aligned legacy CSS.
+   * ====================================================================== */
+  /* Surround colors */
+  --gd-bg-cream:            #f6f4f0;  /* Content-area backdrop              */
+  --gd-bg-white:            #ffffff;  /* Page surface                       */
+  --gd-bg-light-gray:       #f5f5f5;  /* Prompt-box + callout bg            */
+  --gd-toolbar-bg:          #f8f9fa;  /* Docs toolbar bg                    */
+  --gd-menu-hover-bg:       #f0f0f0;  /* Docs menu-item hover               */
+  --gd-card-bg:             #f0f0f0;  /* Card-grid card bg                  */
+  --gd-card-border:         #e5e5e5;  /* Card-grid card border              */
+  --gd-table-header-bg:     #f5f5f5;  /* Table <th> background              */
+  --gd-divider-soft:        #f0f0f0;  /* Table-row divider (legacy)         */
+
+  /* Page content text (governance §7) */
+  --gd-text-body:           #333333;  /* Body copy text (workbook-frame)    */
+  --gd-text-dark:           #1a1a1a;  /* Strong text emphasis               */
+  --gd-text-secondary:      #6b6b6b;  /* Card body, muted labels            */
+  --gd-text-muted:          #9a9a9a;  /* Breadcrumb, caption, table muted   */
+  --gd-callout-body:        #555555;  /* Callout-box body copy              */
+  --gd-callout-italic:      #444444;  /* Prompt-text italic body            */
+  --gd-callout-info-copy:   #666666;  /* Prompt-info italic                 */
+
+  /* Accent colors (badges + callout variants) */
+  --gd-purple-accent:       #8A00FF;  /* Badge purple (= --electric-violet) */
+  --gd-teal-accent:         #0d9488;  /* Badge teal + congrats              */
+  --gd-callout-tip:         #DD6B20;  /* Tip callout left border            */
+  --gd-callout-save:        #3182CE;  /* Save callout left border           */
+  --gd-callout-info:        #718096;  /* Info callout left border           */
+  --gd-callout-warning:     #D69E2E;  /* Warning callout left border        */
+  --gd-callout-default:     #4F81BD;  /* Default callout border (heading)   */
+  --gd-congrats-bg:         #f0fdfa;  /* Congrats callout bg (teal tint)    */
+
+  /* Dimensions */
+  --gd-toolbar-h:             56px;   /* Docs toolbar height                */
+  --gd-breadcrumb-h:          32px;   /* Breadcrumb bar height              */
+  --gd-content-padding:       48px;   /* docs-content padding               */
+  --gd-page-max-w:           900px;   /* docs-page max-width                */
+  --gd-page-padding-y:        48px;   /* docs-page vertical padding         */
+  --gd-page-padding-x:        56px;   /* docs-page horizontal padding       */
+  --gd-badge-top:             48px;   /* Badge absolute top                 */
+  --gd-badge-right:           48px;   /* Badge absolute right               */
+  --gd-badge-radius:          20px;   /* Badge pill radius                  */
+  --gd-card-min-w:           200px;   /* card-grid minmax minimum           */
+  --gd-breadcrumb-padding-x:  48px;   /* Breadcrumb left/right padding      */
+  --gd-breadcrumb-padding-y:   8px;   /* Breadcrumb vertical padding        */
+
+  /* Typography (Google Docs scale — distinct from slides/workbook .docx) */
+  --gd-h1-size:               28px;   /* docs-page h1                       */
+  --gd-h2-size:               16px;   /* docs-page h2                       */
+  --gd-h3-size:               15px;   /* docs-page h3                       */
+  --gd-h4-size:               14px;   /* docs-page h4                       */
+  --gd-body-size:             14px;   /* docs-page body copy                */
+  --gd-lead-size:             15px;   /* p.lead intro paragraphs            */
+  --gd-prompt-body-size:      13px;   /* Prompt-box body                    */
+  --gd-prompt-info-size:    12.5px;   /* Prompt-box info subline            */
+  --gd-marker-size:           14px;   /* .wb-marker font-size               */
+  --gd-compact-size:          14px;   /* .wb-compact font-size              */
+  --gd-callout-size:          13px;   /* Callout-box copy                   */
+  --gd-table-size:            13px;   /* Table body font                    */
+  --gd-breadcrumb-size:       12px;   /* Breadcrumb text                    */
+  --gd-badge-size:            11px;   /* Badge pill text                    */
+  --gd-menu-size:             13px;   /* Docs menu item text                */
+  --gd-list-lh:                1.7;   /* List line-height                   */
+  --gd-body-lh:                1.6;   /* Body line-height                   */
+  --gd-tight-lh:               1.5;   /* Marker + compact line-height       */
+
+  /* Shadow */
+  --gd-page-shadow:    0 1px 3px rgba(0, 0, 0, 0.06);  /* docs-page surface */
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * Optional global font-smoothing rule. Chrome modules may include this
+ * directly; it is declared here so smoothing behavior is governed centrally.
+ * ----------------------------------------------------------------------------
+ */
+html, body, .r100-sim-root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

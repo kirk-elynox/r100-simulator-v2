@@ -1,0 +1,11 @@
+[
+  {
+    "id": "wf3-split-01",
+    "chrome": "split",
+    "layout": "chat-docs-split",
+    "workflow": "WF03",
+    "label": "WF3 Scene 11 — Saving the Template",
+    "chat": { "ref": "wf3-chat-05" },
+    "docs": { "ref": "wf3-doc-template" }
+  }
+]

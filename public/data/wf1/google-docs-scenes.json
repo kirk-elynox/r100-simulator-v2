@@ -1,0 +1,574 @@
+[
+  {
+    "id": "wf1-goal",
+    "layout": "doc",
+    "header": {
+      "title": "Learning to Communicate",
+      "breadcrumb": "Module 1 / The Interview / 1.1 Workflow Goal",
+      "badge": {
+        "text": "Workflow Goal",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "callout",
+        "variant": "tip",
+        "body": "How This Module Relates to the Video — The course video demonstrates the key principles in a condensed format. This workbook is your comprehensive, hands-on exercise — it includes additional prompts, structured phases, and documentation steps that go beyond the video. Follow the workbook for the complete learning experience."
+      },
+      {
+        "type": "text",
+        "heading": "1.1 Workflow Goal"
+      },
+      {
+        "type": "text",
+        "heading": "Context",
+        "headingLevel": 4
+      },
+      {
+        "type": "text",
+        "text": "Objective: Learn to extract targeted knowledge through effective AI communication, while developing skills in iterative questioning and refining your AI collaboration process."
+      },
+      {
+        "type": "text",
+        "heading": "The Concept: The Time Savings of Information Extraction",
+        "headingLevel": 3,
+        "text": "Rapidly scale the volume of information that your AI collaborator can sift through on your behalf by providing the context and detail that will hone your AI collaborator's responses."
+      },
+      {
+        "type": "compact",
+        "label": "Context:",
+        "text": "What information does your collaborator need to know?"
+      },
+      {
+        "type": "compact",
+        "label": "Detail:",
+        "text": "Why do you want what you want, and why should it be done in this specific way?"
+      },
+      {
+        "type": "compact",
+        "label": "Meaningful Outcomes:",
+        "text": "By providing the right context and detail when communicating with your AI collaborator, and treating the exercise as an interview of the information provided, you shape the collaboration for what matters most to you."
+      },
+      {
+        "type": "text",
+        "heading": "Learning Outcomes",
+        "headingLevel": 3,
+        "text": "By the end of this workflow you will be able to:"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "Craft effective questions that draw out your personal perspective"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "Use iterative AI collaboration to refine your inputs and outputs"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "Explain why context and detail are essential to productive AI communication"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "Produce a personal perspective brief that guides all future workflows"
+      }
+    ],
+    "label": "WF1 — 1.1 Workflow Goal",
+    "workflow": "WF01"
+  },
+  {
+    "id": "wf1-prework",
+    "layout": "doc",
+    "header": {
+      "title": "Learning to Communicate",
+      "breadcrumb": "Module 1 / The Interview / 1.2 Workflow Prework",
+      "badge": {
+        "text": "Prework",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "1.2 Workflow Prework"
+      },
+      {
+        "type": "text",
+        "text": "Before you begin, make sure you have access to a large language model (LLM) such as ChatGPT, Claude, or Gemini. You will use this tool throughout the workflow."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 1 — Gather Your Background Materials"
+      },
+      {
+        "type": "text",
+        "text": "Collect any notes, prior resumes, career reflections, or journal entries that capture who you are professionally. These do not need to be polished — rough notes are fine. The goal is to have something to reference when you interview yourself."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 2 — Open a New LLM Conversation"
+      },
+      {
+        "type": "text",
+        "text": "Open a new conversation in your LLM. You will use this thread for the first half of the exercise."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 3 — Set Your Variables"
+      },
+      {
+        "type": "text",
+        "text": "Review the variables you defined in the Getting Started module. You will use these throughout the prompts below:"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "{your role as a knowledge worker}"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "{the industry or domain you work in}"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "{the perspective through which you conduct your knowledge work}"
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "{the knowledge workflow you want to redesign}"
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "For the Job Hunt Sandbox, the defaults are: Senior Industry Marketing Manager working in Technology / AI Marketing, approaching work through the lens of industry marketing strategy, redesigning the job hunt strategy and materials creation workflow."
+      }
+    ],
+    "label": "WF1 — 1.2 Workflow Prework",
+    "workflow": "WF01"
+  },
+  {
+    "id": "wf1-phase-a",
+    "layout": "doc",
+    "header": {
+      "title": "Learning to Communicate",
+      "breadcrumb": "Module 1 / The Interview / Phase A",
+      "badge": {
+        "text": "Phase A",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "1.3 Workflow: The Exercise",
+        "text": "This exercise has three phases: generate your interview questions, conduct your self-interview, and distill the results into a personal perspective brief."
+      },
+      {
+        "type": "text",
+        "heading": "Phase A — Generate Interview Questions",
+        "headingLevel": 3
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 1 — Prompt Your LLM to Generate Questions"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Prompt Structure",
+        "text": "Chat with your LLM to generate a set of 10–15 questions that will best capture what is important to you when seeking a new job. These questions should explore your ideal job, skills, career goals, values, and work preferences."
+      },
+      {
+        "type": "text",
+        "text": "Example: \"What are the top three skills I want to utilize in my next role?\""
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 1 of 3",
+        "info": "These prompts should be modified to reflect your scenario. Cut and paste into your LLM.",
+        "text": "~ NEW THREAD ~\nLet's think step by step. Take on the role of a thought partner. Your task is to collaborate with me using an iterative and recursive process where I will provide you with information and you will help me organize it as we work together. The objective of our collaboration is to compile a list of questions that I can use to interview myself in an effort to explore and document my personal perspective as it relates to evaluating and responding to new job opportunities. Please acknowledge the task, your role in this task, and our approach, and then we will begin."
+      },
+      {
+        "type": "text",
+        "heading": "Response Richness",
+        "headingLevel": 4
+      },
+      {
+        "type": "text",
+        "text": "When you are working with your AI collaborator, the formatting of the response tells you something about how the model is processing your request. Look for bold section headers, numbered lists, hierarchical structure, and specific examples."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "Why this matters: if a response comes back as a flat wall of text, it usually means the prompt was not specific enough to trigger structured thinking. The format is a signal about the quality of your input."
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "After your LLM generates the initial question set, push back. Ask it to reframe questions that feel too generic or to add questions about dimensions you care about — such as company culture, growth trajectory, or management style. The best question sets come from two or three rounds of refinement.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Iteration",
+        "text": "The questions your AI collaborator generates are a starting point, not a final product. The iterative process — refining, adding dimensions, pushing back — is where the real value emerges."
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "You will need it for the next step and for your records. → Results tab: WF_1a",
+        "label": "Save your finalized question set."
+      }
+    ],
+    "label": "WF1 — Phase A: Generate Questions",
+    "workflow": "WF01"
+  },
+  {
+    "id": "wf1-phase-b1",
+    "layout": "doc",
+    "header": {
+      "title": "Learning to Communicate",
+      "breadcrumb": "Module 1 / The Interview / Phase B",
+      "badge": {
+        "text": "Phase B",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase B — Conduct Your Self-Interview",
+        "headingLevel": 3,
+        "appearsAt": 1
+      },
+      {
+        "type": "text",
+        "heading": "Self-Interview",
+        "headingLevel": 4,
+        "appearsAt": 1
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 2 — Answer Each Question",
+        "appearsAt": 2
+      },
+      {
+        "type": "text",
+        "text": "Tackle each question in sequence — it keeps the process neat and tidy. If you find yourself needing to adjust an answer, no problem — it is actually better to start anew with that question.",
+        "appearsAt": 2
+      },
+      {
+        "type": "text",
+        "text": "Got a question where you are drawing a blank or simply do not have an opinion? No stress — just say \"no input\" and move right along to the next one.",
+        "appearsAt": 2
+      },
+      {
+        "type": "text",
+        "text": "When you are ready to answer, start by stating the question label. So, if the topic is \"Company Culture,\" you would say \"Company Culture\" and then follow up with your thoughts like, \"What is important to me when considering company culture...\"",
+        "appearsAt": 2
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Consider using voice-to-text to capture your thoughts as if this were a live interview. Speaking freely often surfaces ideas that typing does not.",
+        "label": "TRY THIS:",
+        "appearsAt": 2
+      },
+      {
+        "type": "marker",
+        "kind": "info",
+        "text": "The process is not necessarily linear. You might need to revisit previous questions as new insights emerge. Try not to rush the process. Exploring personal perspective is a significant step that will greatly influence the outcome of your collaboration with AI. The ultimate goal is to compile a document that will communicate to your AI collaborator what matters most to you when evaluating new career opportunities.",
+        "label": "Keep in mind:",
+        "appearsAt": 2
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 3 — Transcribe and Refine",
+        "appearsAt": 3
+      },
+      {
+        "type": "text",
+        "text": "If you used voice-to-text, clean up the transcript so it reads clearly. If you typed your answers directly, review them for completeness.",
+        "appearsAt": 3
+      },
+      {
+        "type": "text",
+        "text": "Once you have answered all the questions, review your responses. Look for themes, recurring ideas, or contradictions that might help you refine your thoughts. Iterate until you are confident that the questions and answers accurately reflect your perspective.",
+        "appearsAt": 3
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_1b",
+        "label": "Save your interview transcript.",
+        "appearsAt": 3
+      }
+    ],
+    "label": "WF1 — Phase B: Self-Interview",
+    "workflow": "WF01",
+    "states": [
+      {
+        "id": "empty",
+        "label": "Breadcrumb + badge only"
+      },
+      {
+        "id": "heading",
+        "label": "Section + subsection headings"
+      },
+      {
+        "id": "step-2",
+        "label": "Step 2 answer-each-question block"
+      },
+      {
+        "id": "step-3",
+        "label": "Step 3 transcribe-and-refine + save"
+      }
+    ],
+    "kenBurns": {
+      "from": {
+        "zoom": 1.0,
+        "x": 0.5,
+        "y": 0.5
+      },
+      "to": {
+        "zoom": 1.04,
+        "x": 0.5,
+        "y": 0.55
+      },
+      "duration": 8.0
+    }
+  },
+  {
+    "id": "wf1-phase-b2",
+    "layout": "doc",
+    "header": {
+      "title": "Learning to Communicate",
+      "breadcrumb": "Module 1 / The Interview / Phase B (cont.)",
+      "badge": {
+        "text": "Phase B",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Gap Analysis",
+        "headingLevel": 4
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 4 — Collaborate with AI to Identify Gaps"
+      },
+      {
+        "type": "text",
+        "text": "Share your questions and answers with your AI collaborator and ask it to find what is missing."
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 2 of 3",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\nBased on these questions and answers, what additional aspects of my job search preferences should I explore? Are there any gaps in the information I've provided?\n\n{Cut and paste your questions and answers from the self-interview}"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Patterns",
+        "text": "Your AI collaborator's gap analysis will surface both explicit gaps (areas you know you need to explore) and hidden patterns (recurring themes or blind spots you may not have noticed)."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 5 — Iterate and Improve"
+      },
+      {
+        "type": "text",
+        "text": "Use the AI's suggestions to refine your questions. Conduct a second round of self-interview with the improved questions. Continue this loop until you feel your perspective is fully captured."
+      },
+      {
+        "type": "marker",
+        "kind": "warn",
+        "text": "The goal is not perfection — it is completeness. You are building the foundation that every subsequent workflow depends on. A few extra minutes spent here saves hours downstream.",
+        "label": "REMEMBER:"
+      }
+    ],
+    "label": "WF1 — Phase B: Gap Analysis",
+    "workflow": "WF01"
+  },
+  {
+    "id": "wf1-phase-c",
+    "layout": "doc",
+    "header": {
+      "title": "Learning to Communicate",
+      "breadcrumb": "Module 1 / The Interview / Phase C",
+      "badge": {
+        "text": "Phase C",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase C — Create Your Personal Perspective Brief",
+        "headingLevel": 3
+      },
+      {
+        "type": "text",
+        "heading": "Brief Generation",
+        "headingLevel": 4
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 6 — Prompt Your LLM to Generate the Brief"
+      },
+      {
+        "type": "text",
+        "text": "Collaborate with your AI to distill your interview results into a 1–2 page perspective brief. This document should summarize your career objectives, key skills, values, and job preferences."
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 3 of 3",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\nLet's think step by step. Your task is to collaborate with me using an iterative and recursive approach to evaluate the information that I provide to you here and then you will compile a detailed brief that best represents my perspective for the purposes of guiding evaluating career opportunities and guiding the effective creation of materials that I will use to support my job hunt.\n\nYour response must meet the following specifications:\n\nMake sure your response considers each piece of input provided before responding. Structure the format of your response in a logical and easy-to-understand format.\n\nHere are my inputs:\n\n{Cut and paste your questions and answers from the self-interview}"
+      },
+      {
+        "type": "h4-text",
+        "heading": "Brief Generation Redirect",
+        "text": "If your AI collaborator treats your request as a new conversation rather than building on previous context, redirect by referencing your earlier exchanges. This is a common occurrence — the brief should synthesize your entire interview, not start fresh."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Brief Structure",
+        "text": "Your perspective brief should follow a clear structure: a core career thesis, your non-negotiables, your ideal operating environment, and your role design preferences."
+      },
+      {
+        "type": "text",
+        "heading": "Validation",
+        "headingLevel": 4
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Step 7 — Validate the Brief"
+      },
+      {
+        "type": "text",
+        "text": "Share your brief with your AI collaborator for a final quality check."
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Validation",
+        "info": "Cut and paste into your LLM.",
+        "text": "~ CONTINUE THREAD ~\nDoes this brief accurately reflect my job search preferences? Are there any areas that need more clarity or detail?"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Try sharing your brief with a trusted friend or mentor and ask whether it sounds like you. Human feedback on an AI-generated summary of your own perspective is a powerful calibration step.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_1c",
+        "label": "Save your finalized perspective brief."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Summary",
+        "text": "You have now completed the full interview cycle: generating questions, conducting your self-interview, identifying gaps, and distilling everything into a personal perspective brief. This brief is the foundation for every workflow that follows."
+      }
+    ],
+    "label": "WF1 — Phase C: Perspective Brief",
+    "workflow": "WF01"
+  },
+  {
+    "id": "wf1-outcomes",
+    "layout": "doc",
+    "header": {
+      "title": "Learning to Communicate",
+      "breadcrumb": "Module 1 / The Interview / 1.4 Workflow Outcomes",
+      "badge": {
+        "text": "Complete",
+        "color": "teal"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "1.4 Workflow Outcomes"
+      },
+      {
+        "type": "text",
+        "heading": "Workflow Deliverables",
+        "headingLevel": 3
+      },
+      {
+        "type": "compact",
+        "label": "☐ WF_1a:",
+        "text": "Interview Questions — A set of self-interview questions designed to extract your perspective"
+      },
+      {
+        "type": "compact",
+        "label": "☐ WF_1b:",
+        "text": "Interview Transcript — A completed self-interview transcript"
+      },
+      {
+        "type": "compact",
+        "label": "☐ WF_1c:",
+        "text": "Perspective Brief — A personal perspective brief that represents what matters to you when evaluating career opportunities and creating job-hunt materials"
+      },
+      {
+        "type": "text",
+        "heading": "Learning Outcomes",
+        "headingLevel": 3
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "You practiced crafting context-rich prompts and learned why detail matters in AI communication."
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "You used iterative collaboration — refining questions, answers, and outputs through multiple rounds — a foundational skill for every workflow that follows."
+      },
+      {
+        "type": "compact",
+        "label": "",
+        "text": "You produced a perspective brief that becomes the reference document your AI collaborator will use across all remaining workflows."
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Revisit your perspective brief after completing WF2 and WF3. As your skills grow, you may find new dimensions to add. The brief is a living document — update it as your perspective evolves.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "complete",
+        "text": "You have completed Workflow 1. Your personal perspective brief is now the foundation for everything that follows. In WF2, you will learn how to shift your mindset from task execution to strategic AI collaboration — and your brief will be the first input.",
+        "label": "CONGRATULATIONS:"
+      },
+      {
+        "type": "next",
+        "heading": "What Is Next",
+        "content": "In Workflow 2: The Mindset Shift, you will learn how to shift your mindset from task execution to strategic AI collaboration — and your brief will be the first input."
+      }
+    ],
+    "label": "WF1 — 1.4 Workflow Outcomes",
+    "workflow": "WF01"
+  }
+]

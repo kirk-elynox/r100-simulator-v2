@@ -1,0 +1,514 @@
+/*
+ * ============================================================================
+ * shared/simulator/chrome/slides/slides.css
+ * ----------------------------------------------------------------------------
+ * Chrome stylesheet for the Slides (Google Slides / teaching-slide)
+ * simulator. Every hex/px literal lives in lib/design-tokens.css;
+ * this file references tokens only via var().
+ *
+ * Canonical spec:
+ *   governance/central-simulator-architecture.md §4.3 (SlideScene shape)
+ *   governance/central-simulator-architecture.md §10.1 #1 (token singularity)
+ *
+ * PORT OF: shared/slides-simulator.html inline <style> (lines 7–299 of the
+ * legacy file). Literals reconciled against governance — deltas:
+ *   • #888888 → var(--muted) [#8A8A8A]            (governance §1.2)
+ *   • #fafaf9 → var(--field-bg) [#F9F8F6]         (governance §1.2)
+ *   • hardcoded 1920px/1080px → var(--viewport-w/h)
+ *   • hardcoded 48px gaps      → var(--gap-xl) etc.
+ *   • 7 harness literals moved to --harness-* tokens in lib
+ *
+ * INVARIANT CHECK:
+ *   tools/check-invariants.cjs #1 grep must emit ZERO findings in this file.
+ * ============================================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--viewport-w);
+  height: var(--viewport-h);
+  display: flex;
+}
+
+/* ============================================================================
+ * CAPTURE-HARNESS CONTROLS (hidden during Playwright capture)
+ * Shown for human reviewers who navigate via dropdowns / arrow keys.
+ * ========================================================================== */
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--harness-bg);
+  color: var(--harness-fg);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  border-top: var(--border-width-1) solid var(--harness-border);
+}
+.controls.hidden { display: none !important; }
+
+.controls label {
+  font-weight: var(--weight-semibold);
+  margin-right: var(--space-2);
+}
+
+.controls select,
+.controls button {
+  background: var(--harness-btn-bg);
+  color: var(--harness-fg);
+  border: var(--border-width-1) solid var(--harness-btn-border);
+  border-radius: var(--radius-6);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.controls select:hover,
+.controls button:hover {
+  background: var(--harness-btn-hover);
+}
+
+.slide-counter {
+  font-weight: var(--weight-semibold);
+  margin-left: auto;
+}
+
+.scene-info {
+  font-size: var(--text-3xs);
+  color: var(--harness-muted);
+}
+
+/* ============================================================================
+ * LAYOUT 1: TITLE  (dark)
+ * ========================================================================== */
+
+.slide-title {
+  background: var(--ink);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.slide-title .sc-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-2);
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  margin-bottom: var(--space-8);
+}
+.slide-title .sc-title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet-on-dark);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+  margin-bottom: var(--space-5);
+}
+.slide-title .sc-subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-light);
+  color: var(--dark-body);
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-12);
+}
+.slide-title .sc-module {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--muted-strong);
+  letter-spacing: var(--tracking-wide);
+}
+.slide-title .sc-module-line {
+  width: var(--slide-module-line-w);
+  height: var(--border-width-1);
+  background: var(--electric-violet);
+}
+
+/* ============================================================================
+ * LAYOUT 2: PERSONA  (light)
+ * ========================================================================== */
+
+.slide-persona {
+  background: var(--paper);
+  align-items: center;
+  justify-content: center;
+}
+.pc-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-13) var(--space-16);
+  width: var(--slide-card-persona-w);
+  box-shadow: var(--shadow-2);
+}
+.pc-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  margin-bottom: var(--space-10);
+}
+.pc-avatar {
+  width: var(--slide-avatar-size);
+  height: var(--slide-avatar-size);
+  border-radius: var(--radius-pill);
+  background: var(--electric-violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--slide-avatar-text);
+  font-weight: var(--weight-bold);
+  color: var(--white);
+  font-family: var(--font-display);
+  flex-shrink: 0;
+}
+.pc-header-text { flex: 1; }
+.pc-name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+  line-height: 1.1;
+}
+.pc-role {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--muted-strong);
+  margin-top: var(--space-1);
+}
+.pc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.pc-field {
+  background: var(--field-bg);
+  border-radius: var(--radius-sm);
+  padding: var(--space-5) var(--space-6);
+  border-left: var(--border-width-3) solid var(--electric-violet);
+}
+.pc-field-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-11);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+  margin-bottom: var(--space-2);
+}
+.pc-field-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  line-height: var(--line-normal);
+}
+.pc-callout {
+  padding: var(--space-5) var(--space-6);
+  background: var(--field-bg);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--muted-strong);
+  line-height: var(--line-relaxed);
+}
+.pc-callout strong {
+  color: var(--ink);
+  font-weight: var(--weight-semibold);
+}
+
+/* ============================================================================
+ * LAYOUT 3: BRANDED-GRAPHIC  (light)
+ * ========================================================================== */
+
+.slide-branded {
+  background: var(--paper);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bg-numbers {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+.bg-number-card {
+  background: var(--white);
+  border-radius: var(--radius-md-lg);
+  padding: var(--space-10) var(--space-12);
+  text-align: center;
+  box-shadow: var(--shadow-2);
+  min-width: var(--slide-number-card-min-w);
+}
+.bg-number {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet);
+  line-height: 1;
+}
+.bg-number-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--muted-strong);
+  margin-top: var(--space-3);
+  font-weight: var(--weight-medium);
+}
+.bg-arrow {
+  font-size: var(--text-48);
+  color: var(--electric-violet);
+  font-weight: var(--weight-light);
+}
+.bg-levels {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+.bg-level {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-9);
+  flex: 1;
+  box-shadow: var(--shadow-2);
+  border-top: var(--border-width-3) solid var(--electric-violet);
+}
+.bg-level-tag {
+  font-family: var(--font-sans);
+  font-size: var(--text-11);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+  color: var(--electric-violet);
+  margin-bottom: var(--space-3);
+}
+.bg-level-title {
+  font-family: var(--font-display);
+  font-size: var(--text-22);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+}
+.bg-level-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--muted-strong);
+  line-height: var(--line-relaxed);
+}
+.bg-footer {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--muted-strong);
+  text-align: center;
+  margin-top: var(--space-6);
+  max-width: var(--slide-bg-footer-max-w);
+}
+
+/* ============================================================================
+ * LAYOUT 4: MARKER-GUIDE  (light)
+ * ========================================================================== */
+
+.slide-markers {
+  background: var(--paper);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mg-card {
+  background: var(--white);
+  border-radius: var(--radius-md-lg);
+  padding: var(--space-12) var(--space-14);
+  width: var(--slide-card-marker-w);
+  box-shadow: var(--shadow-2);
+}
+.mg-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+.mg-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: var(--border-width-1) solid var(--divider-soft);
+}
+.mg-row:last-child { border-bottom: none; }
+.mg-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+}
+.mg-icon svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+.mg-content { flex: 1; }
+.mg-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--ink);
+  margin-bottom: var(--space-1);
+}
+.mg-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--muted-strong);
+  line-height: var(--line-normal);
+}
+
+/* ============================================================================
+ * LAYOUT 5: CLOSING  (dark)
+ * ========================================================================== */
+
+.slide-closing {
+  background: var(--ink);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cc-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-2);
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  margin-bottom: var(--space-6);
+}
+.cc-title {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet-on-dark);
+  line-height: 1.2;
+  margin-bottom: var(--space-5);
+}
+.cc-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  color: var(--dark-body);
+  line-height: var(--line-normal);
+  max-width: var(--slide-subtitle-max-w);
+  font-weight: var(--weight-light);
+  margin-bottom: var(--space-10);
+}
+.cc-arrow {
+  font-size: var(--text-5xl);
+  color: var(--electric-violet-on-dark);
+  opacity: 0.6;
+}
+
+/* ============================================================================
+ * LAYOUT 6: CONCEPT-OVERLAY  (dark)
+ * ----------------------------------------------------------------------------
+ * Brand authority: WF00-Getting-Started/tools/wf0-slides.html is canonical for
+ * the R100 slide design system. The .slide-concept layout mirrors the
+ * .slide-closing proportions (dark-ink bg, tracked-uppercase overline,
+ * divider rule, Century Gothic presentation-grade headline) adapted for
+ * longer educational callout statements — the headline size steps down to
+ * 38px (--text-4xl) so 30-40 word statements still read cleanly at 1920×1080.
+ *
+ * Color discipline: --electric-violet is the sole accent (per design-system
+ * §1.1) — never --heading-blue, which is reserved for workbook H1–H4.
+ * Typography discipline: --font-display (Century Gothic) for the headline,
+ * --font-sans (Inter) for the overline tag and attribution. No px/hex
+ * literals — all values via var() per architecture spec §10.1 #1.
+ * ========================================================================== */
+
+.slide-concept {
+  background: var(--ink);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-16);
+}
+.slide-concept .co-frame {
+  max-width: var(--slide-concept-frame-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide-concept .co-kicker {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--electric-violet-on-dark);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-8);
+}
+.slide-concept .co-rule {
+  width: var(--slide-module-line-w);
+  height: var(--border-width-2);
+  background: var(--electric-violet);
+  margin-bottom: var(--space-10);
+}
+.slide-concept .co-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-medium);
+  color: var(--paper);
+  line-height: var(--line-snug);
+  letter-spacing: var(--tracking-wide);
+  max-width: var(--slide-concept-head-w);
+}
+.slide-concept .co-attribution {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  color: var(--muted-light);
+  letter-spacing: var(--tracking-wide);
+  margin-top: var(--space-8);
+  font-style: italic;
+}
+
+/* Legacy .co-text / .co-main / .co-label retained for backward compat */
+.co-text { max-width: var(--slide-concept-text-w); }
+.co-main {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-medium);
+  color: var(--paper);
+  line-height: var(--line-snug);
+  margin-bottom: var(--space-7);
+}
+.co-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--muted-light);
+  letter-spacing: var(--tracking-wide);
+}

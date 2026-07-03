@@ -1,0 +1,609 @@
+/*
+ * ============================================================================
+ * shared/simulator/chrome/google-docs/google-docs.css
+ * ----------------------------------------------------------------------------
+ * Chrome-local stylesheet for the Google Docs chrome. Rebuilt on top of the
+ * token layer — every color / dimension / shadow references a var(--gd-*)
+ * or var(--*) from lib/design-tokens.css. Hex/px literals outside var()
+ * are forbidden by invariant §10.1 #1 (tools/check-invariants.cjs).
+ *
+ * Source of truth (ported verbatim where possible):
+ *   - shared/workbook-simulator.html inline <style> (lines 7..382)
+ *   - shared/workbook-frame.css
+ *
+ * Governance:
+ *   governance/02-content-authoring/design-system-visual.md §7
+ *   governance/central-simulator-architecture.md §3.2 + §4.2
+ * ============================================================================
+ */
+
+/* Font family — Inter, matches workbook-simulator + workbook-frame */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--gd-text-dark);
+  background: var(--gd-bg-cream);
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===========================================================================
+ * LAYOUT
+ * ========================================================================= */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: var(--viewport-w);
+}
+
+.workbook-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--gd-bg-cream);
+  position: relative;
+}
+
+/* ===========================================================================
+ * GOOGLE DOCS TOOLBAR
+ * ========================================================================= */
+.docs-toolbar {
+  background: var(--gd-toolbar-bg);
+  border-bottom: var(--border-width-1) solid var(--border);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: var(--gd-toolbar-h);
+  flex-shrink: 0;
+}
+
+.docs-menu {
+  display: flex;
+  gap: 0;
+  padding: 0 var(--space-4);
+  height: 100%;
+  align-items: center;
+  font-size: var(--gd-menu-size);
+  color: var(--gd-text-dark);
+}
+
+.docs-menu-item {
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  border-radius: var(--radius-3);
+  transition: background 150ms ease;
+}
+
+.docs-menu-item:hover {
+  background: var(--gd-menu-hover-bg);
+}
+
+/* ===========================================================================
+ * BREADCRUMB
+ * ========================================================================= */
+.breadcrumb-bar {
+  background: var(--gd-bg-white);
+  border-bottom: var(--border-width-1) solid var(--border);
+  padding: var(--gd-breadcrumb-padding-y) var(--gd-breadcrumb-padding-x);
+  font-size: var(--gd-breadcrumb-size);
+  color: var(--gd-text-muted);
+  height: var(--gd-breadcrumb-h);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ===========================================================================
+ * BADGE PILL
+ * ========================================================================= */
+.badge-pill {
+  position: absolute;
+  top: var(--gd-badge-top);
+  right: var(--gd-badge-right);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--gd-badge-radius);
+  font-size: var(--gd-badge-size);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+  color: var(--white);
+}
+
+.badge-pill.purple { background: var(--gd-purple-accent); }
+.badge-pill.teal   { background: var(--gd-teal-accent); }
+
+/* ===========================================================================
+ * CONTENT AREA + PAGE SURFACE
+ * ========================================================================= */
+.docs-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--gd-content-padding);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--gd-bg-cream);
+}
+
+.docs-page {
+  background: var(--gd-bg-white);
+  max-width: var(--gd-page-max-w);
+  width: 100%;
+  padding: var(--gd-page-padding-y) var(--gd-page-padding-x);
+  box-shadow: var(--gd-page-shadow);
+  border-radius: var(--radius-2);
+  font-family: var(--font-sans);
+  color: var(--gd-text-body);
+  line-height: var(--gd-body-lh);
+  overflow: hidden;
+}
+
+/* ===========================================================================
+ * TYPOGRAPHY — Blue headings (via --heading-blue token)
+ * ========================================================================= */
+.docs-page h1 {
+  font-family: var(--font-display);              /* P1: Century Gothic voice */
+  font-size: var(--gd-h1-size);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--letter-spacing-display); /* §2.2 display scale       */
+  margin-bottom: var(--space-8);
+  color: var(--heading-blue);              /* H1 keeps canonical heading-blue*/
+  line-height: var(--line-height-tight);
+}
+
+.docs-page h2 {
+  font-size: var(--gd-h2-size);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  color: var(--heading-blue-text);  /* P3: AA contrast at small sizes (5.26:1) */
+}
+
+.docs-page h3 {
+  font-size: var(--gd-h3-size);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+  color: var(--heading-blue-text);  /* P3: AA contrast at small sizes (5.26:1) */
+}
+
+.docs-page h4 {
+  font-size: var(--gd-h4-size);
+  font-weight: var(--weight-regular);
+  font-style: italic;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+  color: var(--heading-blue-text);  /* P3: AA contrast at small sizes (5.26:1) */
+}
+
+.docs-page p {
+  font-size: var(--gd-body-size);
+  line-height: var(--gd-body-lh);
+  color: var(--gd-text-body);
+  margin-bottom: var(--space-3);
+}
+
+.docs-page p.lead {
+  font-size: var(--gd-lead-size);
+  font-weight: var(--weight-medium);
+  color: var(--gd-text-dark);
+  margin-bottom: var(--space-4);
+}
+
+.docs-page ul,
+.docs-page ol {
+  margin-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-size: var(--gd-body-size);
+  color: var(--gd-text-body);
+  line-height: var(--gd-list-lh);
+}
+
+.docs-page li {
+  margin-bottom: var(--space-2);
+}
+
+/* ===========================================================================
+ * WORKBOOK-ALIGNED BLOCK TYPES
+ * ========================================================================= */
+
+/* ---------------------------------------------------------------------------
+ * Marker — P4 Pattern Upgrade (brand-alignment RFC v0.1).
+ * Before: single bold paragraph with OS emoji prefix.
+ * After:  colored chip (--marker-N palette) + SVG icon + body text.
+ * Deterministic cross-platform rendering (no OS emoji dependency).
+ * Canonical: design-system-visual.md §1.3 + §5.2.
+ * -------------------------------------------------------------------------- */
+.wb-marker {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-weight: var(--weight-semibold);
+  font-size: var(--gd-marker-size);
+  color: var(--gd-text-dark);
+  margin: var(--space-4) 0 var(--space-2);
+  line-height: var(--gd-tight-lh);
+}
+
+.wb-marker-chip {
+  flex: 0 0 var(--marker-chip-size);  /* pin flex-basis to chip diameter */
+  width: var(--marker-chip-size);
+  height: var(--marker-chip-size);
+  min-width: var(--marker-chip-size); /* defensive — prevent flex shrink */
+  border-radius: var(--marker-chip-radius);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.12));
+  margin-top: var(--space-1);
+}
+
+.wb-marker-chip svg {
+  width: var(--marker-chip-icon-size);
+  height: var(--marker-chip-icon-size);
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Kind variants — map to canonical --marker-N palette + --marker-N-on text.
+ * Mapping table (from design-system-visual.md §1.3):
+ *   flag     → marker-1 (teal)   — Step to Complete
+ *   prompt   → marker-2 (violet) — Prompt to Copy
+ *   save     → marker-3 (blue)   — Save Point
+ *   extend   → marker-4 (orange) — Try This
+ *   info     → marker-5 (grey)   — Helpful Context
+ *   warn     → marker-6 (amber)  — Important Reminder
+ *   complete → marker-1 (teal)   — Step Completed (alias of flag color) */
+.wb-marker-chip.marker-flag     { background: var(--marker-1); color: var(--marker-1-on); }
+.wb-marker-chip.marker-prompt   { background: var(--marker-2); color: var(--marker-2-on); }
+.wb-marker-chip.marker-save     { background: var(--marker-3); color: var(--marker-3-on); }
+.wb-marker-chip.marker-extend   { background: var(--marker-4); color: var(--marker-4-on); }
+.wb-marker-chip.marker-info     { background: var(--marker-5); color: var(--marker-5-on); }
+.wb-marker-chip.marker-warn     { background: var(--marker-6); color: var(--marker-6-on); }
+.wb-marker-chip.marker-complete { background: var(--marker-1); color: var(--marker-1-on); }
+
+.wb-marker .wb-marker-body { flex: 1 1 auto; }
+
+/* Prompt box — indented blue-left-border frame for AI prompts */
+.wb-prompt-box {
+  background: var(--gd-bg-light-gray);
+  border-left: var(--border-width-3) solid var(--heading-blue);
+  padding: var(--space-3) var(--space-5);
+  margin: var(--space-4) 0 var(--space-4) var(--space-5);
+  border-radius: var(--radius-2);
+  font-size: var(--gd-prompt-body-size);
+  color: var(--gd-text-body);
+  line-height: var(--gd-body-lh);
+}
+
+.wb-prompt-box .prompt-header {
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.wb-prompt-box .prompt-info {
+  font-style: italic;
+  color: var(--gd-callout-info-copy);
+  margin-bottom: var(--space-2);
+  font-size: var(--gd-prompt-info-size);
+}
+
+.wb-prompt-box .prompt-text {
+  font-style: italic;
+  color: var(--gd-callout-italic);
+  white-space: pre-wrap;
+}
+
+/* Compact item — tight bold-lead-in label + inline text */
+.wb-compact {
+  font-size: var(--gd-compact-size);
+  color: var(--gd-text-body);
+  margin: var(--space-1) 0;
+  padding: 0;
+  line-height: var(--gd-tight-lh);
+}
+
+.wb-compact strong {
+  color: var(--gd-text-dark);
+}
+
+/* ===========================================================================
+ * SECTION BLOCKS (text + h4-text container)
+ * ========================================================================= */
+.section-block {
+  margin-bottom: var(--space-7);
+}
+
+/* ===========================================================================
+ * CARD GRID (WF3/WF5 framework diagrams)
+ * ========================================================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--gd-card-min-w), 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.card {
+  background: var(--gd-card-bg);
+  padding: var(--space-4);
+  border-radius: var(--radius-4);
+  border: var(--border-width-1) solid var(--gd-card-border);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  font-size: var(--gd-h4-size);
+  font-weight: var(--weight-semibold);
+  color: var(--gd-text-dark);
+}
+
+.card p {
+  font-size: var(--gd-prompt-body-size);
+  color: var(--gd-text-secondary);
+  margin: 0;
+  line-height: var(--gd-tight-lh);
+}
+
+.card.accent {
+  background: var(--gd-bg-light-gray);
+  border-color: var(--gd-purple-accent);
+}
+
+/* ===========================================================================
+ * TABLE
+ * ========================================================================= */
+.docs-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4) 0;
+  font-size: var(--gd-table-size);
+}
+
+.docs-page table th,
+.docs-page table td {
+  border: var(--border-width-1) solid var(--border);
+  padding: var(--space-3) var(--space-3);
+  text-align: left;
+}
+
+.docs-page table th {
+  background: var(--gd-table-header-bg);
+  font-weight: var(--weight-semibold);
+  color: var(--gd-text-dark);
+}
+
+.docs-page table td {
+  color: var(--gd-text-secondary);
+}
+
+/* ===========================================================================
+ * CALLOUT BOX — 4 variants + default (heading-blue)
+ * ========================================================================= */
+.callout-box {
+  background: var(--gd-bg-light-gray);
+  border-left: var(--border-width-3) solid var(--gd-callout-default);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-4) 0 var(--space-4) var(--space-5);
+  border-radius: var(--radius-2);
+  font-size: var(--gd-callout-size);
+  color: var(--gd-callout-body);
+  line-height: var(--gd-body-lh);
+}
+
+.callout-box strong {
+  color: var(--gd-text-dark);
+}
+
+.callout-box.tip      { border-left-color: var(--gd-callout-tip); }
+.callout-box.save     { border-left-color: var(--gd-callout-save); }
+.callout-box.info     { border-left-color: var(--gd-callout-info); }
+.callout-box.warning  { border-left-color: var(--gd-callout-warning); }
+.callout-box.congrats {
+  background: var(--gd-congrats-bg);
+  border-left-color: var(--gd-teal-accent);
+  color: var(--gd-text-dark);
+}
+
+/* ===========================================================================
+ * DELIVERABLES BLOCK (WF outcome roll-up)
+ * ========================================================================= */
+.wb-deliverables h3 {
+  margin-bottom: var(--space-2);
+}
+
+.wb-deliverables ul {
+  padding-left: var(--space-5);
+  margin: 0;
+}
+
+.wb-deliverables li {
+  font-size: var(--gd-body-size);
+  line-height: var(--gd-list-lh);
+  color: var(--gd-text-body);
+  margin-bottom: var(--space-2);
+}
+
+.wb-deliverables .code {
+  color: var(--gd-text-dark);
+  font-weight: var(--weight-semibold);
+}
+
+/* ===========================================================================
+ * NEXT BLOCK (workflow close-out / "what is next")
+ * ========================================================================= */
+.wb-next {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: var(--border-width-1) solid var(--border);
+}
+
+.wb-next h2,
+.wb-next h3 {
+  margin-top: 0;
+}
+
+/* ===========================================================================
+ * CONTROLS BAR — mirrors slides/chatgpt pattern
+ * ========================================================================= */
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--harness-bg);
+  color: var(--harness-fg);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--gd-menu-size);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: var(--border-width-1) solid var(--harness-border);
+  transition: transform 200ms ease;
+}
+
+.controls.hidden {
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.controls label {
+  font-size: var(--text-11);
+  color: var(--harness-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+}
+
+.controls select,
+.controls button {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-3);
+  border: var(--border-width-1) solid var(--harness-btn-border);
+  background: var(--harness-btn-bg);
+  color: var(--harness-fg);
+  font-size: var(--gd-menu-size);
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: var(--harness-btn-hover);
+}
+
+.controls .slide-counter {
+  font-size: var(--text-11);
+  color: var(--harness-muted);
+  margin-left: auto;
+}
+
+.controls .scene-info {
+  font-size: var(--text-11);
+  color: var(--harness-muted);
+}
+.callout-box.save     { border-left-color: var(--gd-callout-save); }
+.callout-box.info     { border-left-color: var(--gd-callout-info); }
+.callout-box.warning  { border-left-color: var(--gd-callout-warning); }
+.callout-box.congrats {
+  background: var(--gd-congrats-bg);
+  border-left-color: var(--gd-teal-accent);
+}
+
+/* Workbook deliverables block */
+.wb-deliverables h3 {
+  color: var(--heading-blue-text);
+  margin-bottom: var(--space-3);
+}
+.wb-deliverables ul {
+  list-style: disc;
+  padding-left: var(--space-6);
+}
+.wb-deliverables li {
+  margin-bottom: var(--space-2);
+  color: var(--gd-text-body);
+}
+.wb-deliverables .code {
+  font-family: var(--font-mono, monospace);
+  color: var(--gd-text-dark);
+}
+
+/* Next-section block */
+.wb-next {
+  border-top: var(--border-width-1) solid var(--border);
+  padding-top: var(--space-4);
+  margin-top: var(--space-6);
+}
+.wb-next h2,
+.wb-next h3 {
+  color: var(--heading-blue-text);
+}
+
+/* ============================================================================
+ * CAPTURE HARNESS — Controls bar
+ * ----------------------------------------------------------------------------
+ * Ported from chrome/chatgpt/chatgpt.css (which owns the canonical pattern).
+ * Pressing 's' adds the .hidden class; the !important below is load-bearing
+ * for Playwright captures — without it, the controls remain painted in the
+ * DOM even when the class is toggled, and screenshots leak them.
+ * Restored 2026-04-24 after edit-tool truncation wiped the rule block.
+ * ============================================================================ */
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--gd-bg-cream);
+  color: var(--gd-text-body);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  border-top: var(--border-width-1) solid var(--border);
+}
+.controls.hidden { display: none !important; }
+
+.controls label {
+  font-weight: var(--weight-semibold);
+  margin-right: var(--space-2);
+}
+
+.controls select,
+.controls button {
+  background: var(--gd-bg-white);
+  color: var(--gd-text-dark);
+  border: var(--border-width-1) solid var(--border);
+  border-radius: var(--radius-6, 6px);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.controls select:hover,
+.controls button:hover {
+  background: var(--gd-menu-hover-bg);
+}
+
+.controls .slide-counter {
+  margin-left: auto;
+  font-weight: var(--weight-semibold);
+}
+
+.controls .scene-info {
+  font-size: var(--text-2xs);
+  color: var(--gd-text-muted);
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "wf5-concept-stacking",
+    "workflow": "WF05",
+    "label": "WF5 — Broader Stacking Vision",
+    "layout": "concept-overlay",
+    "title": "Every template from WF3, every artifact from WF1 and WF2—they all become knowledge your assistant can draw on. This is how single-purpose tools become systems.",
+    "subtitle": "Capability Stacking"
+  },
+  {
+    "id": "wf5-concept-continuity",
+    "workflow": "WF05",
+    "label": "WF5 — Multi-Context Continuity",
+    "layout": "concept-overlay",
+    "title": "One assistant, many threads. Each conversation is a different work stream—resume optimization, job evaluation, offer comparison—all drawing from the same knowledge base.",
+    "subtitle": "Orchestration"
+  },
+  {
+    "id": "wf5-concept-results",
+    "workflow": "WF05",
+    "label": "WF5 — Results and Documentation",
+    "layout": "concept-overlay",
+    "title": "WF_5a: Tailored application materials. WF_5b: Multi-job evaluation matrix. WF_5c: Offer comparison framework. These are your deliverables—grounded in your perspective, produced through orchestration.",
+    "subtitle": "Deliverables"
+  },
+  {
+    "id": "wf5-concept-wrapup",
+    "workflow": "WF05",
+    "label": "WF5 — From Tool to System",
+    "layout": "concept-overlay",
+    "title": "You started with a blank chat window. Now you have an orchestrated system that knows your priorities, holds your context, and compounds in value with every interaction. That's the Rule of 100.",
+    "subtitle": "Course Complete"
+  }
+]

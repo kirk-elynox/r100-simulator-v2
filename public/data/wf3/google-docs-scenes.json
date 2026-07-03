@@ -1,0 +1,823 @@
+[
+  {
+    "id": "wf3-goal",
+    "layout": "doc",
+    "header": {
+      "title": "Establishing Your Toolbox",
+      "breadcrumb": "Module 3 / Establishing Your Toolbox / 3.1 Workflow Goal",
+      "badge": {
+        "text": "Workflow Goal",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "🎬 How This Module Relates to the Video",
+        "body": "The course video demonstrates key principles in a condensed format. This workbook module is your comprehensive, hands-on exercise — it includes additional prompts, structured phases, and documentation steps that go beyond what the video covers. Follow the workbook for the complete learning experience; use the video as a demonstration of the core concepts in action."
+      },
+      {
+        "type": "text",
+        "heading": "3.1 Workflow Goal"
+      },
+      {
+        "type": "text",
+        "heading": "Introduction",
+        "headingLevel": 4
+      },
+      {
+        "type": "h4-text",
+        "heading": "Objective",
+        "text": "Your job search is about to get exponentially more efficient. In this workflow, you will develop a set of reusable AI tools that transform your job search from a series of disconnected, one-off efforts into a systematic, scalable process. You will focus on creating a comprehensive \"schematic\" for building a reusable resume tailoring tool — a living system that learns from your feedback and delivers long-term utility and personal value.\n\nBy combining the fundamental principles of effective AI collaboration — extraction, structure, exploration, and orchestration — you will build your first professional-grade AI tool. This is not just about generating a resume. It is about creating a repeatable process that works, adapts, and evolves as you discover what resonates with employers."
+      },
+      {
+        "type": "text",
+        "heading": "The Concept: Four Essential Tools for Effective AI Partnership",
+        "headingLevel": 3,
+        "text": "To build powerful, reusable tools with AI, you need to master four interconnected capabilities:\n\n**Extract:** The ability to pull targeted, relevant information from large volumes of unstructured data — resumes, cover letters, job descriptions, industry research, and more. Extraction is about mining for signal in the noise.\n\n**Structure:** The discipline of designing scaffolds, templates, and frameworks that organize extracted information in ways that AI can work with effectively. Structure transforms raw material into usable building blocks.\n\n**Explore:** The practice of uncovering new knowledge, generating fresh insights, and identifying gaps in what you know. Exploration helps you see your qualifications, experience, and goals from new angles.\n\n**Orchestrate:** The art of deconstructing complex tasks into manageable steps, chaining multiple AI-assisted processes together, and automating workflows so they run smoothly without constant manual intervention."
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "Design and initialize a structured AI collaboration focused on a specific professional tool"
+          },
+          {
+            "text": "Extract targeted knowledge from your background materials using iterative questioning"
+          },
+          {
+            "text": "Structure information into reusable templates and scaffolds"
+          },
+          {
+            "text": "Develop an orchestration process that chains multiple steps into a coherent workflow"
+          },
+          {
+            "text": "Test your tool against diverse scenarios and iterate based on results"
+          },
+          {
+            "text": "Document your AI tool in a way that makes it reproducible and shareable"
+          }
+        ],
+        "heading": "Learning Outcomes"
+      }
+    ],
+    "label": "WF3 — Workflow Goal",
+    "workflow": "WF03"
+  },
+  {
+    "id": "wf3-prework",
+    "layout": "doc",
+    "header": {
+      "title": "Establishing Your Toolbox",
+      "breadcrumb": "Module 3 / Establishing Your Toolbox / 3.2 Workflow Prework",
+      "badge": {
+        "text": "Prework",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "3.2 Workflow Prework"
+      },
+      {
+        "type": "text",
+        "heading": "Prerequisites",
+        "headingLevel": 3,
+        "text": "Before beginning this workflow, you must have completed:"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "the fundamentals of how to work effectively with your LLM",
+        "label": "Workflow 1: Foundations of AI Collaboration"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "the mental models and expectations that unlock AI partnership success",
+        "label": "Workflow 2: The Mindset Shift"
+      },
+      {
+        "type": "text",
+        "text": "These foundational workflows give you the collaborative mindset and practical techniques that make this workflow effective."
+      },
+      {
+        "type": "text",
+        "heading": "Materials You Will Need",
+        "headingLevel": 3,
+        "text": "Gather the following materials before starting:"
+      },
+      {
+        "type": "text",
+        "heading": "Personal Materials",
+        "headingLevel": 4,
+        "text": "Save these in a document or folder you can reference:\n\n- Your complete resume (or draft)\n- Your career history and key accomplishments\n- Your educational background\n- Any cover letters you have written previously\n- References or professional contacts you are comfortable with"
+      },
+      {
+        "type": "text",
+        "heading": "Reference Materials",
+        "headingLevel": 4,
+        "text": "Search, gather, or reference existing knowledge:\n\n- Job search best practices and industry standards\n- Resume writing guidelines and recommendations\n- Examples of resumes in your target field\n- Information about roles or companies you are interested in"
+      },
+      {
+        "type": "text",
+        "heading": "Template Materials",
+        "headingLevel": 4,
+        "text": "Create simple versions or reference examples:\n\n- A basic resume template (format you prefer)\n- A cover letter template or framework"
+      },
+      {
+        "type": "text",
+        "heading": "Setting Up Your Workspace",
+        "headingLevel": 3,
+        "text": "Before you begin, create a dedicated space for your WF3 work:"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "in your workspace or note-taking system",
+        "label": "Create a new folder or document section labeled \"WF3 Workbook\""
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "which you will save in results tabs WF_3a through WF_3d as you complete each phase",
+        "label": "Prepare to capture four key deliverables"
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "so you can reference them quickly",
+        "label": "Keep your gathered materials nearby"
+      }
+    ],
+    "label": "WF3 — Workflow Prework",
+    "workflow": "WF03"
+  },
+  {
+    "id": "wf3-phase-a",
+    "layout": "doc",
+    "header": {
+      "title": "Establishing Your Toolbox",
+      "breadcrumb": "Module 3 / Establishing Your Toolbox / Phase A",
+      "badge": {
+        "text": "Phase A",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase A — Initialize and Explore Your AI Collaboration",
+        "headingLevel": 3
+      },
+      {
+        "type": "text",
+        "heading": "Step 1: Initialize Your AI Collaboration",
+        "headingLevel": 4,
+        "text": "You are about to start a collaboration with your LLM that will span multiple sessions and generate multiple outputs. Your first step is to establish clear expectations and articulate what you are building together."
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 1 of 8",
+        "info": "Copy this prompt into a new conversation with your LLM. Replace the italicized text with your own phrasing if you prefer — the essence is what matters. Paste in or reference your personal resume, career history, and any materials you have gathered. Wait for your LLM to acknowledge its role and confirm it has reviewed your materials.",
+        "text": "~ NEW THREAD ~\nLet's think step by step. Take on the role of a career coach. Your task is to collaborate with me using an iterative and recursive approach to assist with developing materials to support my job hunt as I evaluate and respond to new job opportunities. When beginning our collaboration, you must first carefully review and consider all of the provided materials to inform any response that you provide to me. Please acknowledge the task and your role in it, and then we will begin our collaboration."
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Before pasting materials, create a brief summary of your target role or the type of position you are seeking. This helps your LLM calibrate its understanding of your context.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "info",
+        "text": "you create a shared understanding. Your LLM will use this context throughout your collaboration to generate more relevant, personalized outputs.",
+        "label": "By explicitly establishing your LLM's role and asking it to review your materials,"
+      },
+      {
+        "type": "text",
+        "heading": "Source Gathering",
+        "headingLevel": 4,
+        "text": "Now that your LLM understands your context, it is time to identify what you do not know about your own qualifications and how they map to employer needs. This exploration phase surfaces blind spots and gaps."
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 2 of 8",
+        "info": "Fill in {target industry or role type} with your actual target (e.g., \"product management\", \"marketing leadership\", \"data science\"). Send this prompt in the same conversation. Review the research questions your LLM generates.",
+        "text": "~ CONTINUE THREAD ~\n\nPlease consider the provided material, then draft a set of questions that are informed by the material and my job search in the {target industry or role type}.\n\nThe questions should help me understand:\n- Gaps in what I know about how my skills translate to this field\n- Blind spots in how I communicate my experience\n- Overlooked accomplishments or strengths I could highlight\n- Missing information about my background that employers might ask about"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_3a",
+        "label": "Save your results."
+      },
+      {
+        "type": "marker",
+        "kind": "warn",
+        "text": "These questions are tools for discovery. Do not worry if you cannot answer all of them — that is the point. Unanswered questions reveal gaps that might matter.",
+        "label": "REMEMBER:"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Take 5 minutes to answer 2–3 of the most uncomfortable or difficult questions. These often reveal your strongest differentiators.",
+        "label": "TRY THIS:"
+      }
+    ],
+    "label": "WF3 — Phase A: Initialize and Explore",
+    "workflow": "WF03"
+  },
+  {
+    "id": "wf3-phase-b",
+    "layout": "doc",
+    "header": {
+      "title": "Establishing Your Toolbox",
+      "breadcrumb": "Module 3 / Establishing Your Toolbox / Phase B",
+      "badge": {
+        "text": "Phase B",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase B — Extract and Process Information",
+        "headingLevel": 3
+      },
+      {
+        "type": "text",
+        "heading": "Evaluation",
+        "headingLevel": 4,
+        "text": "You now have a set of research questions. Use them as a lens to examine your background materials more deeply. Your LLM will take on the role of research analyst, interrogating your materials systematically."
+      },
+      {
+        "type": "text",
+        "heading": "Step 3: Process Information to Extract Knowledge",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 3 of 8",
+        "info": "Paste the research questions you received in Step 2. Let your LLM analyze your materials systematically. Review the extracted knowledge for completeness and accuracy. Identify any surprising insights or overlooked strengths.",
+        "text": "~ CONTINUE THREAD ~\n\nPlease take on the role of a research analyst. Your task is to interrogate the provided information using a set of questions that I have provided and to extract and compile a comprehensive and nuanced set of knowledge that has been exclusively informed by the information that I have provided. If the information provided does not answer one or more of the questions, then leave the question unanswered.\n\nHere are the research questions:\n{Paste the questions from WF_3a}"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_3b",
+        "label": "Save your results."
+      },
+      {
+        "type": "marker",
+        "kind": "info",
+        "text": "It is what you will draw from when tailoring documents for specific roles.",
+        "label": "The extracted knowledge becomes your source of truth for the resume tool."
+      },
+      {
+        "type": "text",
+        "heading": "Source Stacking",
+        "headingLevel": 4,
+        "text": "Source stacking is the principle of layering authoritative external sources on top of your personal context to produce richer, more grounded outputs. Each source adds a dimension that your AI collaborator can reference when refining its work."
+      },
+      {
+        "type": "card-grid",
+        "columns": 3,
+        "cards": [
+          {
+            "title": "Layer 1: Personal Context",
+            "body": "Your perspective brief, career history, values, and goals — the foundation that makes every output personal.",
+            "accent": false
+          },
+          {
+            "title": "Layer 2: External Sources",
+            "body": "Industry guides, blog posts, books, transcripts, case studies — perspectives that challenge and inform your thinking.",
+            "accent": false
+          },
+          {
+            "title": "Layer 3: Synthesized Output",
+            "body": "Your AI collaborator integrates all layers into a refined scaffold that reflects multiple lenses, not just one perspective.",
+            "accent": true
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "Remember:",
+        "body": "Each source you stack does not dilute the template — it clarifies it. You are building a more informed, more considered structure by seeing it through multiple lenses."
+      },
+      {
+        "type": "text",
+        "heading": "Step 4: Design the Orchestration Process",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 4 of 8",
+        "info": "Send this prompt and let your LLM outline the workflow. Review the orchestration process it suggests. Take notes on which steps resonate and which might need adjustment. Pay attention to decision points and quality checks.",
+        "text": "~ CONTINUE THREAD ~\n\nI am documenting a workflow for personal resume tailoring. Please help me design the orchestration process, outlining the steps from initial information gathering to final resume production. Consider:\n- How I will prepare my source materials\n- How I will analyze a specific job posting\n- How I will match my qualifications to the role\n- How I will structure and tailor my resume\n- How I will review and refine the output"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_3c",
+        "label": "Save your results."
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Walk through the orchestration process your LLM suggests with a real job posting. Note where it works smoothly and where you have questions.",
+        "label": "TRY THIS:"
+      }
+    ],
+    "label": "WF3 — Phase B: Extract and Process",
+    "workflow": "WF03"
+  },
+  {
+    "id": "wf3-phase-c",
+    "layout": "doc",
+    "header": {
+      "title": "Establishing Your Toolbox",
+      "breadcrumb": "Module 3 / Establishing Your Toolbox / Phase C",
+      "badge": {
+        "text": "Phase C",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase C — Build Your Toolbox",
+        "headingLevel": 3
+      },
+      {
+        "type": "text",
+        "heading": "Scaffold vs. Output",
+        "headingLevel": 4,
+        "text": "A scaffold is the structural framework that guides your tool's behavior. An output is what the tool produces. Understanding the difference is critical — you are building the scaffold here, not generating final outputs."
+      },
+      {
+        "type": "text",
+        "heading": "Step 5: Create Scaffolds and Templates",
+        "headingLevel": 4
+      },
+      {
+        "type": "text",
+        "heading": "Template Anatomy",
+        "headingLevel": 4,
+        "text": "Your orchestration process outlines what you need to do. Now you will create the templates and scaffolds that make each step repeatable and consistent.\n\nYou may start a new thread here to focus on design and structure. Ask your LLM to help you create templates for:\n- Resume Template — A base structure with sections and formatting for your target field\n- Tailoring Checklist — A list of specific adjustments to make for each role (keywords, emphasis, formatting)\n- Job Analysis Framework — A template for analyzing a job posting and extracting key requirements\n- Quality Rubric — Criteria for evaluating whether your tailored resume matches the role effectively"
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 5 of 8",
+        "info": "Request the resume template. Review it for alignment with your career goals and target roles. Customize it with your actual information. Save a clean version you can use repeatedly.",
+        "text": "~ NEW THREAD ~ (optional: you can continue the previous thread if you prefer)\nUsing the orchestration process we developed, create a professional resume template that works for {my target field}. The template should include:\n- Clear sections (summary, experience, skills, education)\n- Formatting guidance\n- Placeholder text showing the style and tone I should use\n- Examples of strong bullet points from my extracted knowledge"
+      },
+      {
+        "type": "text",
+        "heading": "Step 6: Identify Necessary Inputs",
+        "headingLevel": 4,
+        "text": "For your tool to work reliably, you need to know exactly what information you will feed into it at each step. This step clarifies all the inputs your orchestration process requires."
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 6 of 8",
+        "info": "Review your LLM's input checklist carefully. Gather or prepare all required inputs now. Store them in an organized location you can reference. Mark which inputs you already have and which you need to develop.",
+        "text": "~ CONTINUE THREAD ~\n\nBased on our orchestration process, please create a comprehensive checklist of all the inputs I will need to provide at each stage. For each input, note:\n- What information is required\n- Why it matters to the process\n- How I should format or prepare it\n- Which step in the workflow it is used for"
+      },
+      {
+        "type": "marker",
+        "kind": "info",
+        "text": "It also makes your tool reproducible — you know exactly what you need to feed in to get reliable results.",
+        "label": "A clear input checklist prevents rework later."
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "(or update the tab with the complete input requirements).",
+        "label": "Save this checklist as part of WF_3c"
+      },
+      {
+        "type": "text",
+        "heading": "Template Closure",
+        "headingLevel": 4,
+        "text": "Before moving to testing, confirm that your template and input checklist are complete, consistent, and ready for real-world use."
+      },
+      {
+        "type": "text",
+        "heading": "Step 7: Develop Your Complete Orchestration Process",
+        "headingLevel": 4
+      },
+      {
+        "type": "text",
+        "heading": "Documentation",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 7 of 8",
+        "info": "Review the final orchestration process your LLM provides. Test it mentally with a real job posting — do the steps make sense? Refine any steps that feel unclear or missing. Save this as your master workflow.",
+        "text": "~ CONTINUE THREAD ~\n\nPlease create a final, complete orchestration process for my resume tailoring tool. Format it as a step-by-step workflow that includes:\n- Clear, numbered steps\n- Input requirements for each step (from our input checklist)\n- The specific prompt or action for each step\n- Decision points and quality checks\n- How long each step should take\n- Success criteria for each step\n\nThis should be detailed enough that I could hand it to someone else and they could follow it."
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "→ Results tab: WF_3d",
+        "label": "Save your results."
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Create a simple one-page visual flowchart of your orchestration process. Use shapes and arrows to show the flow. This becomes your quick reference guide.",
+        "label": "TRY THIS:"
+      }
+    ],
+    "label": "WF3 — Phase C: Build Your Toolbox",
+    "workflow": "WF03"
+  },
+  {
+    "id": "wf3-phase-d",
+    "layout": "doc",
+    "header": {
+      "title": "Establishing Your Toolbox",
+      "breadcrumb": "Module 3 / Establishing Your Toolbox / Phase D",
+      "badge": {
+        "text": "Phase D",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Phase D — Test and Refine Your Tool",
+        "headingLevel": 3
+      },
+      {
+        "type": "text",
+        "heading": "Iteration Continued",
+        "headingLevel": 4,
+        "text": "Even after your tool is built, revisiting earlier steps for clarification is not backtracking — it is refining."
+      },
+      {
+        "type": "text",
+        "heading": "Step 8: Test and Refine Your Tool",
+        "headingLevel": 4
+      },
+      {
+        "type": "prompt-box",
+        "heading": "Prompt: Part 8 of 8",
+        "info": "Select 3–5 job postings that represent different target roles or companies. For each posting, walk through your orchestration process step-by-step with your LLM. After each test, note what worked well, what felt clunky or unclear, what you would change next time, and how well the tailored resume matched the role.",
+        "text": "~ NEW THREAD ~\n\nI am testing my resume tailoring tool using the orchestration process we have developed. I will apply it to {job posting 1}, and I would like you to walk through each step with me, noting where the process works smoothly and where we might need adjustments.\n\nHere is the job posting:\n{Paste the job posting text}"
+      },
+      {
+        "type": "text",
+        "text": "For each job posting, evaluate:"
+      },
+      {
+        "type": "compact",
+        "label": "☐ Clarity:",
+        "text": "Did you understand what the role requires?"
+      },
+      {
+        "type": "compact",
+        "label": "☐ Relevance:",
+        "text": "Did your tailored resume highlight the most important qualifications?"
+      },
+      {
+        "type": "compact",
+        "label": "☐ Fit:",
+        "text": "If this were your actual resume, would you feel confident submitting it?"
+      },
+      {
+        "type": "compact",
+        "label": "☐ Efficiency:",
+        "text": "Did the process take a reasonable amount of time?"
+      },
+      {
+        "type": "compact",
+        "label": "☐ Consistency:",
+        "text": "Would you get similar results if you ran it again?"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "After testing with 3 postings, stop and refine your orchestration process based on what you have learned. Then test with 2 more to validate your refinements.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "warn",
+        "text": "Iteration is part of the process. Your tool will not be perfect the first time, and that is fine. Each test makes it stronger.",
+        "label": "REMEMBER:"
+      },
+      {
+        "type": "marker",
+        "kind": "save",
+        "text": "as part of WF_3d.",
+        "label": "Document your testing results and refinements"
+      },
+      {
+        "type": "text",
+        "heading": "ESEO Connection",
+        "headingLevel": 4,
+        "text": "ESEO is an application heuristic — a shortlist of idea starters for how you can apply generative AI in any knowledge workflow. When you are wondering \"what could AI do for me here?\", run through the four actions:"
+      },
+      {
+        "type": "card-grid",
+        "columns": 4,
+        "cards": [
+          {
+            "title": "Extract",
+            "body": "Pull targeted information from unstructured data",
+            "accent": false
+          },
+          {
+            "title": "Structure",
+            "body": "Organize extracted material into scaffolds, templates, and frameworks",
+            "accent": false
+          },
+          {
+            "title": "Explore",
+            "body": "Uncover new knowledge, generate insights, and identify gaps",
+            "accent": false
+          },
+          {
+            "title": "Orchestrate",
+            "body": "Chain multiple AI-assisted steps into a coherent, repeatable workflow",
+            "accent": true
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "What You Exercised in WF3",
+        "headingLevel": 4,
+        "text": "You have exercised all four in this module. In WF1, you extracted your perspective. In WF2, you structured your strategy. Here in WF3, you explored tool design and orchestrated a complete workflow. Recognizing this pattern is the meta-skill that makes all future tools faster to build."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "ESEO vs. S.E.A.",
+        "body": "ESEO tells you what to try with AI. S.E.A. (Streamline, Enrich, Accelerate), introduced in WF2, tells you whether it worked. Use ESEO when planning or brainstorming AI collaboration. Use S.E.A. when evaluating whether your AI partnership is delivering real value. They are complementary: ESEO drives the work, S.E.A. measures the impact."
+      }
+    ],
+    "label": "WF3 — Phase D: Test and Refine",
+    "workflow": "WF03"
+  },
+  {
+    "id": "wf3-outcomes",
+    "layout": "doc",
+    "header": {
+      "title": "Establishing Your Toolbox",
+      "breadcrumb": "Module 3 / Establishing Your Toolbox / 3.4 Workflow Outcomes",
+      "badge": {
+        "text": "Complete",
+        "color": "teal"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "3.4 Workflow Outcomes"
+      },
+      {
+        "type": "deliverables",
+        "heading": "Workflow Deliverables",
+        "documents": [
+          {
+            "code": "WF_3a",
+            "name": "Research Questions",
+            "purpose": "A set of targeted questions that helped you explore blind spots and gaps in how you present yourself"
+          },
+          {
+            "code": "WF_3b",
+            "name": "Extracted Knowledge",
+            "purpose": "A comprehensive compilation of your qualifications, accomplishments, and strengths, extracted and organized from your background materials"
+          },
+          {
+            "code": "WF_3c",
+            "name": "Orchestration Process",
+            "purpose": "A complete, step-by-step workflow (including input requirements) that defines how your resume tool works"
+          },
+          {
+            "code": "WF_3d",
+            "name": "Toolbox Output",
+            "purpose": "Your polished resume template, supporting materials, testing results, and refinement notes"
+          }
+        ]
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "text": "You demonstrated the ability to initialize and structure an AI collaboration focused on a specific professional objective."
+          },
+          {
+            "text": "You extracted targeted, actionable knowledge from your background materials using iterative questioning and research analysis."
+          },
+          {
+            "text": "You designed and documented a complete orchestration process that chains multiple steps into a coherent workflow."
+          },
+          {
+            "text": "You created reusable templates and scaffolds that support consistent, high-quality outputs."
+          },
+          {
+            "text": "You tested your tool against real-world scenarios and validated its effectiveness."
+          },
+          {
+            "text": "You developed muscle memory in the Extract, Structure, Explore, Orchestrate cycle that powers all reusable AI tools."
+          }
+        ],
+        "heading": "Learning Outcomes"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Extend your tool to cover letter generation — use the same orchestration process to build a second tool for creating tailored cover letters. Notice what is different and what is the same.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Build an email outreach template — design a workflow for personalizing outreach emails to hiring managers, using the same extraction and orchestration principles.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Document your tool for others — write a brief guide to your resume tool that someone else could follow. Notice what assumptions you made that were not obvious.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Create a variation — develop a parallel version of your tool for a different type of role.",
+        "label": "TRY THIS:"
+      },
+      {
+        "type": "marker",
+        "kind": "complete",
+        "text": "You have just built your first professional-grade AI tool. You have moved beyond one-off prompts and conversations — you have created a repeatable system that combines extraction, structure, exploration, and orchestration into a cohesive whole. This is the mindset and skillset that power all reusable AI tools.",
+        "label": "CONGRATULATIONS:"
+      },
+      {
+        "type": "next",
+        "heading": "What Is Next",
+        "content": "In Workflow 4: Codifying Personal AI Tools, you will codify your tools into reusable, shareable systems that embody your job hunt strategy."
+      }
+    ],
+    "label": "WF3 — Workflow Outcomes",
+    "workflow": "WF03"
+  },
+  {
+    "id": "wf3-doc-template",
+    "layout": "doc",
+    "workflow": "WF03",
+    "label": "WF_3d: Resume Template (Generic Scaffold)",
+    "header": {
+      "title": "Resume Template — Generic Scaffold",
+      "breadcrumb": "Module 3 / WF_3d Resume Template",
+      "badge": {
+        "text": "WF_3d",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "text": "You're right — here's the structural scaffold without any filled-in content. This is the framework you'll use when you sit down to build your actual resume."
+      },
+      {
+        "type": "h4-text",
+        "heading": "[Your Full Name]",
+        "text": "[Current Title] → [Target Title/Direction]   ·   [email] | [LinkedIn URL] | [phone]"
+      },
+      {
+        "type": "text",
+        "heading": "Professional Summary",
+        "headingLevel": 3,
+        "text": "3–4 sentences. Answer: Who are you? What do you do differently? What kind of role are you looking for?"
+      },
+      {
+        "type": "compact",
+        "label": "Sentence 1.",
+        "text": "Your professional identity and primary skill — what you do at a strategic level."
+      },
+      {
+        "type": "compact",
+        "label": "Sentence 2.",
+        "text": "Your differentiator — what makes your approach unique or valuable."
+      },
+      {
+        "type": "compact",
+        "label": "Sentence 3.",
+        "text": "What you’re looking for — the type of role, company, and function that fits you."
+      },
+      {
+        "type": "compact",
+        "label": "Sentence 4 (optional).",
+        "text": "A specific credibility marker or scope indicator."
+      },
+      {
+        "type": "text",
+        "heading": "Key Achievements",
+        "headingLevel": 3,
+        "text": "3–4 bullets. Front-load your strongest proof points. Each should be quantifiable."
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "label": "Achievement 1.",
+            "text": "Action verb + what you built/designed + measurable business impact."
+          },
+          {
+            "label": "Achievement 2.",
+            "text": "Action verb + what you built/designed + measurable business impact."
+          },
+          {
+            "label": "Achievement 3.",
+            "text": "Action verb + what you built/designed + measurable business impact."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "heading": "Core Competencies",
+        "headingLevel": 3,
+        "text": "Organize by the dimensions most relevant to your target roles."
+      },
+      {
+        "type": "compact",
+        "label": "Category 1 (e.g., Strategic):",
+        "text": "[Skill], [Skill], [Skill], [Skill]"
+      },
+      {
+        "type": "compact",
+        "label": "Category 2 (e.g., Technical):",
+        "text": "[Skill], [Skill], [Skill], [Skill]"
+      },
+      {
+        "type": "compact",
+        "label": "Category 3 (e.g., Operational):",
+        "text": "[Skill], [Skill], [Skill], [Skill]"
+      },
+      {
+        "type": "text",
+        "heading": "Experience",
+        "headingLevel": 3,
+        "text": "[Job Title] | [Company Name] | [Start Year]–[End Year or Present]   ·   1-sentence role summary: scope and ownership."
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "label": "Bullet 1.",
+            "text": "CAR format — Challenge/context + Action you took + Result with metrics."
+          },
+          {
+            "label": "Bullet 2.",
+            "text": "CAR format — emphasize architecture/design over execution."
+          },
+          {
+            "label": "Bullet 3.",
+            "text": "CAR format — show cross-functional or technical collaboration."
+          }
+        ]
+      },
+      {
+        "type": "h4-text",
+        "heading": "Education",
+        "text": "[Degree, Major] | [University] | [Year]"
+      },
+      {
+        "type": "text",
+        "heading": "Frameworks and Tools You’ve Built",
+        "headingLevel": 3,
+        "text": "List anything you've designed that others now use — process maps, evaluation rubrics, narrative frameworks, etc."
+      },
+      {
+        "type": "outcomes",
+        "items": [
+          {
+            "label": "[Framework Name].",
+            "text": "1-sentence description of what it does and who uses it."
+          },
+          {
+            "label": "[Framework Name].",
+            "text": "1-sentence description."
+          }
+        ]
+      },
+      {
+        "type": "callout",
+        "variant": "save",
+        "title": "Saved to your toolbox.",
+        "body": "This template is now a durable artifact — reusable across future job applications and adaptable for similar tasks."
+      }
+    ]
+  }
+]

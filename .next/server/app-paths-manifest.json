@@ -1,0 +1,4 @@
+{
+  "/page": "app/page.js",
+  "/simulator/[chrome]/[wf]/page": "app/simulator/[chrome]/[wf]/page.js"
+}

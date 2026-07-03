@@ -1,0 +1,18 @@
+[
+  {
+    "id": "wf1-concept-richness",
+    "workflow": "WF01",
+    "label": "WF1 — Response Richness",
+    "layout": "concept-overlay",
+    "title": "Your AI collaborator's responses are going to be richer and more elaborate than you might expect. Don't let the formatting overwhelm you—your job is to evaluate the substance, not the style.",
+    "subtitle": "Understanding AI Output"
+  },
+  {
+    "id": "wf1-concept-interview",
+    "workflow": "WF01",
+    "label": "WF1 — Self-Interview Phase",
+    "layout": "concept-overlay",
+    "title": "Sarah is going to take these questions and interview herself. She's going to sit down, read each question, and write or voice her honest answers. This takes time—maybe 45 minutes, maybe an hour—and it should.",
+    "subtitle": "Self-Interview Phase"
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "id": "wf0-slide-01",
+    "workflow": "WF00",
+    "label": "WF0.1 — Title Card",
+    "layout": "title",
+    "title": "The Rule of 100",
+    "subtitle": "Building Skills with Generative AI",
+    "body": {
+      "label": "LINKEDIN LEARNING COURSE",
+      "moduleLabel": "Getting Started"
+    }
+  },
+  {
+    "id": "wf0-slide-02",
+    "workflow": "WF00",
+    "label": "WF0.2 — Meet Sarah Chen",
+    "layout": "persona",
+    "title": "Sarah Chen",
+    "subtitle": "Senior Industry Marketing Manager — AI Marketing",
+    "body": {
+      "initials": "SC",
+      "cards": [
+        { "label": "ROLE",        "text": "Senior Industry Marketing Manager" },
+        { "label": "INDUSTRY",    "text": "Technology / AI Marketing" },
+        { "label": "PERSPECTIVE", "text": "Industry marketing strategy — translating complex AI into credible market narratives" },
+        { "label": "GOAL",        "text": "Redesign job hunt strategy and materials creation with AI collaboration" }
+      ],
+      "callout": "Your scenario will be different. Sarah's role, industry, and goals are the defaults for this sandbox. You'll bring your own context to the workflows and make them your own."
+    }
+  },
+  {
+    "id": "wf0-slide-03",
+    "workflow": "WF00",
+    "label": "WF0.3 — 100-Minute Challenge",
+    "layout": "branded-graphic",
+    "body": {
+      "numbers": [
+        { "value": "100", "label": "Minutes In" },
+        { "value": "100", "label": "Minutes Back" }
+      ],
+      "levels": [
+        { "label": "LEVEL 1", "title": "Time Savings",    "text": "Build reusable tools, documented processes, and prompts you can return to again and again. Each use saves time you would have spent starting from scratch." },
+        { "label": "LEVEL 2", "title": "Personal Impact", "text": "Reinvest reclaimed time in what matters most — your career, relationships, health, or whatever you're building. The return compounds over time." }
+      ],
+      "footer": "From 100 minutes per month, to 100 minutes per week, to 100 minutes per day."
+    }
+  },
+  {
+    "id": "wf0-slide-06",
+    "workflow": "WF00",
+    "label": "WF0.6 — Workbook Navigation Markers",
+    "layout": "marker-guide",
+    "title": "Workbook Navigation Markers",
+    "markers": [
+      { "icon": "checkbox",  "title": "Step to Complete",      "desc": "A step to do — follow the instruction before moving on." },
+      { "icon": "clipboard", "title": "Prompt to Copy",        "desc": "Copy and paste this prompt into your AI tool." },
+      { "icon": "save",      "title": "Save Point",            "desc": "Capture your output — save it to a document or the results tab." },
+      { "icon": "star",      "title": "Try This (Extension)",  "desc": "Optional extension to deepen your learning." },
+      { "icon": "info",      "title": "Helpful Context",       "desc": "Background information on why a step matters." },
+      { "icon": "warning",   "title": "Important Reminder",    "desc": "Don't skip this — common mistakes or critical notes." }
+    ]
+  },
+  {
+    "id": "wf0-slide-07",
+    "workflow": "WF00",
+    "label": "WF0.7 — Closing: Module 1",
+    "layout": "closing",
+    "title": "Module 1: Learning to Communicate",
+    "subtitle": "Build your personal perspective brief — the foundation for everything that follows.",
+    "body": {
+      "label": "YOU'RE READY"
+    }
+  }
+]

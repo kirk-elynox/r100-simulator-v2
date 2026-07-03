@@ -1,0 +1,287 @@
+[
+  {
+    "id": "wf0-intro",
+    "layout": "doc",
+    "header": {
+      "title": "🎯 Getting Started",
+      "breadcrumb": "Getting Started / Introduction",
+      "badge": {
+        "text": "Orientation",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Welcome to the Rule of 100",
+        "text": "Over the next five workflows, you will build the skills, tools, and mindset to collaborate with AI in a way that delivers real, measurable value in your professional life. This orientation module is your starting point."
+      },
+      {
+        "type": "callout",
+        "variant": "tip",
+        "title": "The Promise",
+        "body": "If you invest 100 minutes working through these five workflows, you will get 100 minutes of your time back — and that return compounds. As you build reusable tools and processes, each use saves more time than the last. The Rule of 100 is not about getting it right once. It is about getting better through repetition until the process becomes second nature."
+      },
+      {
+        "type": "h4-text",
+        "heading": "Meet Sarah",
+        "text": "Throughout all five workflows, we follow a scenario built around Sarah Chen — a Senior Industry Marketing Manager in AI marketing who is looking for her next opportunity. Sarah's scenario is the sandbox. Her role, her industry, and her goals are the defaults. Your job is to make the workflows your own by substituting your own context wherever Sarah's appears."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "Sarah Chen — Course Scenario",
+        "body": "Role: Senior Industry Marketing Manager\nIndustry: AI Marketing\nPerspective: Industry marketing strategy\nWorkflow: Job hunt strategy and materials creation"
+      },
+      {
+        "type": "text",
+        "heading": "Two Tiers",
+        "headingLevel": 4,
+        "text": "Workflows 1–3 work with the ChatGPT free tier. Workflows 4–5 use the GPT Creator, which requires ChatGPT Plus ($20/month). You can work through the first three workflows before deciding whether to upgrade, or start with Plus for the complete end-to-end experience."
+      }
+    ],
+    "label": "WF0 — Getting Started",
+    "workflow": "WF00"
+  },
+  {
+    "id": "wf0-variables",
+    "layout": "doc",
+    "header": {
+      "title": "🎯 Getting Started",
+      "breadcrumb": "Getting Started / Chart Your Course",
+      "badge": {
+        "text": "Variables",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "Chart Your Course",
+        "text": "Before you begin the workflows, define four variables that will personalize every prompt in this workbook. Every AI collaboration exercise is designed to use these variables — so the output you get will be grounded in your context, not Sarah's."
+      },
+      {
+        "type": "marker",
+        "kind": "flag",
+        "text": "Fill in each row below. Sarah's defaults are shown as examples.",
+        "label": "Define your four variables now."
+      },
+      {
+        "type": "compact",
+        "label": "{your role as a knowledge worker}",
+        "text": "— Sarah's default: \"Senior Industry Marketing Manager\""
+      },
+      {
+        "type": "compact",
+        "label": "{the industry or domain you work in}",
+        "text": "— Sarah's default: \"AI Marketing\""
+      },
+      {
+        "type": "compact",
+        "label": "{the perspective through which you conduct your knowledge work}",
+        "text": "— Sarah's default: \"Industry marketing strategy\""
+      },
+      {
+        "type": "compact",
+        "label": "{the knowledge workflow you want to redesign}",
+        "text": "— Sarah's default: \"Job hunt strategy and materials creation\""
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "body": "You do not need to get these perfect right now. As you work through the modules, your variables may sharpen or shift. These are a starting point, not a contract. Return to this page and revise as you go."
+      },
+      {
+        "type": "marker",
+        "kind": "info",
+        "text": "Every prompt in this workbook includes placeholders like {your role} or {your industry}. When you fill in these variables, your AI collaborator receives context that is specific to you — not generic advice, but personalized analysis grounded in your actual situation.",
+        "label": "Why these four variables matter:"
+      },
+      {
+        "type": "marker",
+        "kind": "extend",
+        "text": "Write one sentence that connects all four variables: \"As a {role} in {industry}, I approach my work through the lens of {perspective} and I want to improve how I {workflow}.\" This becomes a useful shorthand you can paste into any collaboration.",
+        "label": "TRY THIS:"
+      }
+    ],
+    "label": "WF0 — Chart Your Course",
+    "workflow": "WF00"
+  },
+  {
+    "id": "wf0-roadmap",
+    "layout": "doc",
+    "header": {
+      "title": "🎯 Getting Started",
+      "breadcrumb": "Getting Started / The Five Workflows",
+      "badge": {
+        "text": "Roadmap",
+        "color": "purple"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "The Five Workflows",
+        "text": "Each workflow builds directly on the outputs of the one before it. Complete them in order. Each one sets up the next."
+      },
+      {
+        "type": "compact",
+        "label": "WF1 — The Interview:",
+        "text": "Learn to communicate your context to an AI collaborator. Build your personal perspective brief — the foundation for everything that follows. What you will build: WF_1c Personal Perspective Brief."
+      },
+      {
+        "type": "compact",
+        "label": "WF2 — The Mindset Shift:",
+        "text": "Apply the S.E.A. framework to your chosen workflow. Map what you know — and what you do not know — and decompose your process into AI-collaborative steps. What you will build: WF_2a–WF_2d Source Library, S.E.A. Analysis, Task Breakdown, Job Hunt Scaffold."
+      },
+      {
+        "type": "compact",
+        "label": "WF3 — Establishing Your Toolbox:",
+        "text": "Build a reusable AI tool from scratch using Extract, Structure, Explore, and Orchestrate. What you will build: WF_3a–WF_3d Research Questions, Extracted Knowledge, Orchestration Process, Toolbox Output."
+      },
+      {
+        "type": "compact",
+        "label": "WF4 — Codifying Personal AI Tools (Plus required):",
+        "text": "Configure a custom GPT or equivalent personal tool. Define its instructions, knowledge base, and conversation starters. What you will build: WF_4a GPT Configuration, WF_4b Validation Results."
+      },
+      {
+        "type": "compact",
+        "label": "WF5 — Orchestrating AI Collaboration (Plus required):",
+        "text": "Build a full AI Assistant with a structured knowledge base and master prompt. Apply the 10x10=100 principle to unlock compound productivity gains. What you will build: WF_5a Knowledge Base Index, WF_5b Assistant Output, WF_5c 100x Evaluation."
+      },
+      {
+        "type": "callout",
+        "variant": "warning",
+        "title": "⚠️ Important",
+        "body": "Do not skip workflows or complete them out of order. The outputs from each workflow are direct inputs to the next. WF3 uses outputs from WF1 and WF2. WF5 uses outputs from all four preceding workflows."
+      },
+      {
+        "type": "text",
+        "heading": "Key Definitions",
+        "headingLevel": 4
+      },
+      {
+        "type": "compact",
+        "label": "The Rule of 100:",
+        "text": "A principle for building expertise through deliberate, AI-augmented practice. Invest 100 minutes, reclaim 100 minutes. Repeat until the return compounds."
+      },
+      {
+        "type": "compact",
+        "label": "Context and Detail:",
+        "text": "The two ingredients that transform AI from a generic tool into a personalized collaborator. Context is the information your collaborator needs. Detail is why you want what you want."
+      },
+      {
+        "type": "compact",
+        "label": "S.E.A.:",
+        "text": "An evaluation heuristic. After integrating AI into a workflow, ask: Has this Streamlined my cognitive load? Has this Enriched my outcomes? Has this Accelerated my process? If \"no\" to any, revisit the collaboration."
+      },
+      {
+        "type": "compact",
+        "label": "ESEO:",
+        "text": "An application heuristic (introduced in WF3): Extract, Structure, Explore, Orchestrate. Use when planning what AI can do in a knowledge workflow. S.E.A. measures impact. ESEO drives the work."
+      }
+    ],
+    "label": "WF0 — The Five Workflows",
+    "workflow": "WF00"
+  },
+  {
+    "id": "wf0-guide",
+    "layout": "doc",
+    "header": {
+      "title": "🎯 Getting Started",
+      "breadcrumb": "Getting Started / How to Use the Workbook",
+      "badge": {
+        "text": "Guide",
+        "color": "teal"
+      }
+    },
+    "blocks": [
+      {
+        "type": "text",
+        "heading": "How to Use the Workbook",
+        "text": "Each module follows a consistent four-section pattern:"
+      },
+      {
+        "type": "compact",
+        "label": "X.1 Workflow Goal —",
+        "text": "What you will learn and why it matters."
+      },
+      {
+        "type": "compact",
+        "label": "X.2 Workflow Prework —",
+        "text": "What to gather and prepare before you begin."
+      },
+      {
+        "type": "compact",
+        "label": "X.3 Workflow Exercise —",
+        "text": "The hands-on, step-by-step activity with your AI collaborator."
+      },
+      {
+        "type": "compact",
+        "label": "X.4 Workflow Outcomes —",
+        "text": "What you produced, what you learned, and what comes next."
+      },
+      {
+        "type": "text",
+        "heading": "Workbook Markers",
+        "headingLevel": 3,
+        "text": "As you work through each module, you will see these markers:"
+      },
+      {
+        "type": "compact",
+        "label": "🚩 Step to Complete —",
+        "text": "An action you need to take."
+      },
+      {
+        "type": "compact",
+        "label": "🤖 Prompt to Copy —",
+        "text": "A prompt to paste into your AI tool. Fill in any {variables} before sending."
+      },
+      {
+        "type": "compact",
+        "label": "💾 Save Point —",
+        "text": "Capture your output to a results tab."
+      },
+      {
+        "type": "compact",
+        "label": "🚀 Try This —",
+        "text": "An optional stretch activity to deepen your learning."
+      },
+      {
+        "type": "compact",
+        "label": "ℹ️ Helpful Context —",
+        "text": "Background information to deepen understanding."
+      },
+      {
+        "type": "compact",
+        "label": "⚠️ Important Reminder —",
+        "text": "Something critical to keep in mind."
+      },
+      {
+        "type": "compact",
+        "label": "🏁 Workflow Complete —",
+        "text": "You have finished this workflow and are ready to proceed to the next."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "Results Tabs",
+        "body": "At the end of each module, you will find a Workflow Outcomes section listing the deliverables you produced (e.g., WF_1a, WF_1b, WF_1c). These are the outputs you save as you work through the exercise. Each deliverable is a reusable artifact — prompts, analyses, scaffolds, and tools that you will carry forward into later workflows."
+      },
+      {
+        "type": "callout",
+        "variant": "info",
+        "title": "About the Prompt Boxes",
+        "body": "Every prompt in the workbook is formatted in a blue-bordered box. Each prompt box includes:\n- The prompt number (e.g., \"Part 1 of 5\")\n- An instruction line explaining what to do\n- The prompt text itself, with {variables} in curly braces\n\nAlways fill in your variables before pasting. The quality of what you get back depends on the quality of what you put in."
+      },
+      {
+        "type": "marker",
+        "kind": "complete",
+        "text": "Open Module 1 — The Interview. In this first workflow, you will build your personal perspective brief — the foundation for everything that follows.",
+        "label": "You are ready."
+      }
+    ],
+    "label": "WF0 — How to Use the Workbook",
+    "workflow": "WF00"
+  }
+]

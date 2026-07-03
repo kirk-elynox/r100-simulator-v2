@@ -1,0 +1,34 @@
+[
+  {
+    "id": "wf4-concept-icon",
+    "workflow": "WF04",
+    "label": "WF4 — Generating an Icon",
+    "layout": "concept-overlay",
+    "title": "A professional icon gives your GPT visual identity. It signals that this is a deliberate tool, not a casual conversation.",
+    "subtitle": "GPT Configuration"
+  },
+  {
+    "id": "wf4-concept-structure",
+    "workflow": "WF04",
+    "label": "WF4 — Why This Structure Works",
+    "layout": "concept-overlay",
+    "title": "Every instruction in your GPT serves a purpose: role definition, process constraints, output format, and safety rails. Remove any one and the tool degrades.",
+    "subtitle": "Instruction Architecture"
+  },
+  {
+    "id": "wf4-concept-calibration",
+    "workflow": "WF04",
+    "label": "WF4 — The Calibration Principle",
+    "layout": "concept-overlay",
+    "title": "Don't accept 'good enough.' If the output format isn't right, go back to the instructions and fix it. Calibration is what turns a chatbot into a tool.",
+    "subtitle": "Calibration"
+  },
+  {
+    "id": "wf4-concept-validation",
+    "workflow": "WF04",
+    "label": "WF4 — Validation Checklist",
+    "layout": "concept-overlay",
+    "title": "Before you submit anything a GPT produces: verify facts, check tone, confirm structure, and have a human review it. The tool assists—you decide.",
+    "subtitle": "Human-in-the-Loop"
+  }
+]

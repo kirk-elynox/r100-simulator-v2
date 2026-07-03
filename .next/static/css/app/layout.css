@@ -1,0 +1,3544 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Inter","arguments":[{"subsets":["latin"],"variable":"--font-inter"}],"variableName":"inter"} ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/* cyrillic-ext */
+@font-face {
+  font-family: '__Inter_f367f3';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/ba9851c3c22cd980-s.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: '__Inter_f367f3';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/21350d82a1f187e9-s.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: '__Inter_f367f3';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/c5fe6dc8356a8c31-s.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: '__Inter_f367f3';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/19cfc7226ec3afaa-s.woff2) format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: '__Inter_f367f3';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/df0a9ae256c0569c-s.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: '__Inter_f367f3';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/8e9860b6e62d6359-s.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: '__Inter_f367f3';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/_next/static/media/e4af272ccee01ff0-s.p.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}@font-face {font-family: '__Inter_Fallback_f367f3';src: local("Arial");ascent-override: 90.49%;descent-override: 22.56%;line-gap-override: 0.00%;size-adjust: 107.06%
+}.__className_f367f3 {font-family: '__Inter_f367f3', '__Inter_Fallback_f367f3';font-style: normal
+}.__variable_f367f3 {--font-inter: '__Inter_f367f3', '__Inter_Fallback_f367f3'
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./styles/design-tokens.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+/*
+ * ============================================================================
+ * shared/simulator/lib/design-tokens.css
+ * ----------------------------------------------------------------------------
+ * Single source of truth for design tokens across the central simulator.
+ *
+ * GOVERNANCE AUTHORITY:
+ *   governance/02-content-authoring/design-system-visual.md v1.0 (canonical)
+ *   governance/central-simulator-architecture.md §3.1 + §10.1 (structural)
+ *
+ * INVARIANT (architecture spec §10.1 + Phase 6/7/8 rubrics):
+ *   Chrome modules (shared/simulator/chrome/*) must reference these tokens
+ *   via var(--token-name). Hex literals or px literals in chrome/* CSS
+ *   (other than as var() references) are a drift signal and a rubric
+ *   failure. Grep check:
+ *     grep -rE '#[0-9A-Fa-f]{6}|[0-9]+px' shared/simulator/chrome/ \
+ *       | grep -v 'var(' ⇒ must be empty
+ *
+ * RESOLUTION OF LITERAL DISAGREEMENTS:
+ *   Architecture spec §7.1 step 1: "Literals that disagree → governance wins."
+ *   - Ink: #0A0A0F (governance) supersedes #1a1a1a / #333 (workbook-frame).
+ *   - Paper: #F6F4F0 (governance, slide/workbook-page surround) is distinct
+ *     from Frame BG #f5f5f0 (governance, workbook-frame inner surround).
+ *     Both retained as separate tokens per governance §1.2.
+ *
+ * HEADING BLUE RECONCILIATION (corrected 2026-04-17):
+ *   An initial A1 pass omitted #4F81BD from the token set on the
+ *   assumption that it was legacy-only drift. This was wrong.
+ *   design-system-visual.md §7.1 (table at line 263) explicitly assigns
+ *   #4F81BD to all four workbook heading levels (H1–H4) and declares it
+ *   "the single most recognizable visual cue in the workbooks." It is
+ *   now tokenized as --heading-blue and is governance-canonical.
+ *   Legacy literal usage in shared/workbook-frame.css and
+ *   shared/workbook-simulator.html is therefore expected and is NOT
+ *   drift; the scan-existing.js drift list has been updated to match.
+ *
+ * SOURCE: design-system-visual.md v1.0 §1–§3 + §7.
+ * ============================================================================
+ */
+
+:root {
+  /* ========================================================================
+   * 1. BRAND COLORS (design-system-visual.md §1.1)
+   * ====================================================================== */
+  --ink: #0A0A0F;              /* Primary dark. Backgrounds, primary text. */
+  --paper: #F6F4F0;            /* Primary light. Slide + workbook-page bg. */
+  --electric-violet: #8A00FF;  /* Brand accent. Surfaces, borders, large display text on light bg (5.55:1 on paper, AA). Fails AA for normal text on dark bg (3.27:1) — use --electric-violet-on-dark instead. */
+  --electric-violet-on-dark: #B65BFF;  /* Brand-violet, brightened for AA on --ink. 5.57:1 on ink. Use for violet text/labels on dark slide backgrounds (concept-overlay kicker, closing-card titles, etc.). */
+  --digital-phlox: #DD00FF;    /* Secondary accent. Level-2 highlights.    */
+  --white: #FFFFFF;            /* Card bg, page surface, contrast layer.   */
+  --heading-blue: #4F81BD;     /* Workbook H1–H4 (design-system §7.1).     */
+  --heading-blue-text: #3F6DAC;/* Text-safe variant: 5.26:1 on white (AA). */
+                               /* Use for h2-h4 at <18.66px bold; h1 keeps */
+                               /* --heading-blue per brand continuity.     */
+                               /* Promotion 🔴 — RFC brand-alignment P3.   */
+
+  /* ========================================================================
+   * 2. NEUTRAL SCALE (design-system-visual.md §1.2)
+   * ====================================================================== */
+  --muted: #8A8A8A;            /* Decorative-only on light bg (3.27:1 on paper — fails AA for text). On dark bg (--ink), passes AAA. Use --muted-strong on light bg for readable text. */
+  --muted-strong: #707070;     /* Muted but AA-readable on light bg. 4.57:1 on paper, 4.95:1 on white. Use for labels, captions, secondary body on paper/white slide backgrounds. */
+  --muted-light: #B0B0B0;      /* Tertiary text, decorative; use on dark backgrounds only. 9.38:1 on --ink (AAA pass). FAILS WCAG on light bg — never use on paper/white. */
+  --dark-body: #e0e0e0;        /* Body text on dark slide backgrounds.     */
+  --field-bg: #F9F8F6;         /* Card fields, note blocks.                */
+  --frame-bg: #f5f5f0;         /* Workbook frame surround (warm grey).     */
+  --border: #e5e7eb;           /* Table borders, dividers.                 */
+  --border-light: #F0EFEB;     /* Subtle row separators.                   */
+  --divider-soft: #f0f0f0;     /* Marker-guide row separators (slides).    */
+
+  /* ========================================================================
+   * 3. MARKER PALETTE (design-system-visual.md §1.3 + §5.2)
+   * All WCAG-AA with white stroke/icon except --marker-6 (large graphic).
+   * ====================================================================== */
+  --marker-1: #0F766E;         /* Step to Complete (Teal)     — flag       */
+  --marker-2: #8A00FF;         /* Prompt to Copy (Violet)     — bot        */
+  --marker-3: #3182CE;         /* Save Point (Blue)           — floppy     */
+  --marker-4: #DD6B20;         /* Try This (Orange)           — rocket     */
+  --marker-5: #718096;         /* Helpful Context (Grey)      — info       */
+  --marker-6: #D69E2E;         /* Important Reminder (Amber)  — alert      */
+
+  --marker-1-on: #FFFFFF;      /* White stroke/icon on teal.               */
+  --marker-2-on: #FFFFFF;      /* White stroke/icon on violet.             */
+  --marker-3-on: #FFFFFF;      /* White stroke/icon on blue.               */
+  --marker-4-on: #FFFFFF;      /* White stroke/icon on orange.             */
+  --marker-5-on: #FFFFFF;      /* White stroke/icon on grey.               */
+  --marker-6-on: #0A0A0F;      /* Ink on amber (amber/white <AA for text). */
+
+  /* Marker chip geometry — consumed by .wb-marker-chip in the chrome CSS.
+   * Introduced by RFC brand-alignment P4. Governs circular marker pills
+   * that wrap design-system-visual.md §1.3 + §5.2 palette. Promotion 🔴. */
+  --marker-chip-size:      24px;  /* Chip outer diameter.                  */
+  --marker-chip-radius:    50%;   /* 50% = circular; override for pill.    */
+  --marker-chip-icon-size: 14px;  /* Inner SVG glyph size.                 */
+
+  /* ========================================================================
+   * 4. TYPOGRAPHY — FAMILIES (design-system-visual.md §2.1)
+   * ====================================================================== */
+  --font-display: "Century Gothic", "Avenir Next", "Avenir", "Gill Sans",
+                  "Segoe UI", sans-serif, "Noto Color Emoji", "Apple Color Emoji",
+                  "Segoe UI Emoji";
+  --font-serif:   "Palatino Linotype", "Book Antiqua", "Palatino", "Georgia",
+                  serif, "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                  "Helvetica Neue", sans-serif, "Noto Color Emoji",
+                  "Apple Color Emoji", "Segoe UI Emoji";
+
+  /* Letter-spacing scale — per design-system-visual.md §2.2.
+   * Display faces (Century Gothic) tighten slightly at display sizes;
+   * hero (80px) uses -2px per §2.2. Promotion 🟢 local → track if more
+   * sizes are added. */
+  --letter-spacing-hero:    -2px;   /* 80px Century Gothic hero title */
+  --letter-spacing-display: -0.5px; /* 28-44px display headings       */
+
+  /* ========================================================================
+   * 5. TYPE SCALE — SLIDES (1920×1080) (design-system-visual.md §2.2)
+   * ====================================================================== */
+  --text-hero: 80px;           /* Hero title (Century Gothic 700, -2px)    */
+  --text-6xl: 56px;            /* Slide heading (closing cards)            */
+  --text-5xl: 44px;            /* Section title (upper range)              */
+  --text-4xl: 38px;            /* Section title (lower range)              */
+  --text-3xl: 36px;            /* Card heading (persona name)              */
+  --text-2xl: 32px;            /* Subtitle (title cards)                   */
+  --text-xl: 24px;             /* Level/card title, infographic cards      */
+  --text-lg: 18px;             /* Overline upper, body upper               */
+  --text-md: 16px;             /* Overline lower, body mid                 */
+  --text-base: 15px;           /* Body text (paragraphs, labels)           */
+  --text-sm: 14px;             /* Caption upper, notes                     */
+  --text-xs: 13px;             /* Caption lower                            */
+  --text-2xs: 12px;            /* Tag upper                                */
+  --text-3xs: 10px;            /* Tag lower, badges                        */
+  --text-11: 11px;             /* Slides: persona-field label (uppercase)  */
+  --text-22: 22px;             /* Slides: bg-level-title                   */
+  --text-26: 26px;             /* Slides: concept-overlay main text        */
+  --text-48: 48px;             /* Slides: bg-arrow + cc-arrow glyphs       */
+
+  /* ========================================================================
+   * 6. TYPE SCALE — WORKBOOK EMBED (design-system-visual.md §2.3)
+   * Smaller because rendered inside a framed preview panel.
+   * ====================================================================== */
+  --wb-text-page-heading:    20px;   /* Century Gothic 700                 */
+  --wb-text-section-heading: 14px;   /* Inter 700                          */
+  --wb-text-body:           12.5px;  /* Inter 400                          */
+  --wb-text-table-header:   10.5px;  /* Inter 600 uppercase                */
+  --wb-text-table-cell:     11.5px;  /* Inter 400                          */
+  --wb-text-list:           11.5px;  /* Inter 400                          */
+  --wb-text-breadcrumb:       12px;  /* Inter 400                          */
+  --wb-text-badge:            10px;  /* Inter 600 uppercase                */
+
+  /* ========================================================================
+   * 7. LINE-HEIGHTS & WEIGHTS
+   * ====================================================================== */
+  --line-tight:   1.2;
+  --line-snug:    1.4;
+  --line-normal:  1.5;
+  --line-relaxed: 1.6;
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --tracking-tight: -2px;      /* Hero title                               */
+  --tracking-wide:  0.5px;     /* Uppercase labels, subtitles              */
+  --tracking-1:     1px;       /* Slide module overlines, tags             */
+  --tracking-2:     2px;       /* Slide title/closing labels               */
+  --tracking-wider: 3px;       /* Overlines (3px, uppercase)               */
+
+  /* ========================================================================
+   * 8. SPACING (design-system-visual.md §3.3 gap tokens)
+   * ====================================================================== */
+  --gap-xs:      8px;          /* Tight spacing                            */
+  --gap-sm:     14px;          /* Icon-to-text, breadcrumb items           */
+  --gap-sm-lg:  16px;          /* Marker legend rows                       */
+  --gap-md:     20px;          /* Grid gaps, persona fields                */
+  --gap-md-lg:  24px;          /* Card internal spacing                    */
+  --gap-lg:     32px;          /* Section separations                      */
+  --gap-lg-xl:  40px;          /* Level card gaps                          */
+  --gap-xl:     48px;          /* Major section breaks                     */
+  --gap-xl-xxl: 56px;          /* Challenge equation spacing               */
+  --gap-xxl:    72px;          /* Infographic section gaps                 */
+
+  /* 4px base grid (architecture spec §3.1) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-9:  36px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-13: 52px;
+  --space-14: 56px;
+  --space-15: 60px;
+  --space-16: 64px;
+
+  /* ========================================================================
+   * 9. RADII (design-system-visual.md §3.4)
+   * ====================================================================== */
+  --radius-xxs:  2px;          /* Callout blocks (workbook-frame)          */
+  --radius-xs:   3px;          /* Workbook page edge                       */
+  --radius-6:    6px;          /* Capture-harness controls (select/button) */
+  --radius-sm:   8px;          /* Small badges, inline elements            */
+  --radius-md:   10px;         /* Marker badges                            */
+  --radius-md-lg: 12px;        /* Callout blocks, persona fields           */
+  --radius-lg:   16px;         /* Level cards, tables, workbook frame      */
+  --radius-xl:   20px;         /* Persona card, challenge boxes            */
+  --radius-pill: 50%;          /* Full-round avatars (non-px; no var guard needed) */
+
+  /* ========================================================================
+   * 10. SHADOWS (design-system-visual.md §3.5)
+   * ====================================================================== */
+  --shadow-1: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 2px 16px rgba(0, 0, 0, 0.04);
+  --shadow-3: 0 4px 24px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 8px 40px rgba(0, 0, 0, 0.06),
+              0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-frame: 0 8px 40px rgba(0, 0, 0, 0.10),
+                  0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-paper: var(--shadow-1);   /* alias — page surface               */
+
+  /* ========================================================================
+   * 11. TRANSITIONS
+   * ====================================================================== */
+  --transition-fast: 120ms ease-out;
+  --transition-base: 200ms ease-out;
+  --transition-slow: 400ms ease-out;
+
+  /* ========================================================================
+   * 12. VIEWPORT (design-system-visual.md §3.1)
+   * ====================================================================== */
+  --viewport-w:   1920px;
+  --viewport-h:   1080px;
+  --safe-margin:   120px;      /* Safe area margin (all sides)             */
+  --content-w:    1680px;      /* Usable content area                      */
+  --content-h:     840px;
+
+  /* ========================================================================
+   * 13. FONT SMOOTHING (design-system-visual.md §6)
+   * ====================================================================== */
+  --font-smoothing: antialiased;    /* -webkit-font-smoothing target       */
+
+  /* ========================================================================
+   * 14. BORDER WIDTHS
+   * ====================================================================== */
+  --border-width-1: 1px;       /* Hairline separators, row dividers.       */
+  --border-width-2: 2px;       /* Slide divider rule (concept-overlay,     */
+                               /* title-card divider) per wf0-slides.html. */
+  --border-width-3: 3px;       /* Accent borders (persona field, level).   */
+
+  /* ========================================================================
+   * 15. SLIDE-CHROME DIMENSIONS (derived from shared/slides-simulator.html
+   * during B3 port; keep in lib/ so chrome/slides/slides.css references
+   * only via var() — enforcing invariant §10.1 #1).
+   * ====================================================================== */
+  --slide-card-persona-w:     900px;  /* Persona card                        */
+  --slide-card-marker-w:      800px;  /* Marker-guide card                   */
+  --slide-concept-text-w:     800px;  /* Concept-overlay text column (legacy)*/
+  --slide-concept-frame-w:   1500px;  /* Concept-overlay .co-frame max-width */
+  --slide-concept-head-w:    1400px;  /* Concept-overlay .co-headline max-w  */
+  --slide-subtitle-max-w:     700px;  /* Closing card subtitle               */
+  --slide-bg-footer-max-w:    800px;  /* Branded-graphic footer caption      */
+  --slide-number-card-min-w:  220px;  /* Infographic number cards            */
+  --slide-module-line-w:       56px;  /* Title-card module decoration line   */
+  --slide-avatar-size:         60px;  /* Persona avatar                      */
+  --slide-avatar-text:         24px;  /* Persona avatar initial glyph        */
+  --icon-size-md:              20px;  /* Generic 20px SVG icon box (consumed by both chatgpt and slides chromes; was --slide-icon-size before promotion to lib/generic). */
+
+  /* ========================================================================
+   * 16. CAPTURE-HARNESS CHROME (navigation controls — hidden during
+   * Playwright capture, shown for reviewer navigation). These tokens live
+   * in lib/ because the harness overlay is shared across all chrome
+   * modules and should render identically everywhere.
+   * ====================================================================== */
+  --harness-bg:         #1a1a1a;
+  --harness-fg:         #e0e0e0;
+  --harness-border:     #333333;
+  --harness-btn-bg:     #2a2a2a;
+  --harness-btn-border: #444444;
+  --harness-btn-hover:  #3a3a3a;
+  --harness-muted:      #999999;
+
+  /* ========================================================================
+   * 17. CHATGPT CHROME TOKENS (derived from shared/chatgpt-simulator.html
+   * during B1 port). Kept in lib/ so chrome/chatgpt/chatgpt.css references
+   * only via var() — enforcing invariant §10.1 #1. Distinct from slide
+   * typography because ChatGPT's visual system uses a different scale
+   * (neutral greys, tighter type) than R100's teaching slides.
+   * ====================================================================== */
+  /* Colors */
+  --cg-bg:                  #ffffff;  /* App background                      */
+  --cg-sidebar-bg:          #f9f9f9;  /* Left sidebar surface                */
+  --cg-sidebar-border:      #e5e5e5;  /* Sidebar right-edge + nav-active bg  */
+  --cg-user-bubble:         #f4f4f4;  /* Light-grey user turn bubble         */
+  --cg-text:                #0d0d0d;  /* Primary text + accent (send button) */
+  --cg-text-secondary:      #6b6b6b;  /* Secondary labels, header btns       */
+  --cg-text-muted:          #9a9a9a;  /* Muted decorative-only contexts (WCAG-exempt: placeholders, hint text, footer disclaimer). 2.85:1 on white — fails AA for body text by design; consumers are placeholders and similar exemptions. */
+  --cg-text-muted-strong:   #757575;  /* Muted but AA-readable. 4.6:1 on white — clears WCAG AA for normal text. Use for labels, badges, sub-text — anywhere the muted role meets readable-text expectations. */
+  --cg-border-light:        #e5e7eb;  /* Generic UI borders (= --border)     */
+  --cg-blockquote-bg:       #f7f7f8;  /* Assistant blockquote surface        */
+  --cg-blockquote-border:   #d1d5db;  /* Blockquote + input border           */
+  --cg-input-bg:            #ffffff;  /* Composer input background           */
+  --cg-link:                #2563eb;  /* Anchor links in assistant markdown  */
+  --cg-nav-hover:           #ececec;  /* Sidebar nav-item hover              */
+  --cg-table-header-bg:     #fafafa;  /* Assistant-content table <th> bg     */
+  --cg-action-hover-bg:     #f0f0f0;  /* Action-bar button hover             */
+  --cg-header-btn-hover-bg: #f5f5f5;  /* Header-btn + gpt-tab active bg      */
+  --cg-gpt-preview-bg:      #f5f5f5;  /* GPT editor preview icon bg          */
+  --cg-send-icon:           #ffffff;  /* Send-button SVG fill                */
+
+  /* Dimensions */
+  --cg-sidebar-w:            260px;   /* Sidebar column width                */
+  --cg-content-max:          900px;   /* Chat content max-width              */
+  --cg-sidebar-logo:          28px;   /* Sidebar logo + toggle box           */
+  --cg-sidebar-logo-svg:      18px;   /* Sidebar logo SVG inner              */
+  --cg-avatar:                28px;   /* Footer avatar size                  */
+  --cg-bubble-radius:         22px;   /* User-bubble pill radius             */
+  --cg-input-radius:          26px;   /* Composer input pill radius          */
+  --cg-input-send:            32px;   /* Send-button circle size             */
+  --cg-input-plus:            28px;   /* Plus / mic / action button size     */
+  --cg-gpt-preview-icon:      48px;   /* GPT editor preview icon circle      */
+  --cg-gpt-textarea-min-h:   120px;   /* GPT instructions textarea min       */
+  --cg-gpt-preview-max-w:    380px;   /* GPT preview description max-width   */
+  --cg-gpt-starter-max-w:    220px;   /* GPT preview starter card max-width  */
+  --cg-text-17:               17px;   /* Model selector heading              */
+  --cg-text-15:               15px;   /* Chat body copy                      */
+  --cg-text-135:            13.5px;   /* GPT editor labels + starter card    */
+  --cg-nav-text:            13.5px;   /* Sidebar recent-chat text            */
+  --cg-bubble-max-w:           75%;   /* User bubble max-width (non-px)      */
+
+  /* Shadow (ChatGPT-native, tighter than slide shadows) */
+  --cg-input-shadow:    0 1px 4px rgba(0, 0, 0, 0.04);
+
+  /* ========================================================================
+   * 18. GOOGLE DOCS CHROME TOKENS (derived from shared/workbook-simulator.html
+   * + shared/workbook-frame.css during B2 port). All `--gd-*` prefixed so
+   * chrome/google-docs/google-docs.css references only via var() —
+   * enforcing invariant §10.1 #1. These tokens encode the Google Docs
+   * surround (toolbar, breadcrumb, page surface) plus the workbook
+   * content-block styles (prompt-box, compact, callout, marker, card-grid)
+   * ported verbatim from governance-aligned legacy CSS.
+   * ====================================================================== */
+  /* Surround colors */
+  --gd-bg-cream:            #f6f4f0;  /* Content-area backdrop              */
+  --gd-bg-white:            #ffffff;  /* Page surface                       */
+  --gd-bg-light-gray:       #f5f5f5;  /* Prompt-box + callout bg            */
+  --gd-toolbar-bg:          #f8f9fa;  /* Docs toolbar bg                    */
+  --gd-menu-hover-bg:       #f0f0f0;  /* Docs menu-item hover               */
+  --gd-card-bg:             #f0f0f0;  /* Card-grid card bg                  */
+  --gd-card-border:         #e5e5e5;  /* Card-grid card border              */
+  --gd-table-header-bg:     #f5f5f5;  /* Table <th> background              */
+  --gd-divider-soft:        #f0f0f0;  /* Table-row divider (legacy)         */
+
+  /* Page content text (governance §7) */
+  --gd-text-body:           #333333;  /* Body copy text (workbook-frame)    */
+  --gd-text-dark:           #1a1a1a;  /* Strong text emphasis               */
+  --gd-text-secondary:      #6b6b6b;  /* Card body, muted labels            */
+  --gd-text-muted:          #9a9a9a;  /* Breadcrumb, caption, table muted   */
+  --gd-callout-body:        #555555;  /* Callout-box body copy              */
+  --gd-callout-italic:      #444444;  /* Prompt-text italic body            */
+  --gd-callout-info-copy:   #666666;  /* Prompt-info italic                 */
+
+  /* Accent colors (badges + callout variants) */
+  --gd-purple-accent:       #8A00FF;  /* Badge purple (= --electric-violet) */
+  --gd-teal-accent:         #0d9488;  /* Badge teal + congrats              */
+  --gd-callout-tip:         #DD6B20;  /* Tip callout left border            */
+  --gd-callout-save:        #3182CE;  /* Save callout left border           */
+  --gd-callout-info:        #718096;  /* Info callout left border           */
+  --gd-callout-warning:     #D69E2E;  /* Warning callout left border        */
+  --gd-callout-default:     #4F81BD;  /* Default callout border (heading)   */
+  --gd-congrats-bg:         #f0fdfa;  /* Congrats callout bg (teal tint)    */
+
+  /* Dimensions */
+  --gd-toolbar-h:             56px;   /* Docs toolbar height                */
+  --gd-breadcrumb-h:          32px;   /* Breadcrumb bar height              */
+  --gd-content-padding:       48px;   /* docs-content padding               */
+  --gd-page-max-w:           900px;   /* docs-page max-width                */
+  --gd-page-padding-y:        48px;   /* docs-page vertical padding         */
+  --gd-page-padding-x:        56px;   /* docs-page horizontal padding       */
+  --gd-badge-top:             48px;   /* Badge absolute top                 */
+  --gd-badge-right:           48px;   /* Badge absolute right               */
+  --gd-badge-radius:          20px;   /* Badge pill radius                  */
+  --gd-card-min-w:           200px;   /* card-grid minmax minimum           */
+  --gd-breadcrumb-padding-x:  48px;   /* Breadcrumb left/right padding      */
+  --gd-breadcrumb-padding-y:   8px;   /* Breadcrumb vertical padding        */
+
+  /* Typography (Google Docs scale — distinct from slides/workbook .docx) */
+  --gd-h1-size:               28px;   /* docs-page h1                       */
+  --gd-h2-size:               16px;   /* docs-page h2                       */
+  --gd-h3-size:               15px;   /* docs-page h3                       */
+  --gd-h4-size:               14px;   /* docs-page h4                       */
+  --gd-body-size:             14px;   /* docs-page body copy                */
+  --gd-lead-size:             15px;   /* p.lead intro paragraphs            */
+  --gd-prompt-body-size:      13px;   /* Prompt-box body                    */
+  --gd-prompt-info-size:    12.5px;   /* Prompt-box info subline            */
+  --gd-marker-size:           14px;   /* .wb-marker font-size               */
+  --gd-compact-size:          14px;   /* .wb-compact font-size              */
+  --gd-callout-size:          13px;   /* Callout-box copy                   */
+  --gd-table-size:            13px;   /* Table body font                    */
+  --gd-breadcrumb-size:       12px;   /* Breadcrumb text                    */
+  --gd-badge-size:            11px;   /* Badge pill text                    */
+  --gd-menu-size:             13px;   /* Docs menu item text                */
+  --gd-list-lh:                1.7;   /* List line-height                   */
+  --gd-body-lh:                1.6;   /* Body line-height                   */
+  --gd-tight-lh:               1.5;   /* Marker + compact line-height       */
+
+  /* Shadow */
+  --gd-page-shadow:    0 1px 3px rgba(0, 0, 0, 0.06);  /* docs-page surface */
+}
+
+/*
+ * ----------------------------------------------------------------------------
+ * Optional global font-smoothing rule. Chrome modules may include this
+ * directly; it is declared here so smoothing behavior is governed centrally.
+ * ----------------------------------------------------------------------------
+ */
+html, body, .r100-sim-root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./styles/chatgpt.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+/*
+ * ============================================================================
+ * shared/simulator/chrome/chatgpt/chatgpt.css
+ * ----------------------------------------------------------------------------
+ * Chrome-local stylesheet for the ChatGPT chrome module (B1).
+ *
+ * INVARIANT (architecture spec §10.1 #1):
+ *   Every hex and px literal in this file MUST be reached through
+ *   var(--token-name). All tokens are declared in lib/design-tokens.css
+ *   §17 (ChatGPT chrome) or shared sections §1..§16.
+ *
+ * Source reconciliation:
+ *   Legacy: shared/chatgpt-simulator.html lines 7..566 (inline <style>).
+ *   Port deltas:
+ *     - 16 :root vars + 22 hex literals + ~100 px literals replaced with
+ *       var() references declared in lib/design-tokens.css.
+ *     - .google-docs-* selectors stripped (belong to chrome/google-docs).
+ *     - .concept-overlay/.concept-* stripped (belong to chrome/slides).
+ *     - Inline screenshot-mode controls ("dev controls bar") removed;
+ *       capture-harness renders its own controls via runner.js.
+ * ============================================================================
+ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--cg-text);
+  background: var(--cg-bg);
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== LAYOUT ===== */
+.app { display: flex; height: 100vh; }
+
+.app.no-sidebar .main { max-width: 100%; }
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: var(--cg-sidebar-w);
+  background: var(--cg-sidebar-bg);
+  border-right: var(--border-width-1) solid var(--cg-sidebar-border);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2);
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-2) var(--space-3);
+}
+.sidebar-logo {
+  width: var(--cg-sidebar-logo);
+  height: var(--cg-sidebar-logo);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar-logo svg {
+  width: var(--cg-sidebar-logo-svg);
+  height: var(--cg-sidebar-logo-svg);
+  fill: var(--white);
+}
+.sidebar-toggle {
+  width: var(--cg-sidebar-logo);
+  height: var(--cg-sidebar-logo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: var(--radius-6);
+  color: var(--cg-text-secondary);
+}
+.sidebar-toggle:hover { background: var(--cg-sidebar-border); }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--cg-text);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.nav-item:hover { background: var(--cg-nav-hover); }
+.nav-item svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  color: var(--cg-text-secondary);
+  flex-shrink: 0;
+}
+
+.nav-section-label {
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  color: var(--cg-text-muted-strong);
+  padding: var(--space-4) var(--space-2) var(--space-2);
+  text-transform: capitalize;
+}
+.nav-item.recent {
+  font-size: var(--cg-nav-text);
+  color: var(--cg-text);
+  padding: var(--space-2);
+}
+.nav-item.recent.active { background: var(--cg-sidebar-border); }
+
+.sidebar-footer {
+  margin-top: auto;
+  padding: var(--space-3) var(--space-2) var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  border-top: var(--border-width-1) solid var(--cg-sidebar-border);
+}
+.avatar {
+  width: var(--cg-avatar);
+  height: var(--cg-avatar);
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+}
+.avatar-name { font-size: var(--text-sm); font-weight: var(--weight-medium); }
+.avatar-sub  { font-size: var(--text-2xs); color: var(--cg-text-muted-strong); }
+
+/* ===== MAIN ===== */
+.main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  flex-shrink: 0;
+}
+.model-selector {
+  font-size: var(--cg-text-17);
+  font-weight: var(--weight-semibold);
+  color: var(--cg-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  cursor: pointer;
+}
+.model-selector svg {
+  width: var(--text-md);
+  height: var(--text-md);
+  color: var(--cg-text-secondary);
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  color: var(--cg-text-secondary);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: var(--border-width-1) solid var(--cg-border-light);
+}
+.header-btn:hover { background: var(--cg-header-btn-hover-bg); }
+.header-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  cursor: pointer;
+  color: var(--cg-text-secondary);
+}
+
+/* Chat scroll + content */
+.chat-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 var(--space-5) var(--space-5);
+}
+.chat-content {
+  max-width: var(--cg-content-max);
+  margin: 0 auto;
+}
+
+/* Messages */
+.message { margin-bottom: var(--space-6); }
+.message.user { display: flex; justify-content: flex-end; }
+.user-bubble {
+  background: var(--cg-user-bubble);
+  border-radius: var(--cg-bubble-radius);
+  padding: var(--space-3) var(--space-4);
+  max-width: var(--cg-bubble-max-w);
+  font-size: var(--cg-text-15);
+  line-height: var(--line-normal);
+  color: var(--cg-text);
+}
+
+.message.assistant { padding: 0; }
+.assistant-content {
+  font-size: var(--cg-text-15);
+  line-height: var(--line-relaxed);
+  color: var(--cg-text);
+}
+.assistant-content h2 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  margin: var(--space-5) 0 var(--space-2);
+  line-height: var(--line-tight);
+}
+.assistant-content h3 {
+  font-size: var(--cg-text-17);
+  font-weight: var(--weight-semibold);
+  margin: var(--space-4) 0 var(--space-1);
+}
+.assistant-content p { margin: var(--space-2) 0; }
+.assistant-content ul,
+.assistant-content ol { padding-left: var(--space-6); margin: var(--space-2) 0; }
+.assistant-content li { margin: var(--space-1) 0; line-height: var(--line-relaxed); }
+.assistant-content strong { font-weight: var(--weight-semibold); }
+.assistant-content em { font-style: italic; }
+.assistant-content a { color: var(--cg-link); text-decoration: underline; }
+.assistant-content blockquote {
+  border-left: var(--border-width-3) solid var(--cg-blockquote-border);
+  background: var(--cg-blockquote-bg);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-3) 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: var(--cg-text-15);
+}
+.assistant-content hr {
+  border: none;
+  border-top: var(--border-width-1) solid var(--cg-border-light);
+  margin: var(--space-5) 0;
+}
+.assistant-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-3) 0;
+  font-size: var(--text-sm);
+}
+.assistant-content table th {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width-3) solid var(--cg-border-light);
+  font-weight: var(--weight-semibold);
+  background: var(--cg-table-header-bg);
+}
+.assistant-content table td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width-1) solid var(--cg-border-light);
+}
+
+/* Action toolbar */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  padding: var(--space-1) 0;
+}
+.action-btn {
+  width: var(--cg-input-plus);
+  height: var(--cg-input-plus);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-6);
+  cursor: pointer;
+  color: var(--cg-text-muted-strong);
+}
+.action-btn:hover { background: var(--cg-action-hover-bg); color: var(--cg-text-secondary); }
+.action-btn svg { width: var(--text-md); height: var(--text-md); }
+
+/* Input bar */
+.input-area {
+  padding: 0 var(--space-5) var(--space-4);
+  flex-shrink: 0;
+}
+.input-container {
+  max-width: var(--cg-content-max);
+  margin: 0 auto;
+  position: relative;
+}
+.input-box {
+  display: flex;
+  align-items: center;
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  border-radius: var(--cg-input-radius);
+  padding: var(--space-3) var(--space-4);
+  background: var(--cg-input-bg);
+  gap: var(--space-2);
+  box-shadow: var(--cg-input-shadow);
+}
+.input-plus {
+  width: var(--cg-input-plus);
+  height: var(--cg-input-plus);
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: var(--cg-text-secondary);
+}
+.input-text {
+  flex: 1;
+  font-size: var(--cg-text-15);
+  color: var(--cg-text-muted);
+  padding: var(--space-1) 0;
+}
+.input-mic {
+  width: var(--cg-input-plus);
+  height: var(--cg-input-plus);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--cg-text-secondary);
+}
+.input-send {
+  width: var(--cg-input-send);
+  height: var(--cg-input-send);
+  border-radius: var(--radius-pill);
+  background: var(--cg-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.input-send svg {
+  width: var(--text-md);
+  height: var(--text-md);
+  color: var(--cg-send-icon);
+}
+
+.footer-note {
+  text-align: center;
+  font-size: var(--text-2xs);
+  color: var(--cg-text-muted);
+  margin-top: var(--space-2);
+}
+
+/* ===== GPT EDITOR ===== */
+.gpt-editor { display: flex; flex: 1; overflow: hidden; }
+.gpt-editor-left {
+  flex: 1;
+  padding: var(--space-6) var(--space-8);
+  overflow-y: auto;
+  border-right: var(--border-width-1) solid var(--cg-border-light);
+}
+.gpt-editor-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6);
+}
+.gpt-editor-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: var(--border-width-1) solid var(--cg-border-light);
+}
+.gpt-editor-back {
+  cursor: pointer;
+  font-size: var(--text-xl);
+  color: var(--cg-text-secondary);
+}
+.gpt-editor-title {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+.gpt-editor-badge {
+  font-size: var(--text-2xs);
+  color: var(--cg-text-muted-strong);
+}
+.gpt-editor-create-btn {
+  background: var(--cg-text);
+  color: var(--white);
+  border: none;
+  border-radius: var(--text-xl);
+  padding: var(--space-2) var(--space-5);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+
+.gpt-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: var(--space-4) auto var(--space-6);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: center;
+}
+.gpt-tab {
+  padding: var(--space-2) var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  color: var(--cg-text-secondary);
+  background: var(--white);
+}
+.gpt-tab.active {
+  background: var(--cg-header-btn-hover-bg);
+  color: var(--cg-text);
+  font-weight: var(--weight-semibold);
+}
+
+.gpt-field-label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  margin: var(--space-4) 0 var(--space-1);
+}
+.gpt-textarea {
+  width: 100%;
+  min-height: var(--cg-gpt-textarea-min-h);
+  padding: var(--space-3);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--cg-text-135);
+  line-height: var(--line-normal);
+  resize: vertical;
+  font-family: inherit;
+  color: var(--cg-text);
+  background: var(--cg-bg);
+}
+.gpt-input {
+  width: 100%;
+  padding: var(--space-3);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--cg-text-135);
+  font-family: inherit;
+  margin-top: var(--space-2);
+  color: var(--cg-text);
+  background: var(--cg-bg);
+}
+.gpt-knowledge-hint {
+  font-size: var(--text-2xs);
+  color: var(--cg-text-muted);
+  margin-bottom: var(--space-2);
+}
+.gpt-capability {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  margin-top: var(--space-1);
+}
+
+.gpt-preview-icon {
+  width: var(--cg-gpt-preview-icon);
+  height: var(--cg-gpt-preview-icon);
+  margin: var(--space-10) 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  background: var(--cg-gpt-preview-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gpt-preview-name {
+  font-size: var(--text-22);
+  font-weight: var(--weight-bold);
+  margin-bottom: var(--space-2);
+}
+.gpt-preview-desc {
+  font-size: var(--text-sm);
+  color: var(--cg-text-secondary);
+  text-align: center;
+  max-width: var(--cg-gpt-preview-max-w);
+  line-height: var(--line-normal);
+}
+.gpt-starter {
+  margin-top: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  border: var(--border-width-1) solid var(--cg-border-light);
+  border-radius: var(--radius-lg);
+  font-size: var(--cg-text-135);
+  color: var(--cg-text-secondary);
+  max-width: var(--cg-gpt-starter-max-w);
+  text-align: left;
+}
+.gpt-editor-preview-meta {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+.gpt-editor-preview-meta .preview-model {
+  color: var(--cg-text-secondary);
+}
+
+/* ============================================================================
+ * CAPTURE-HARNESS CONTROLS (bottom bar, hidden during Playwright capture)
+ * Identical structure to chrome/slides/slides.css so both chromes share the
+ * same harness affordances. Lives in chrome-local CSS for now; a future
+ * refactor may promote this block to lib/ as a shared controls stylesheet.
+ * ========================================================================== */
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--harness-bg);
+  color: var(--harness-fg);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  border-top: var(--border-width-1) solid var(--harness-border);
+}
+.controls.hidden { display: none !important; }
+
+.controls label {
+  font-weight: var(--weight-semibold);
+  margin-right: var(--space-2);
+}
+
+.controls select,
+.controls button {
+  background: var(--harness-btn-bg);
+  color: var(--harness-fg);
+  border: var(--border-width-1) solid var(--harness-btn-border);
+  border-radius: var(--radius-6);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.controls select:hover,
+.controls button:hover { background: var(--harness-btn-hover); }
+
+.slide-counter {
+  font-weight: var(--weight-semibold);
+  margin-left: auto;
+}
+
+.scene-info {
+  font-size: var(--text-3xs);
+  color: var(--harness-muted);
+}
+
+/* ============================================================================
+ * GPT-Editor rich progressive states
+ * Added 2026-04-26 per Option C (port from archived wf4-simulator.html).
+ * Provides classes for: starter chips, knowledge file chips (3 color variants),
+ * capability group toggles, instruction highlight markers, test-chat preview
+ * pane. See chrome/chatgpt/scenes/GptEditorScene.js for usage.
+ * ========================================================================== */
+
+/* Editor-left body wrapper */
+.gpt-editor-left-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+}
+
+/* Conversation starters list (Configure tab) */
+.gpt-starters-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.gpt-starter-chip {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--cg-user-bubble);
+  color: var(--cg-text);
+  font-size: var(--cg-text-15);
+  font-weight: var(--weight-medium);
+}
+
+/* Knowledge file chips with 3 color variants */
+.gpt-knowledge-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.gpt-file-chip {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--cg-text-135);
+  font-weight: var(--weight-medium);
+  color: var(--white);
+}
+.gpt-file-chip.blue   { background: #3B82F6; }   /* Context: files */
+.gpt-file-chip.green  { background: #10B981; }   /* Reference: files */
+.gpt-file-chip.orange { background: #F59E0B; }   /* Template: files */
+
+/* Capabilities group (4 toggle rows) */
+.gpt-capability-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-2) 0;
+}
+.gpt-capability-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--cg-text-15);
+  color: var(--cg-text);
+  cursor: default;
+}
+.gpt-capability-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: default;
+}
+
+/* Instruction-highlight spans (for highlightParts: [1], [2], [3]) */
+.instruction-part {
+  display: block;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+.instruction-part-1 { background: rgba(138, 0, 255, 0.10); }   /* electric-violet, soft */
+.instruction-part-2 { background: rgba(63, 109, 172, 0.10); }   /* heading-blue-text, soft */
+.instruction-part-3 { background: rgba(16, 185, 129, 0.10); }   /* green, soft */
+
+/* Preview pane: starters list + variants */
+.gpt-starters-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  width: 100%;
+  max-width: var(--cg-gpt-starter-max-w);
+}
+.gpt-starter-preview {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  background: var(--white);
+  color: var(--cg-text);
+  font-size: var(--cg-text-15);
+  text-align: left;
+}
+
+/* Generated DALL-E icon (variant of .gpt-preview-icon) */
+.gpt-preview-icon.generated {
+  background: linear-gradient(135deg, var(--electric-violet), var(--cg-link));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-2xl);
+}
+
+/* Test-chat preview panel (when scene.testChatIndices is set) */
+.test-chat-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: var(--space-4);
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  max-height: 400px;
+  overflow: hidden;
+}
+.test-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.test-message {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--cg-user-bubble);
+  font-size: var(--cg-text-15);
+  color: var(--cg-text);
+}
+.test-input-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-top: var(--border-width-1) solid var(--cg-blockquote-border);
+}
+.test-input-text {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  font-size: var(--cg-text-15);
+  color: var(--cg-text-muted);
+  outline: none;
+}
+.test-input-send {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background: var(--cg-text);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-md);
+}
+
+/* ============================================================================
+ * Capability-mark indicator (Q-21 fix, 2026-04-27)
+ * Replaces the React `defaultChecked + readOnly` checkbox pattern that didn't
+ * render reliably in headless Chromium captures. The mark is data-driven via
+ * `is-checked` modifier on `.gpt-capability-item`.
+ * ========================================================================== */
+.gpt-capability-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border: var(--border-width-1) solid var(--cg-blockquote-border);
+  border-radius: 3px;
+  background: var(--white);
+  color: var(--white);
+  font-size: 11px;
+  line-height: 1;
+  font-weight: var(--weight-bold);
+}
+.gpt-capability-item.is-checked .gpt-capability-mark {
+  background: var(--cg-text);
+  border-color: var(--cg-text);
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./styles/slides.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/*
+ * ============================================================================
+ * shared/simulator/chrome/slides/slides.css
+ * ----------------------------------------------------------------------------
+ * Chrome stylesheet for the Slides (Google Slides / teaching-slide)
+ * simulator. Every hex/px literal lives in lib/design-tokens.css;
+ * this file references tokens only via var().
+ *
+ * Canonical spec:
+ *   governance/central-simulator-architecture.md §4.3 (SlideScene shape)
+ *   governance/central-simulator-architecture.md §10.1 #1 (token singularity)
+ *
+ * PORT OF: shared/slides-simulator.html inline <style> (lines 7–299 of the
+ * legacy file). Literals reconciled against governance — deltas:
+ *   • #888888 → var(--muted) [#8A8A8A]            (governance §1.2)
+ *   • #fafaf9 → var(--field-bg) [#F9F8F6]         (governance §1.2)
+ *   • hardcoded 1920px/1080px → var(--viewport-w/h)
+ *   • hardcoded 48px gaps      → var(--gap-xl) etc.
+ *   • 7 harness literals moved to --harness-* tokens in lib
+ *
+ * INVARIANT CHECK:
+ *   tools/check-invariants.cjs #1 grep must emit ZERO findings in this file.
+ * ============================================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--viewport-w);
+  height: var(--viewport-h);
+  display: flex;
+}
+
+/* ============================================================================
+ * CAPTURE-HARNESS CONTROLS (hidden during Playwright capture)
+ * Shown for human reviewers who navigate via dropdowns / arrow keys.
+ * ========================================================================== */
+
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--harness-bg);
+  color: var(--harness-fg);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  border-top: var(--border-width-1) solid var(--harness-border);
+}
+.controls.hidden { display: none !important; }
+
+.controls label {
+  font-weight: var(--weight-semibold);
+  margin-right: var(--space-2);
+}
+
+.controls select,
+.controls button {
+  background: var(--harness-btn-bg);
+  color: var(--harness-fg);
+  border: var(--border-width-1) solid var(--harness-btn-border);
+  border-radius: var(--radius-6);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.controls select:hover,
+.controls button:hover {
+  background: var(--harness-btn-hover);
+}
+
+.slide-counter {
+  font-weight: var(--weight-semibold);
+  margin-left: auto;
+}
+
+.scene-info {
+  font-size: var(--text-3xs);
+  color: var(--harness-muted);
+}
+
+/* ============================================================================
+ * LAYOUT 1: TITLE  (dark)
+ * ========================================================================== */
+
+.slide-title {
+  background: var(--ink);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.slide-title .sc-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-2);
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  margin-bottom: var(--space-8);
+}
+.slide-title .sc-title {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet-on-dark);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+  margin-bottom: var(--space-5);
+}
+.slide-title .sc-subtitle {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-light);
+  color: var(--dark-body);
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-12);
+}
+.slide-title .sc-module {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--muted-strong);
+  letter-spacing: var(--tracking-wide);
+}
+.slide-title .sc-module-line {
+  width: var(--slide-module-line-w);
+  height: var(--border-width-1);
+  background: var(--electric-violet);
+}
+
+/* ============================================================================
+ * LAYOUT 2: PERSONA  (light)
+ * ========================================================================== */
+
+.slide-persona {
+  background: var(--paper);
+  align-items: center;
+  justify-content: center;
+}
+.pc-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-13) var(--space-16);
+  width: var(--slide-card-persona-w);
+  box-shadow: var(--shadow-2);
+}
+.pc-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  margin-bottom: var(--space-10);
+}
+.pc-avatar {
+  width: var(--slide-avatar-size);
+  height: var(--slide-avatar-size);
+  border-radius: var(--radius-pill);
+  background: var(--electric-violet);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--slide-avatar-text);
+  font-weight: var(--weight-bold);
+  color: var(--white);
+  font-family: var(--font-display);
+  flex-shrink: 0;
+}
+.pc-header-text { flex: 1; }
+.pc-name {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+  line-height: 1.1;
+}
+.pc-role {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--muted-strong);
+  margin-top: var(--space-1);
+}
+.pc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+.pc-field {
+  background: var(--field-bg);
+  border-radius: var(--radius-sm);
+  padding: var(--space-5) var(--space-6);
+  border-left: var(--border-width-3) solid var(--electric-violet);
+}
+.pc-field-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-11);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+  margin-bottom: var(--space-2);
+}
+.pc-field-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  line-height: var(--line-normal);
+}
+.pc-callout {
+  padding: var(--space-5) var(--space-6);
+  background: var(--field-bg);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--muted-strong);
+  line-height: var(--line-relaxed);
+}
+.pc-callout strong {
+  color: var(--ink);
+  font-weight: var(--weight-semibold);
+}
+
+/* ============================================================================
+ * LAYOUT 3: BRANDED-GRAPHIC  (light)
+ * ========================================================================== */
+
+.slide-branded {
+  background: var(--paper);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bg-numbers {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+.bg-number-card {
+  background: var(--white);
+  border-radius: var(--radius-md-lg);
+  padding: var(--space-10) var(--space-12);
+  text-align: center;
+  box-shadow: var(--shadow-2);
+  min-width: var(--slide-number-card-min-w);
+}
+.bg-number {
+  font-family: var(--font-display);
+  font-size: var(--text-hero);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet);
+  line-height: 1;
+}
+.bg-number-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--muted-strong);
+  margin-top: var(--space-3);
+  font-weight: var(--weight-medium);
+}
+.bg-arrow {
+  font-size: var(--text-48);
+  color: var(--electric-violet);
+  font-weight: var(--weight-light);
+}
+.bg-levels {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+.bg-level {
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8) var(--space-9);
+  flex: 1;
+  box-shadow: var(--shadow-2);
+  border-top: var(--border-width-3) solid var(--electric-violet);
+}
+.bg-level-tag {
+  font-family: var(--font-sans);
+  font-size: var(--text-11);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+  color: var(--electric-violet);
+  margin-bottom: var(--space-3);
+}
+.bg-level-title {
+  font-family: var(--font-display);
+  font-size: var(--text-22);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+}
+.bg-level-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--muted-strong);
+  line-height: var(--line-relaxed);
+}
+.bg-footer {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--muted-strong);
+  text-align: center;
+  margin-top: var(--space-6);
+  max-width: var(--slide-bg-footer-max-w);
+}
+
+/* ============================================================================
+ * LAYOUT 4: MARKER-GUIDE  (light)
+ * ========================================================================== */
+
+.slide-markers {
+  background: var(--paper);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mg-card {
+  background: var(--white);
+  border-radius: var(--radius-md-lg);
+  padding: var(--space-12) var(--space-14);
+  width: var(--slide-card-marker-w);
+  box-shadow: var(--shadow-2);
+}
+.mg-title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--ink);
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+.mg-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: var(--border-width-1) solid var(--divider-soft);
+}
+.mg-row:last-child { border-bottom: none; }
+.mg-icon {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+}
+.mg-icon svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+.mg-content { flex: 1; }
+.mg-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--ink);
+  margin-bottom: var(--space-1);
+}
+.mg-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--muted-strong);
+  line-height: var(--line-normal);
+}
+
+/* ============================================================================
+ * LAYOUT 5: CLOSING  (dark)
+ * ========================================================================== */
+
+.slide-closing {
+  background: var(--ink);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cc-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-2);
+  text-transform: uppercase;
+  color: var(--muted-strong);
+  margin-bottom: var(--space-6);
+}
+.cc-title {
+  font-family: var(--font-display);
+  font-size: var(--text-6xl);
+  font-weight: var(--weight-bold);
+  color: var(--electric-violet-on-dark);
+  line-height: 1.2;
+  margin-bottom: var(--space-5);
+}
+.cc-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  color: var(--dark-body);
+  line-height: var(--line-normal);
+  max-width: var(--slide-subtitle-max-w);
+  font-weight: var(--weight-light);
+  margin-bottom: var(--space-10);
+}
+.cc-arrow {
+  font-size: var(--text-5xl);
+  color: var(--electric-violet-on-dark);
+  opacity: 0.6;
+}
+
+/* ============================================================================
+ * LAYOUT 6: CONCEPT-OVERLAY  (dark)
+ * ----------------------------------------------------------------------------
+ * Brand authority: WF00-Getting-Started/tools/wf0-slides.html is canonical for
+ * the R100 slide design system. The .slide-concept layout mirrors the
+ * .slide-closing proportions (dark-ink bg, tracked-uppercase overline,
+ * divider rule, Century Gothic presentation-grade headline) adapted for
+ * longer educational callout statements — the headline size steps down to
+ * 38px (--text-4xl) so 30-40 word statements still read cleanly at 1920×1080.
+ *
+ * Color discipline: --electric-violet is the sole accent (per design-system
+ * §1.1) — never --heading-blue, which is reserved for workbook H1–H4.
+ * Typography discipline: --font-display (Century Gothic) for the headline,
+ * --font-sans (Inter) for the overline tag and attribution. No px/hex
+ * literals — all values via var() per architecture spec §10.1 #1.
+ * ========================================================================== */
+
+.slide-concept {
+  background: var(--ink);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-16);
+}
+.slide-concept .co-frame {
+  max-width: var(--slide-concept-frame-w);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide-concept .co-kicker {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  color: var(--electric-violet-on-dark);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  margin-bottom: var(--space-8);
+}
+.slide-concept .co-rule {
+  width: var(--slide-module-line-w);
+  height: var(--border-width-2);
+  background: var(--electric-violet);
+  margin-bottom: var(--space-10);
+}
+.slide-concept .co-headline {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-medium);
+  color: var(--paper);
+  line-height: var(--line-snug);
+  letter-spacing: var(--tracking-wide);
+  max-width: var(--slide-concept-head-w);
+}
+.slide-concept .co-attribution {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  color: var(--muted-light);
+  letter-spacing: var(--tracking-wide);
+  margin-top: var(--space-8);
+  font-style: italic;
+}
+
+/* Legacy .co-text / .co-main / .co-label retained for backward compat */
+.co-text { max-width: var(--slide-concept-text-w); }
+.co-main {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-medium);
+  color: var(--paper);
+  line-height: var(--line-snug);
+  margin-bottom: var(--space-7);
+}
+.co-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--muted-light);
+  letter-spacing: var(--tracking-wide);
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./styles/google-docs.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/*
+ * ============================================================================
+ * shared/simulator/chrome/google-docs/google-docs.css
+ * ----------------------------------------------------------------------------
+ * Chrome-local stylesheet for the Google Docs chrome. Rebuilt on top of the
+ * token layer — every color / dimension / shadow references a var(--gd-*)
+ * or var(--*) from lib/design-tokens.css. Hex/px literals outside var()
+ * are forbidden by invariant §10.1 #1 (tools/check-invariants.cjs).
+ *
+ * Source of truth (ported verbatim where possible):
+ *   - shared/workbook-simulator.html inline <style> (lines 7..382)
+ *   - shared/workbook-frame.css
+ *
+ * Governance:
+ *   governance/02-content-authoring/design-system-visual.md §7
+ *   governance/central-simulator-architecture.md §3.2 + §4.2
+ * ============================================================================
+ */
+
+/* Font family — Inter, matches workbook-simulator + workbook-frame */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--gd-text-dark);
+  background: var(--gd-bg-cream);
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===========================================================================
+ * LAYOUT
+ * ========================================================================= */
+.app {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: var(--viewport-w);
+}
+
+.workbook-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--gd-bg-cream);
+  position: relative;
+}
+
+/* ===========================================================================
+ * GOOGLE DOCS TOOLBAR
+ * ========================================================================= */
+.docs-toolbar {
+  background: var(--gd-toolbar-bg);
+  border-bottom: var(--border-width-1) solid var(--border);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: var(--gd-toolbar-h);
+  flex-shrink: 0;
+}
+
+.docs-menu {
+  display: flex;
+  gap: 0;
+  padding: 0 var(--space-4);
+  height: 100%;
+  align-items: center;
+  font-size: var(--gd-menu-size);
+  color: var(--gd-text-dark);
+}
+
+.docs-menu-item {
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  border-radius: var(--radius-3);
+  transition: background 150ms ease;
+}
+
+.docs-menu-item:hover {
+  background: var(--gd-menu-hover-bg);
+}
+
+/* ===========================================================================
+ * BREADCRUMB
+ * ========================================================================= */
+.breadcrumb-bar {
+  background: var(--gd-bg-white);
+  border-bottom: var(--border-width-1) solid var(--border);
+  padding: var(--gd-breadcrumb-padding-y) var(--gd-breadcrumb-padding-x);
+  font-size: var(--gd-breadcrumb-size);
+  color: var(--gd-text-muted);
+  height: var(--gd-breadcrumb-h);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ===========================================================================
+ * BADGE PILL
+ * ========================================================================= */
+.badge-pill {
+  position: absolute;
+  top: var(--gd-badge-top);
+  right: var(--gd-badge-right);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--gd-badge-radius);
+  font-size: var(--gd-badge-size);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+  color: var(--white);
+}
+
+.badge-pill.purple { background: var(--gd-purple-accent); }
+.badge-pill.teal   { background: var(--gd-teal-accent); }
+
+/* ===========================================================================
+ * CONTENT AREA + PAGE SURFACE
+ * ========================================================================= */
+.docs-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--gd-content-padding);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: var(--gd-bg-cream);
+}
+
+.docs-page {
+  background: var(--gd-bg-white);
+  max-width: var(--gd-page-max-w);
+  width: 100%;
+  padding: var(--gd-page-padding-y) var(--gd-page-padding-x);
+  box-shadow: var(--gd-page-shadow);
+  border-radius: var(--radius-2);
+  font-family: var(--font-sans);
+  color: var(--gd-text-body);
+  line-height: var(--gd-body-lh);
+  overflow: hidden;
+}
+
+/* ===========================================================================
+ * TYPOGRAPHY — Blue headings (via --heading-blue token)
+ * ========================================================================= */
+.docs-page h1 {
+  font-family: var(--font-display);              /* P1: Century Gothic voice */
+  font-size: var(--gd-h1-size);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--letter-spacing-display); /* §2.2 display scale       */
+  margin-bottom: var(--space-8);
+  color: var(--heading-blue);              /* H1 keeps canonical heading-blue*/
+  line-height: var(--line-height-tight);
+}
+
+.docs-page h2 {
+  font-size: var(--gd-h2-size);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  color: var(--heading-blue-text);  /* P3: AA contrast at small sizes (5.26:1) */
+}
+
+.docs-page h3 {
+  font-size: var(--gd-h3-size);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+  color: var(--heading-blue-text);  /* P3: AA contrast at small sizes (5.26:1) */
+}
+
+.docs-page h4 {
+  font-size: var(--gd-h4-size);
+  font-weight: var(--weight-regular);
+  font-style: italic;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+  color: var(--heading-blue-text);  /* P3: AA contrast at small sizes (5.26:1) */
+}
+
+.docs-page p {
+  font-size: var(--gd-body-size);
+  line-height: var(--gd-body-lh);
+  color: var(--gd-text-body);
+  margin-bottom: var(--space-3);
+}
+
+.docs-page p.lead {
+  font-size: var(--gd-lead-size);
+  font-weight: var(--weight-medium);
+  color: var(--gd-text-dark);
+  margin-bottom: var(--space-4);
+}
+
+.docs-page ul,
+.docs-page ol {
+  margin-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-size: var(--gd-body-size);
+  color: var(--gd-text-body);
+  line-height: var(--gd-list-lh);
+}
+
+.docs-page li {
+  margin-bottom: var(--space-2);
+}
+
+/* ===========================================================================
+ * WORKBOOK-ALIGNED BLOCK TYPES
+ * ========================================================================= */
+
+/* ---------------------------------------------------------------------------
+ * Marker — P4 Pattern Upgrade (brand-alignment RFC v0.1).
+ * Before: single bold paragraph with OS emoji prefix.
+ * After:  colored chip (--marker-N palette) + SVG icon + body text.
+ * Deterministic cross-platform rendering (no OS emoji dependency).
+ * Canonical: design-system-visual.md §1.3 + §5.2.
+ * -------------------------------------------------------------------------- */
+.wb-marker {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-weight: var(--weight-semibold);
+  font-size: var(--gd-marker-size);
+  color: var(--gd-text-dark);
+  margin: var(--space-4) 0 var(--space-2);
+  line-height: var(--gd-tight-lh);
+}
+
+.wb-marker-chip {
+  flex: 0 0 var(--marker-chip-size);  /* pin flex-basis to chip diameter */
+  width: var(--marker-chip-size);
+  height: var(--marker-chip-size);
+  min-width: var(--marker-chip-size); /* defensive — prevent flex shrink */
+  border-radius: var(--marker-chip-radius);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-xs, 0 1px 2px rgba(0,0,0,0.12));
+  margin-top: var(--space-1);
+}
+
+.wb-marker-chip svg {
+  width: var(--marker-chip-icon-size);
+  height: var(--marker-chip-icon-size);
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Kind variants — map to canonical --marker-N palette + --marker-N-on text.
+ * Mapping table (from design-system-visual.md §1.3):
+ *   flag     → marker-1 (teal)   — Step to Complete
+ *   prompt   → marker-2 (violet) — Prompt to Copy
+ *   save     → marker-3 (blue)   — Save Point
+ *   extend   → marker-4 (orange) — Try This
+ *   info     → marker-5 (grey)   — Helpful Context
+ *   warn     → marker-6 (amber)  — Important Reminder
+ *   complete → marker-1 (teal)   — Step Completed (alias of flag color) */
+.wb-marker-chip.marker-flag     { background: var(--marker-1); color: var(--marker-1-on); }
+.wb-marker-chip.marker-prompt   { background: var(--marker-2); color: var(--marker-2-on); }
+.wb-marker-chip.marker-save     { background: var(--marker-3); color: var(--marker-3-on); }
+.wb-marker-chip.marker-extend   { background: var(--marker-4); color: var(--marker-4-on); }
+.wb-marker-chip.marker-info     { background: var(--marker-5); color: var(--marker-5-on); }
+.wb-marker-chip.marker-warn     { background: var(--marker-6); color: var(--marker-6-on); }
+.wb-marker-chip.marker-complete { background: var(--marker-1); color: var(--marker-1-on); }
+
+.wb-marker .wb-marker-body { flex: 1 1 auto; }
+
+/* Prompt box — indented blue-left-border frame for AI prompts */
+.wb-prompt-box {
+  background: var(--gd-bg-light-gray);
+  border-left: var(--border-width-3) solid var(--heading-blue);
+  padding: var(--space-3) var(--space-5);
+  margin: var(--space-4) 0 var(--space-4) var(--space-5);
+  border-radius: var(--radius-2);
+  font-size: var(--gd-prompt-body-size);
+  color: var(--gd-text-body);
+  line-height: var(--gd-body-lh);
+}
+
+.wb-prompt-box .prompt-header {
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-2);
+}
+
+.wb-prompt-box .prompt-info {
+  font-style: italic;
+  color: var(--gd-callout-info-copy);
+  margin-bottom: var(--space-2);
+  font-size: var(--gd-prompt-info-size);
+}
+
+.wb-prompt-box .prompt-text {
+  font-style: italic;
+  color: var(--gd-callout-italic);
+  white-space: pre-wrap;
+}
+
+/* Compact item — tight bold-lead-in label + inline text */
+.wb-compact {
+  font-size: var(--gd-compact-size);
+  color: var(--gd-text-body);
+  margin: var(--space-1) 0;
+  padding: 0;
+  line-height: var(--gd-tight-lh);
+}
+
+.wb-compact strong {
+  color: var(--gd-text-dark);
+}
+
+/* ===========================================================================
+ * SECTION BLOCKS (text + h4-text container)
+ * ========================================================================= */
+.section-block {
+  margin-bottom: var(--space-7);
+}
+
+/* ===========================================================================
+ * CARD GRID (WF3/WF5 framework diagrams)
+ * ========================================================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--gd-card-min-w), 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.card {
+  background: var(--gd-card-bg);
+  padding: var(--space-4);
+  border-radius: var(--radius-4);
+  border: var(--border-width-1) solid var(--gd-card-border);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+  font-size: var(--gd-h4-size);
+  font-weight: var(--weight-semibold);
+  color: var(--gd-text-dark);
+}
+
+.card p {
+  font-size: var(--gd-prompt-body-size);
+  color: var(--gd-text-secondary);
+  margin: 0;
+  line-height: var(--gd-tight-lh);
+}
+
+.card.accent {
+  background: var(--gd-bg-light-gray);
+  border-color: var(--gd-purple-accent);
+}
+
+/* ===========================================================================
+ * TABLE
+ * ========================================================================= */
+.docs-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4) 0;
+  font-size: var(--gd-table-size);
+}
+
+.docs-page table th,
+.docs-page table td {
+  border: var(--border-width-1) solid var(--border);
+  padding: var(--space-3) var(--space-3);
+  text-align: left;
+}
+
+.docs-page table th {
+  background: var(--gd-table-header-bg);
+  font-weight: var(--weight-semibold);
+  color: var(--gd-text-dark);
+}
+
+.docs-page table td {
+  color: var(--gd-text-secondary);
+}
+
+/* ===========================================================================
+ * CALLOUT BOX — 4 variants + default (heading-blue)
+ * ========================================================================= */
+.callout-box {
+  background: var(--gd-bg-light-gray);
+  border-left: var(--border-width-3) solid var(--gd-callout-default);
+  padding: var(--space-3) var(--space-4);
+  margin: var(--space-4) 0 var(--space-4) var(--space-5);
+  border-radius: var(--radius-2);
+  font-size: var(--gd-callout-size);
+  color: var(--gd-callout-body);
+  line-height: var(--gd-body-lh);
+}
+
+.callout-box strong {
+  color: var(--gd-text-dark);
+}
+
+.callout-box.tip      { border-left-color: var(--gd-callout-tip); }
+.callout-box.save     { border-left-color: var(--gd-callout-save); }
+.callout-box.info     { border-left-color: var(--gd-callout-info); }
+.callout-box.warning  { border-left-color: var(--gd-callout-warning); }
+.callout-box.congrats {
+  background: var(--gd-congrats-bg);
+  border-left-color: var(--gd-teal-accent);
+  color: var(--gd-text-dark);
+}
+
+/* ===========================================================================
+ * DELIVERABLES BLOCK (WF outcome roll-up)
+ * ========================================================================= */
+.wb-deliverables h3 {
+  margin-bottom: var(--space-2);
+}
+
+.wb-deliverables ul {
+  padding-left: var(--space-5);
+  margin: 0;
+}
+
+.wb-deliverables li {
+  font-size: var(--gd-body-size);
+  line-height: var(--gd-list-lh);
+  color: var(--gd-text-body);
+  margin-bottom: var(--space-2);
+}
+
+.wb-deliverables .code {
+  color: var(--gd-text-dark);
+  font-weight: var(--weight-semibold);
+}
+
+/* ===========================================================================
+ * NEXT BLOCK (workflow close-out / "what is next")
+ * ========================================================================= */
+.wb-next {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: var(--border-width-1) solid var(--border);
+}
+
+.wb-next h2,
+.wb-next h3 {
+  margin-top: 0;
+}
+
+/* ===========================================================================
+ * CONTROLS BAR — mirrors slides/chatgpt pattern
+ * ========================================================================= */
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--harness-bg);
+  color: var(--harness-fg);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--gd-menu-size);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: var(--border-width-1) solid var(--harness-border);
+  transition: transform 200ms ease;
+}
+
+.controls.hidden {
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.controls label {
+  font-size: var(--text-11);
+  color: var(--harness-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-1);
+}
+
+.controls select,
+.controls button {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-3);
+  border: var(--border-width-1) solid var(--harness-btn-border);
+  background: var(--harness-btn-bg);
+  color: var(--harness-fg);
+  font-size: var(--gd-menu-size);
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: var(--harness-btn-hover);
+}
+
+.controls .slide-counter {
+  font-size: var(--text-11);
+  color: var(--harness-muted);
+  margin-left: auto;
+}
+
+.controls .scene-info {
+  font-size: var(--text-11);
+  color: var(--harness-muted);
+}
+.callout-box.save     { border-left-color: var(--gd-callout-save); }
+.callout-box.info     { border-left-color: var(--gd-callout-info); }
+.callout-box.warning  { border-left-color: var(--gd-callout-warning); }
+.callout-box.congrats {
+  background: var(--gd-congrats-bg);
+  border-left-color: var(--gd-teal-accent);
+}
+
+/* Workbook deliverables block */
+.wb-deliverables h3 {
+  color: var(--heading-blue-text);
+  margin-bottom: var(--space-3);
+}
+.wb-deliverables ul {
+  list-style: disc;
+  padding-left: var(--space-6);
+}
+.wb-deliverables li {
+  margin-bottom: var(--space-2);
+  color: var(--gd-text-body);
+}
+.wb-deliverables .code {
+  font-family: var(--font-mono, monospace);
+  color: var(--gd-text-dark);
+}
+
+/* Next-section block */
+.wb-next {
+  border-top: var(--border-width-1) solid var(--border);
+  padding-top: var(--space-4);
+  margin-top: var(--space-6);
+}
+.wb-next h2,
+.wb-next h3 {
+  color: var(--heading-blue-text);
+}
+
+/* ============================================================================
+ * CAPTURE HARNESS — Controls bar
+ * ----------------------------------------------------------------------------
+ * Ported from chrome/chatgpt/chatgpt.css (which owns the canonical pattern).
+ * Pressing 's' adds the .hidden class; the !important below is load-bearing
+ * for Playwright captures — without it, the controls remain painted in the
+ * DOM even when the class is toggled, and screenshots leak them.
+ * Restored 2026-04-24 after edit-tool truncation wiped the rule block.
+ * ============================================================================ */
+.controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--gd-bg-cream);
+  color: var(--gd-text-body);
+  padding: var(--space-3) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  border-top: var(--border-width-1) solid var(--border);
+}
+.controls.hidden { display: none !important; }
+
+.controls label {
+  font-weight: var(--weight-semibold);
+  margin-right: var(--space-2);
+}
+
+.controls select,
+.controls button {
+  background: var(--gd-bg-white);
+  color: var(--gd-text-dark);
+  border: var(--border-width-1) solid var(--border);
+  border-radius: var(--radius-6, 6px);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+.controls select:hover,
+.controls button:hover {
+  background: var(--gd-menu-hover-bg);
+}
+
+.controls .slide-counter {
+  margin-left: auto;
+  font-weight: var(--weight-semibold);
+}
+
+.controls .scene-info {
+  font-size: var(--text-2xs);
+  color: var(--gd-text-muted);
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}/*
+! tailwindcss v3.4.19 | MIT License | https://tailwindcss.com
+*//*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box; /* 1 */
+  border-width: 0; /* 2 */
+  border-style: solid; /* 2 */
+  border-color: #e5e7eb; /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4; /* 3 */
+  font-family: var(--font-inter), system-ui, sans-serif; /* 4 */
+  font-feature-settings: normal; /* 5 */
+  font-variation-settings: normal; /* 6 */
+  -webkit-tap-highlight-color: transparent; /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0; /* 1 */
+  line-height: inherit; /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
+  border-top-width: 1px; /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono), monospace; /* 1 */
+  font-feature-settings: normal; /* 2 */
+  font-variation-settings: normal; /* 3 */
+  font-size: 1em; /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
+  border-collapse: collapse; /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-feature-settings: inherit; /* 1 */
+  font-variation-settings: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  font-weight: inherit; /* 1 */
+  line-height: inherit; /* 1 */
+  letter-spacing: inherit; /* 1 */
+  color: inherit; /* 1 */
+  margin: 0; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  color: #9ca3af; /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block; /* 1 */
+  vertical-align: middle; /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --primary: 270 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --border: 240 5.9% 90%;
+    --ring: 270 100% 50%;
+    --radius: 0.5rem;
+    --sidebar-width: 260px;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+.visible {
+  visibility: visible;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.-right-3 {
+  right: -0.75rem;
+}
+.top-4 {
+  top: 1rem;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-20 {
+  z-index: 20;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.ml-1 {
+  margin-left: 0.25rem;
+}
+.ml-auto {
+  margin-left: auto;
+}
+.mr-4 {
+  margin-right: 1rem;
+}
+.mr-6 {
+  margin-right: 1.5rem;
+}
+.mt-auto {
+  margin-top: auto;
+}
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+}
+.flex {
+  display: flex;
+}
+.inline-flex {
+  display: inline-flex;
+}
+.grid {
+  display: grid;
+}
+.hidden {
+  display: none;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-11 {
+  height: 2.75rem;
+}
+.h-12 {
+  height: 3rem;
+}
+.h-3 {
+  height: 0.75rem;
+}
+.h-3\.5 {
+  height: 0.875rem;
+}
+.h-4 {
+  height: 1rem;
+}
+.h-5 {
+  height: 1.25rem;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-7 {
+  height: 1.75rem;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-9 {
+  height: 2.25rem;
+}
+.h-full {
+  height: 100%;
+}
+.h-px {
+  height: 1px;
+}
+.h-screen {
+  height: 100vh;
+}
+.min-h-0 {
+  min-height: 0px;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-12 {
+  width: 3rem;
+}
+.w-3 {
+  width: 0.75rem;
+}
+.w-3\.5 {
+  width: 0.875rem;
+}
+.w-4 {
+  width: 1rem;
+}
+.w-5 {
+  width: 1.25rem;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-7 {
+  width: 1.75rem;
+}
+.w-8 {
+  width: 2rem;
+}
+.w-\[260px\] {
+  width: 260px;
+}
+.w-full {
+  width: 100%;
+}
+.w-px {
+  width: 1px;
+}
+.max-w-4xl {
+  max-width: 56rem;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+@keyframes spin {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-0\.5 {
+  gap: 0.125rem;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-1\.5 {
+  gap: 0.375rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-3 {
+  gap: 0.75rem;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.gap-5 {
+  gap: 1.25rem;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-y-auto {
+  overflow-y: auto;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rounded {
+  border-radius: 0.5rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-lg {
+  border-radius: 0.75rem;
+}
+.rounded-md {
+  border-radius: 0.5rem;
+}
+.rounded-xl {
+  border-radius: 1rem;
+}
+.border {
+  border-width: 1px;
+}
+.border-b {
+  border-bottom-width: 1px;
+}
+.border-r {
+  border-right-width: 1px;
+}
+.border-t {
+  border-top-width: 1px;
+}
+.border-electric-violet\/20 {
+  border-color: rgb(138 0 255 / 0.2);
+}
+.border-zinc-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(63 63 70 / var(--tw-border-opacity, 1));
+}
+.border-zinc-800 {
+  --tw-border-opacity: 1;
+  border-color: rgb(39 39 42 / var(--tw-border-opacity, 1));
+}
+.border-zinc-800\/60 {
+  border-color: rgb(39 39 42 / 0.6);
+}
+.bg-blue-500\/15 {
+  background-color: rgb(59 130 246 / 0.15);
+}
+.bg-electric-violet {
+  --tw-bg-opacity: 1;
+  background-color: rgb(138 0 255 / var(--tw-bg-opacity, 1));
+}
+.bg-electric-violet\/15 {
+  background-color: rgb(138 0 255 / 0.15);
+}
+.bg-electric-violet\/20 {
+  background-color: rgb(138 0 255 / 0.2);
+}
+.bg-emerald-500\/15 {
+  background-color: rgb(16 185 129 / 0.15);
+}
+.bg-transparent {
+  background-color: transparent;
+}
+.bg-violet-500\/15 {
+  background-color: rgb(139 92 246 / 0.15);
+}
+.bg-zinc-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
+}
+.bg-zinc-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
+}
+.bg-zinc-900\/60 {
+  background-color: rgb(24 24 27 / 0.6);
+}
+.bg-zinc-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(9 9 11 / var(--tw-bg-opacity, 1));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+.py-1\.5 {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+.pb-12 {
+  padding-bottom: 3rem;
+}
+.pb-16 {
+  padding-bottom: 4rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
+}
+.pt-16 {
+  padding-top: 4rem;
+}
+.pt-4 {
+  padding-top: 1rem;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-\[10px\] {
+  font-size: 10px;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.normal-case {
+  text-transform: none;
+}
+.tabular-nums {
+  --tw-numeric-spacing: tabular-nums;
+  font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
+}
+.leading-tight {
+  line-height: 1.25;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+.text-\[var\(--muted\)\] {
+  color: var(--muted);
+}
+.text-blue-400 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity, 1));
+}
+.text-electric-violet-dark {
+  --tw-text-opacity: 1;
+  color: rgb(182 91 255 / var(--tw-text-opacity, 1));
+}
+.text-emerald-400 {
+  --tw-text-opacity: 1;
+  color: rgb(52 211 153 / var(--tw-text-opacity, 1));
+}
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+}
+.text-violet-400 {
+  --tw-text-opacity: 1;
+  color: rgb(167 139 250 / var(--tw-text-opacity, 1));
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-zinc-100 {
+  --tw-text-opacity: 1;
+  color: rgb(244 244 245 / var(--tw-text-opacity, 1));
+}
+.text-zinc-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 216 / var(--tw-text-opacity, 1));
+}
+.text-zinc-400 {
+  --tw-text-opacity: 1;
+  color: rgb(161 161 170 / var(--tw-text-opacity, 1));
+}
+.text-zinc-50 {
+  --tw-text-opacity: 1;
+  color: rgb(250 250 250 / var(--tw-text-opacity, 1));
+}
+.text-zinc-500 {
+  --tw-text-opacity: 1;
+  color: rgb(113 113 122 / var(--tw-text-opacity, 1));
+}
+.text-zinc-600 {
+  --tw-text-opacity: 1;
+  color: rgb(82 82 91 / var(--tw-text-opacity, 1));
+}
+.text-zinc-700 {
+  --tw-text-opacity: 1;
+  color: rgb(63 63 70 / var(--tw-text-opacity, 1));
+}
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.opacity-25 {
+  opacity: 0.25;
+}
+.opacity-75 {
+  opacity: 0.75;
+}
+.outline {
+  outline-style: solid;
+}
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.duration-200 {
+  transition-duration: 200ms;
+}
+
+.hover\:border-zinc-600:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(82 82 91 / var(--tw-border-opacity, 1));
+}
+
+.hover\:bg-electric-violet\/90:hover {
+  background-color: rgb(138 0 255 / 0.9);
+}
+
+.hover\:bg-zinc-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-zinc-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-zinc-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:text-zinc-100:hover {
+  --tw-text-opacity: 1;
+  color: rgb(244 244 245 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-zinc-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(228 228 231 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-zinc-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 216 / var(--tw-text-opacity, 1));
+}
+
+.hover\:shadow-lg:hover {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.focus-visible\:outline-none:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-visible\:ring-2:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.disabled\:pointer-events-none:disabled {
+  pointer-events: none;
+}
+
+.disabled\:opacity-30:disabled {
+  opacity: 0.3;
+}
+
+.disabled\:opacity-50:disabled {
+  opacity: 0.5;
+}
+
+.group:hover .group-hover\:border-blue-500\/60 {
+  border-color: rgb(59 130 246 / 0.6);
+}
+
+.group:hover .group-hover\:border-emerald-500\/60 {
+  border-color: rgb(16 185 129 / 0.6);
+}
+
+.group:hover .group-hover\:border-violet-500\/60 {
+  border-color: rgb(139 92 246 / 0.6);
+}
+
+.group:hover .group-hover\:bg-electric-violet\/30 {
+  background-color: rgb(138 0 255 / 0.3);
+}
+
+.group:hover .group-hover\:text-zinc-100 {
+  --tw-text-opacity: 1;
+  color: rgb(244 244 245 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:text-zinc-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 216 / var(--tw-text-opacity, 1));
+}
+
+.group:hover .group-hover\:shadow-blue-500\/10 {
+  --tw-shadow-color: rgb(59 130 246 / 0.1);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.group:hover .group-hover\:shadow-emerald-500\/10 {
+  --tw-shadow-color: rgb(16 185 129 / 0.1);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.group:hover .group-hover\:shadow-violet-500\/10 {
+  --tw-shadow-color: rgb(139 92 246 / 0.1);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+@media (min-width: 640px) {
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+
+  .md\:block {
+    display: block;
+  }
+}
+

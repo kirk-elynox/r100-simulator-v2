@@ -1,0 +1,427 @@
+[
+  {
+    "id": "wf5-02",
+    "layout": "gpt-editor",
+    "workflow": "WF05",
+    "label": "Foundation Review: Knowledge, Instructions, Starters (part 1)",
+    "activeTab": "create",
+    "headerText": "ResumeOptimizer • Draft",
+    "name": "ResumeOptimizer",
+    "description": "A career coach AI that helps refine resumes for specific roles by analyzing job postings, providing targeted feedback, and iterating on resume content until it's a strong match.",
+    "instructions": "You are a career coach AI specialized in resume optimization. Your role is to analyze the user's resume alongside the target job posting, identify gaps, and provide specific, actionable feedback to strengthen the match.\n\nIn each conversation:\n1. Ask the user to provide their resume and a job posting.\n2. Analyze the resume against the job posting.\n3. Provide feedback in three sections: Strengths, Gaps, and Specific Recommendations.\n4. After feedback, ask if they want to revise.\n\nKeep feedback concise and actionable. Do not rewrite the resume for them. Prioritize keywords from the job posting.",
+    "conversationStarters": [
+      "Analyze my resume against this job posting",
+      "What are my strongest qualifications for this role?",
+      "Help me identify gaps in my application"
+    ],
+    "knowledgeFiles": [
+      {
+        "name": "Context: About Me.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Context: My Resume.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Reference: Best Practices.docx",
+        "color": "green"
+      }
+    ],
+    "capabilities": {
+      "webBrowsing": true,
+      "dalleImageGen": true,
+      "codeInterpreter": true,
+      "fileRetrieval": true
+    },
+    "isPublished": false,
+    "showSidebar": false
+  },
+  {
+    "id": "wf5-03",
+    "layout": "gpt-editor",
+    "workflow": "WF05",
+    "label": "Foundation Review: Knowledge, Instructions, Starters (part 2)",
+    "activeTab": "create",
+    "headerText": "ResumeOptimizer • Draft",
+    "name": "ResumeOptimizer",
+    "description": "A career coach AI that helps refine resumes for specific roles by analyzing job postings, providing targeted feedback, and iterating on resume content until it's a strong match.",
+    "instructions": "You are a career coach AI specialized in resume optimization. Your role is to analyze the user's resume alongside the target job posting, identify gaps, and provide specific, actionable feedback to strengthen the match.\n\nIn each conversation:\n1. Ask the user to provide their resume and a job posting.\n2. Analyze the resume against the job posting.\n3. Provide feedback in three sections: Strengths, Gaps, and Specific Recommendations.\n4. After feedback, ask if they want to revise.\n\nKeep feedback concise and actionable. Do not rewrite the resume for them. Prioritize keywords from the job posting.",
+    "conversationStarters": [
+      "Analyze my resume against this job posting",
+      "What are my strongest qualifications for this role?",
+      "Help me identify gaps in my application"
+    ],
+    "knowledgeFiles": [
+      {
+        "name": "Context: About Me.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Context: My Resume.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Reference: Best Practices.docx",
+        "color": "green"
+      }
+    ],
+    "capabilities": {
+      "webBrowsing": true,
+      "dalleImageGen": true,
+      "codeInterpreter": true,
+      "fileRetrieval": true
+    },
+    "isPublished": false,
+    "showSidebar": false
+  },
+  {
+    "id": "wf5-04",
+    "layout": "gpt-editor",
+    "workflow": "WF05",
+    "label": "Capability Stacking: Add Cover Letter Template (part 1)",
+    "activeTab": "create",
+    "headerText": "Job Hunt Assistant • Draft",
+    "name": "Job Hunt Assistant",
+    "description": "A career coach AI that helps with resume optimization, cover letter drafting, multi-role evaluation, and offer comparison — using your context, values, and goals as the foundation.",
+    "instructions": "You are a career coach AI and job hunt assistant. Your role is to help with resume optimization, cover letter drafting, multi-role evaluation, market analysis, and offer comparison — using the user's context, values, and goals as the foundation for all guidance.\n\nIn each conversation:\n1. Ask the user to provide their resume and a job posting (or multiple postings for comparison).\n2. Analyze against the posting — look for keyword alignment, experience gaps, and missing context.\n3. Provide feedback in three sections: Strengths, Gaps, and Specific Recommendations.\n4. For cover letters, use the uploaded template as the scaffold and customize for each role.\n5. For multi-role evaluation, rank opportunities against the user's stated criteria.\n6. For offer evaluation, use the personal perspective brief to ground the framework.\n\nKeep feedback concise and actionable. Prioritize the user's values and goals. Adapt strategy based on new market context as it arrives. Always suggest no more than three changes per iteration.",
+    "conversationStarters": [
+      "Analyze my resume against this job posting",
+      "Draft a cover letter for this role",
+      "Evaluate these roles against my criteria",
+      "Compare these two offers side by side"
+    ],
+    "knowledgeFiles": [
+      {
+        "name": "Context: About Me.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Context: My Resume.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Template: Cover Letter.docx",
+        "color": "green"
+      },
+      {
+        "name": "Reference: Best Practices.docx",
+        "color": "green"
+      },
+      {
+        "name": "Reference: Cover Letter Guide.docx",
+        "color": "green"
+      }
+    ],
+    "capabilities": {
+      "webBrowsing": true,
+      "dalleImageGen": true,
+      "codeInterpreter": true,
+      "fileRetrieval": true
+    },
+    "isPublished": false,
+    "showSidebar": false
+  },
+  {
+    "id": "wf5-05",
+    "layout": "gpt-editor",
+    "workflow": "WF05",
+    "label": "Capability Stacking: Add Cover Letter Template (part 2)",
+    "activeTab": "create",
+    "headerText": "Job Hunt Assistant • Draft",
+    "name": "Job Hunt Assistant",
+    "description": "A career coach AI that helps with resume optimization, cover letter drafting, multi-role evaluation, and offer comparison — using your context, values, and goals as the foundation.",
+    "instructions": "You are a career coach AI and job hunt assistant. Your role is to help with resume optimization, cover letter drafting, multi-role evaluation, market analysis, and offer comparison — using the user's context, values, and goals as the foundation for all guidance.\n\nIn each conversation:\n1. Ask the user to provide their resume and a job posting (or multiple postings for comparison).\n2. Analyze against the posting — look for keyword alignment, experience gaps, and missing context.\n3. Provide feedback in three sections: Strengths, Gaps, and Specific Recommendations.\n4. For cover letters, use the uploaded template as the scaffold and customize for each role.\n5. For multi-role evaluation, rank opportunities against the user's stated criteria.\n6. For offer evaluation, use the personal perspective brief to ground the framework.\n\nKeep feedback concise and actionable. Prioritize the user's values and goals. Adapt strategy based on new market context as it arrives. Always suggest no more than three changes per iteration.",
+    "conversationStarters": [
+      "Analyze my resume against this job posting",
+      "Draft a cover letter for this role",
+      "Evaluate these roles against my criteria",
+      "Compare these two offers side by side"
+    ],
+    "knowledgeFiles": [
+      {
+        "name": "Context: About Me.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Context: My Resume.docx",
+        "color": "blue"
+      },
+      {
+        "name": "Template: Cover Letter.docx",
+        "color": "green"
+      },
+      {
+        "name": "Reference: Best Practices.docx",
+        "color": "green"
+      },
+      {
+        "name": "Reference: Cover Letter Guide.docx",
+        "color": "green"
+      }
+    ],
+    "capabilities": {
+      "webBrowsing": true,
+      "dalleImageGen": true,
+      "codeInterpreter": true,
+      "fileRetrieval": true
+    },
+    "isPublished": false,
+    "showSidebar": false
+  },
+  {
+    "id": "wf5-12",
+    "layout": "gpt-editor",
+    "workflow": "WF05",
+    "label": "Modular Updates: Future-Proofing Your Specification",
+    "activeTab": "create",
+    "headerText": "Job Hunt Assistant • Draft",
+    "name": "Job Hunt Assistant",
+    "description": "A career coach AI that helps with resume optimization, cover letter drafting, multi-role evaluation, and offer comparison — using your context, values, and goals as the foundation.",
+    "instructions": "You are a career coach AI and job hunt assistant. Your role is to help with resume optimization, cover letter drafting, multi-role evaluation, market analysis, and offer comparison — using the user's context, values, and goals as the foundation for all guidance.\n\nIn each conversation:\n1. Ask the user to provide their resume and a job posting (or multiple postings for comparison).\n2. Analyze against the posting — look for keyword alignment, experience gaps, and missing context.\n3. Provide feedback in three sections: Strengths, Gaps, and Specific Recommendations.\n4. For cover letters, use the uploaded template as the scaffold and customize for each role.\n5. For multi-role evaluation, rank opportunities against the user's stated criteria.\n6. For offer evaluation, use the personal perspective brief to ground the framework.\n\nKeep feedback concise and actionable. Prioritize the user's values and goals. Adapt strategy based on new market context as it arrives. Always suggest no more than three changes per iteration.",
+    "conversationStarters": [
+      "Analyze my resume against this job posting",
+      "Draft a cover letter for this role",
+      "Evaluate these roles against my criteria",
+      "Compare these two offers side by side"
+    ],
+    "knowledgeFiles": [
+      {
+        "name": "Context: About Me (Updated).docx",
+        "color": "blue"
+      },
+      {
+        "name": "Context: My Resume (v2).docx",
+        "color": "blue"
+      },
+      {
+        "name": "Template: Cover Letter.docx",
+        "color": "green"
+      },
+      {
+        "name": "Reference: Best Practices.docx",
+        "color": "green"
+      },
+      {
+        "name": "Reference: Cover Letter Guide.docx",
+        "color": "green"
+      }
+    ],
+    "capabilities": {
+      "webBrowsing": true,
+      "dalleImageGen": true,
+      "codeInterpreter": true,
+      "fileRetrieval": true
+    },
+    "isPublished": false,
+    "showSidebar": false
+  },
+  {
+    "id": "wf5-06",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "First Use: Single Conversation, Dual Capability",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I'm applying to Globe Bank for the VP of AI Marketing role. First, help me tailor my resume for this specific posting. Then, draft a cover letter that connects my experience to their specific needs."
+      },
+      {
+        "role": "assistant",
+        "content": "Here's how your resume stacks up against Globe Bank's VP of AI Marketing role:\n\n**Gaps & Misalignments**\n- **Seniority gap:** Your experience reads as strong Senior Manager level, but not yet clearly \"VP.\" Scope (team size, budget ownership, org influence) needs elevation.\n- **Team leadership scale:** You've led 4 people; role calls for 6–8 + broader org leadership narrative.\n- **Budget ownership missing:** No mention of owning or managing a marketing budget.\n- **Financial services experience:** No direct fintech/banking exposure, which is a stated preference.\n- **Enterprise buyer focus:** Your work leans developer/technical audiences; needs clearer enterprise GTM framing.\n\n**Strengths to Emphasize**\n- Strong AI/ML marketing foundation with credible technical fluency\n- Proven \"build from scratch\" experience — highly relevant to a scaling org\n- Clear impact metrics (adoption, engagement, conversion lift)\n- MBA + CS combo — exactly what they're signaling as ideal\n\n**Recommended Revisions**\n- Reframe title/scope upward: Add \"Head of Product Marketing, AI Products\"\n- Add budget responsibility: \"Managed $X marketing budget across product launches\"\n- Expand team leadership narrative: \"Scaled team from 0→4; established hiring plan\"\n\n---\n\nNow, a tailored cover letter:\n\nDear Globe Bank Hiring Team,\n\nI'm excited to apply for the VP of AI Marketing role at Globe Bank. Your mission to transform financial services through AI aligns closely with the work I've been leading over the past eight years: bringing technically sophisticated AI products to market in a way that drives real adoption and trust.\n\nIn my current role leading AI product marketing at Nexus AI, I built the function from the ground up, launching multiple AI products that exceeded adoption targets by 40% in their first quarter. A key part of that success has been translating complex machine learning capabilities into clear, credible narratives for business and technical buyers.\n\nI'd welcome the opportunity to help Globe Bank define the category for AI-powered banking.\n\nBest regards, Sarah Chen"
+      }
+    ]
+  },
+  {
+    "id": "wf5-08",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "Multi-Job Evaluation: Scaling Decision Support (part 1)",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I'm applying to Globe Bank for the VP of AI Marketing role. First, help me tailor my resume for this specific posting. Then, draft a cover letter that connects my experience to their specific needs."
+      },
+      {
+        "role": "assistant",
+        "content": "Here's how your resume stacks up against Globe Bank's VP of AI Marketing role:\n\n**Gaps & Misalignments**\n- **Seniority gap:** Your experience reads as strong Senior Manager level, but not yet clearly \"VP.\" Scope (team size, budget ownership, org influence) needs elevation.\n- **Team leadership scale:** You've led 4 people; role calls for 6–8 + broader org leadership narrative.\n- **Budget ownership missing:** No mention of owning or managing a marketing budget.\n- **Financial services experience:** No direct fintech/banking exposure, which is a stated preference.\n- **Enterprise buyer focus:** Your work leans developer/technical audiences; needs clearer enterprise GTM framing.\n\n**Strengths to Emphasize**\n- Strong AI/ML marketing foundation with credible technical fluency\n- Proven \"build from scratch\" experience — highly relevant to a scaling org\n- Clear impact metrics (adoption, engagement, conversion lift)\n- MBA + CS combo — exactly what they're signaling as ideal\n\n**Recommended Revisions**\n- Reframe title/scope upward: Add \"Head of Product Marketing, AI Products\"\n- Add budget responsibility: \"Managed $X marketing budget across product launches\"\n- Expand team leadership narrative: \"Scaled team from 0→4; established hiring plan\"\n\n---\n\nNow, a tailored cover letter:\n\nDear Globe Bank Hiring Team,\n\nI'm excited to apply for the VP of AI Marketing role at Globe Bank. Your mission to transform financial services through AI aligns closely with the work I've been leading over the past eight years: bringing technically sophisticated AI products to market in a way that drives real adoption and trust.\n\nIn my current role leading AI product marketing at Nexus AI, I built the function from the ground up, launching multiple AI products that exceeded adoption targets by 40% in their first quarter. A key part of that success has been translating complex machine learning capabilities into clear, credible narratives for business and technical buyers.\n\nI'd welcome the opportunity to help Globe Bank define the category for AI-powered banking.\n\nBest regards, Sarah Chen"
+      },
+      {
+        "role": "user",
+        "content": "That cover letter is solid. Can you tighten it to three focused paragraphs? Lead with the AI translation angle — that seems to be their core need."
+      },
+      {
+        "role": "assistant",
+        "content": "Here's a tighter version leading with the translation angle:\n\n---\n\nDear Globe Bank Hiring Team,\n\nThe most valuable skill in AI marketing isn't understanding the models — it's translating them. Over eight years building AI product marketing from the ground up at Nexus AI, I've learned that adoption lives or dies on whether the buyer trusts the technology. That's the challenge Globe Bank is solving, and it's exactly the work I'm built for.\n\nAt Nexus AI, I launched multiple AI products that exceeded adoption targets by 40% in Q1 — not by leading with features, but by making the technology feel credible, accessible, and consequential. I scaled a team of four, managed end-to-end GTM across product and sales, and developed a content strategy that lifted conversion by 18% while establishing a lasting voice in a crowded market.\n\nGlobe Bank is at an inflection point: the AI capabilities are real, but the market narrative isn't yet. I'd welcome the opportunity to build it.\n\nBest regards, Sarah Chen\n\n---\n\nThis version anchors the \"translator\" identity immediately, keeps the metrics but cuts the inventory, and ends with a sharp positioning statement rather than a generic close."
+      }
+    ]
+  },
+  {
+    "id": "wf5-09",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "Multi-Job Evaluation: Scaling Decision Support (part 2)",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I have five job postings I'm considering. Can you evaluate each one against my perspective brief and rank them by alignment?"
+      },
+      {
+        "role": "assistant",
+        "content": "I'll pressure-test each role against your non-negotiables and what you're actually optimizing for.\n\n---\n\n**1. Globe Bank – VP of AI Marketing** | Fit: Moderate\nVP title and strategic scope are promising, but fintech context often means heavier compliance and slower narrative iteration. Compensation is strong.\n\n**Take:** Looks good on paper, but likely drifts toward \"institutional marketing leader\" vs. AI narrative architect.\n\n---\n\n**2. Prism Analytics – Director of AI Marketing (Series B)** | Fit: Strong\nSeries B + complex domain AI = exactly where translation and narrative matter. Clear path to VP. Slightly below comp target.\n\n**Take:** Very aligned with your \"architecture over execution\" goal, assuming real autonomy.\n\n---\n\n**3. NeuralPath – Head of Product Marketing (Series D, healthcare AI)** | Fit: Very Strong\nHealthcare AI demands deep translation and credibility — your core strength. Series D means more structure.\n\n**Take:** Strong domain alignment, but confirm this isn't a \"polished execution\" PMM role.\n\n---\n\n**4. TechForge Labs – VP Marketing (public, dev tools)** | Fit: Weak-Moderate\nPublic company = scale, not build. Likely far from product decisions. Highest comp.\n\n**Take:** Best pay, worst alignment with your operating model.\n\n---\n\n**5. DataMind – Director of Growth (seed stage)** | Fit: Weak\n\"Growth\" signals execution and channels — not narrative architecture. Below comp range.\n\n**Take:** Too execution-heavy and too early.\n\n---\n\n## Overall Ranking\n1. **Prism Analytics** – Best balance of build opportunity and strategic ownership\n2. **NeuralPath** – Strong domain fit; depends on role scope\n3. **Globe Bank** – Good scope, but cultural and structural risks\n4. **TechForge Labs** – High comp, low alignment\n5. **DataMind** – Misaligned role design and compensation"
+      }
+    ]
+  },
+  {
+    "id": "wf5-10",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "Market News Integration: Context Informs Strategy",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I just read this article about AI in banking. How should this change my approach to the Globe Bank application?"
+      },
+      {
+        "role": "assistant",
+        "content": "Short answer: yes — this should absolutely influence how you position yourself. Not in a dramatic rewrite, but in a smart reframing.\n\n**What the shift means for your positioning:**\n\nBanks are past AI hype. They want people who understand *real-world application and impact*. That changes what Globe Bank is actually screening for.\n\n**Gaps to Address**\n- If your resume treats AI as a buzzword, that's a miss — they want demonstrated understanding of applied AI\n- If your experience is framed purely as \"marketing campaigns\" without tying to business outcomes (conversion, risk understanding, customer behavior), it may feel outdated\n- If you don't show ability to translate complex ideas into customer-friendly messaging, you're missing the core challenge\n\n**Strengths to Amplify**\n- Any experience explaining complex, technical, or abstract concepts to non-experts\n- Work tied to outcomes: growth, adoption, trust, retention\n- Data-informed decision-making\n- Cross-functional collaboration with product, data, or engineering\n\n**Recommended Reframes**\n\nInstead of: \"Led campaign for new digital product\"\nTry: \"Led campaign translating complex product functionality into customer-facing value, increasing adoption by X%\"\n\nAdd a thread of \"translator between tech and customer\" throughout. Even without direct AI experience, you can position yourself as someone who simplifies complexity and builds trust in new systems.\n\nConsider a summary line: \"Marketing professional focused on translating complex financial and technological capabilities into clear, customer-centered value.\"\n\n---\n\nGlobe Bank doesn't just want marketers — they want interpreters of AI-driven banking. Your goal is to show you can sit between the model and the customer and make it meaningful."
+      }
+    ]
+  },
+  {
+    "id": "wf5-11",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "Company Research for Offer Evaluation: Full Circle",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I've received an offer from Globe Bank. Can you help me build an evaluation framework based on my perspective brief?"
+      },
+      {
+        "role": "assistant",
+        "content": "This is a strong offer on the surface. Let's turn your brief into a practical evaluation framework.\n\n---\n\n**1. Hard Filters (Pass / Risk / Fail)**\n\n- Strategic autonomy → Globe Bank: **UNCLEAR / RISK** (org layers)\n- Product integrity (AI is real, not hype) → Globe Bank: **RISK** (could be AI-washed)\n- Org structure (marketing not under sales) → Reports to CPO → **PASS**\n- Cultural standard (substance vs optics) → **UNKNOWN**\n- Work-life expectations → **UNKNOWN** (finance can skew intense)\n\n---\n\n**2. Role Design Fit (1–5 Scale)**\n\n- VP title + small team + hiring budget → **4–5 on design/build**\n- Reporting to CPO → strong **product influence potential**\n- Risk: in large orgs, \"VP\" can mean stakeholder management over true ownership\n\n---\n\n**3. Compensation & Risk Balance**\n\n- Base: $210K → top of your range\n- Bonus: 20% → solid\n- Equity: 0.15% → **lower upside vs startup**\n\nThis is a **cash-heavy, lower-risk package** — not a high-upside bet.\n\n---\n\n**Key Risks**\n\n- AI may not be differentiated enough to support your narrative work\n- You may spend more time navigating compliance + stakeholders than building frameworks\n- Culture could skew toward optics and consensus vs clarity\n\n**Key Upside Signals**\n\n- Reporting to CPO → suggests product-led marketing seat\n- Team small enough to shape → not inheriting a bloated org\n- Budget to hire → real ability to architect function\n\n---\n\n**Before deciding, explicitly validate:**\n- \"What AI capabilities are actually proprietary vs vendor-based?\"\n- \"What decisions will I fully own vs influence?\"\n- \"What has prevented strong AI adoption so far?\"\n\nTheir answers will tell you whether this is a true architecture role or a high-prestige execution role with constraints."
+      }
+    ]
+  },
+  {
+    "id": "wf5-13",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "Multi-Context Continuity: One Assistant, Many Threads",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I'm applying to Globe Bank for the VP of AI Marketing role. First, help me tailor my resume for this specific posting. Then, draft a cover letter that connects my experience to their specific needs."
+      },
+      {
+        "role": "assistant",
+        "content": "Here's how your resume stacks up against Globe Bank's VP of AI Marketing role:\n\n**Gaps & Misalignments**\n- **Seniority gap:** Your experience reads as strong Senior Manager level, but not yet clearly \"VP.\" Scope (team size, budget ownership, org influence) needs elevation.\n- **Team leadership scale:** You've led 4 people; role calls for 6–8 + broader org leadership narrative.\n- **Budget ownership missing:** No mention of owning or managing a marketing budget.\n- **Financial services experience:** No direct fintech/banking exposure, which is a stated preference.\n- **Enterprise buyer focus:** Your work leans developer/technical audiences; needs clearer enterprise GTM framing.\n\n**Strengths to Emphasize**\n- Strong AI/ML marketing foundation with credible technical fluency\n- Proven \"build from scratch\" experience — highly relevant to a scaling org\n- Clear impact metrics (adoption, engagement, conversion lift)\n- MBA + CS combo — exactly what they're signaling as ideal\n\n**Recommended Revisions**\n- Reframe title/scope upward: Add \"Head of Product Marketing, AI Products\"\n- Add budget responsibility: \"Managed $X marketing budget across product launches\"\n- Expand team leadership narrative: \"Scaled team from 0→4; established hiring plan\"\n\n---\n\nNow, a tailored cover letter:\n\nDear Globe Bank Hiring Team,\n\nI'm excited to apply for the VP of AI Marketing role at Globe Bank. Your mission to transform financial services through AI aligns closely with the work I've been leading over the past eight years: bringing technically sophisticated AI products to market in a way that drives real adoption and trust.\n\nIn my current role leading AI product marketing at Nexus AI, I built the function from the ground up, launching multiple AI products that exceeded adoption targets by 40% in their first quarter. A key part of that success has been translating complex machine learning capabilities into clear, credible narratives for business and technical buyers.\n\nI'd welcome the opportunity to help Globe Bank define the category for AI-powered banking.\n\nBest regards, Sarah Chen"
+      }
+    ]
+  },
+  {
+    "id": "wf5-14",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "Decision Support: Comparing Multiple Offers",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I now have two offers. Can you compare them against my evaluation criteria and perspective brief?"
+      },
+      {
+        "role": "assistant",
+        "content": "Here's a clean comparison through the lens of your brief — not just comp/title, but actual fit to how you work.\n\n---\n\n## Offer 1 — Globe Bank (VP AI Marketing)\n\n**Gaps:** Large bank likely skews toward slower decision-making and \"optics over substance.\" AI product integrity is ambiguous. Stage mismatch: this is post-product optimization, not shaping from ambiguity.\n\n**Strengths:** VP title + team of 3→7 = immediate architectural authority. Reports to CPO. Remote-friendly. Budget to hire.\n\n---\n\n## Offer 2 — Prism Analytics (Director AI Marketing)\n\n**Gaps:** Director reporting to VP Marketing = higher risk of execution over strategy. Location friction: 3 days/week SF.\n\n**Strengths:** Strong product integrity — Series B, engineering-led, focused AI product. Closest to your sweet spot: market doesn't fully understand the product yet. High proximity to product. Substance over optics culture.\n\n---\n\n## Direct Comparison Against Your Criteria\n\n| Dimension | Globe Bank | Prism Analytics |\n|---|---|---|\n| Product Integrity | Risk | Strong |\n| Build vs Scale | Scale/optimize | Shape/build |\n| Proximity to Product | Moderate | High |\n| Cultural Fit | Risk | Strong |\n| Career Trajectory (2–3yr) | Title now | Differentiation |\n| Compensation | $210K + stronger | $190K + equity upside |\n\n---\n\n## My Read (Based on Your Brief)\n\n**If you choose Globe:** You're prioritizing title, stability, and immediate authority — but risking misalignment with how you actually create impact.\n\n**If you choose Prism:** You're prioritizing working on a real AI product in an ambiguous market, staying close to product and narrative creation — but you must solve for scope and autonomy upfront.\n\n**Critical question before deciding (for Prism):** Do you own positioning and GTM strategy, or support it? If the VP of Marketing is hands-off and you have direct access to product leadership — Prism aligns much better with your trajectory."
+      }
+    ]
+  },
+  {
+    "id": "wf5-15",
+    "layout": "chat",
+    "workflow": "WF05",
+    "label": "Continuous Learning and Iteration",
+    "showSidebar": true,
+    "recentChats": [
+      "Offer Comparison",
+      "Multi-Job Evaluation",
+      "Job Hunt Assistant",
+      "ResumeOptimizer Test",
+      "AI Marketing Leader Resume"
+    ],
+    "activeChat": "Job Hunt Assistant",
+    "turns": [
+      {
+        "role": "user",
+        "content": "I now have two offers. Can you compare them against my evaluation criteria and perspective brief?"
+      },
+      {
+        "role": "assistant",
+        "content": "Here's a clean comparison through the lens of your brief — not just comp/title, but actual fit to how you work.\n\n---\n\n## Offer 1 — Globe Bank (VP AI Marketing)\n\n**Gaps:** Large bank likely skews toward slower decision-making and \"optics over substance.\" AI product integrity is ambiguous. Stage mismatch: this is post-product optimization, not shaping from ambiguity.\n\n**Strengths:** VP title + team of 3→7 = immediate architectural authority. Reports to CPO. Remote-friendly. Budget to hire.\n\n---\n\n## Offer 2 — Prism Analytics (Director AI Marketing)\n\n**Gaps:** Director reporting to VP Marketing = higher risk of execution over strategy. Location friction: 3 days/week SF.\n\n**Strengths:** Strong product integrity — Series B, engineering-led, focused AI product. Closest to your sweet spot: market doesn't fully understand the product yet. High proximity to product. Substance over optics culture.\n\n---\n\n## Direct Comparison Against Your Criteria\n\n| Dimension | Globe Bank | Prism Analytics |\n|---|---|---|\n| Product Integrity | Risk | Strong |\n| Build vs Scale | Scale/optimize | Shape/build |\n| Proximity to Product | Moderate | High |\n| Cultural Fit | Risk | Strong |\n| Career Trajectory (2–3yr) | Title now | Differentiation |\n| Compensation | $210K + stronger | $190K + equity upside |\n\n---\n\n## My Read (Based on Your Brief)\n\n**If you choose Globe:** You're prioritizing title, stability, and immediate authority — but risking misalignment with how you actually create impact.\n\n**If you choose Prism:** You're prioritizing working on a real AI product in an ambiguous market, staying close to product and narrative creation — but you must solve for scope and autonomy upfront.\n\n**Critical question before deciding (for Prism):** Do you own positioning and GTM strategy, or support it? If the VP of Marketing is hands-off and you have direct access to product leadership — Prism aligns much better with your trajectory."
+      }
+    ]
+  }
+]
