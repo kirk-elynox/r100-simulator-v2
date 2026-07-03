@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { MessageSquare, Presentation, BookOpen, Zap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { CHROME_META, VALID_CHROMES, type ChromeId, type WfId } from '@/lib/types';
+import ExportButton from './ExportButton';
 
 const ICONS: Record<ChromeId, React.ComponentType<{ className?: string }>> = {
   'chatgpt':     MessageSquare,
@@ -55,8 +56,9 @@ export default function TopNav({ chrome, wf }: Props) {
       </nav>
 
       {/* Right slot */}
-      <div className="ml-auto flex items-center gap-2">
+      <div className="ml-auto flex items-center gap-3">
         <span className="text-xs text-zinc-600 hidden md:block">Press S to hide sidebar · ←→ to navigate</span>
+        <ExportButton wf={wf} />
       </div>
     </header>
   );
